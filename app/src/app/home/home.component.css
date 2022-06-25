@@ -1,0 +1,15 @@
+#image1{
+    background-position:right;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-image: url("https://thumbs.dreamstime.com/b/vector-dial-login-icon-white-isolated-background-layers-grouped-easy-editing-illustration-your-design-236168654.jpg");
+}
+html{
+scroll-behavior: smooth;
+}
+
+.bt1 a:hover{
+    color:blueviolet;
+    background-color:white;
+  
+}
