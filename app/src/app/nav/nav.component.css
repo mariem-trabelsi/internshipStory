@@ -5,3 +5,9 @@ a{
 img{
     motion-rotation: 180deg;
 }
+.lv {
+    border-left: 2px solid #000;
+    display: inline-block;
+    height: 50px;
+    margin: 0 20px;
+  }
