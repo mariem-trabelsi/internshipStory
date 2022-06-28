@@ -9,6 +9,9 @@ import { NavComponent } from './nav/nav.component';
 import { RechercheComponent } from './recherche/recherche.component';
 import{RouterModule,Routes} from '@angular/router';
 import { LogComponent } from './log/log.component';
+import { FooterComponent } from './footer/footer.component';
+import { SigninHrComponent } from './signin-hr/signin-hr.component';
+import { SigninIntershipSeekerComponent } from './signin-intership-seeker/signin-intership-seeker.component';
 
 
 const appRoutes: Routes =[
@@ -25,7 +28,10 @@ const appRoutes: Routes =[
     HomeComponent,
     NavComponent,
     RechercheComponent,
-    LogComponent
+    LogComponent,
+    FooterComponent,
+    SigninHrComponent,
+    SigninIntershipSeekerComponent
   ],
   imports: [
     BrowserModule,
