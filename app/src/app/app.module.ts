@@ -10,16 +10,16 @@ import { RechercheComponent } from './recherche/recherche.component';
 import{RouterModule,Routes} from '@angular/router';
 import { LogComponent } from './log/log.component';
 import { FooterComponent } from './footer/footer.component';
-import { SigninHrComponent } from './signin-hr/signin-hr.component';
-import { SigninIntershipSeekerComponent } from './signin-intership-seeker/signin-intership-seeker.component';
 import { StoryComponent } from './story/story.component';
+import { AboutComponent } from './about/about.component';
+import { SigninComponent } from './signin/signin.component';
 
 
 const appRoutes: Routes =[
   {path:'home',component:HomeComponent},
   {path:'recherche',component:RechercheComponent},
   {path:'story',component:StoryComponent},
-  {path:'signin-hr',component:SigninHrComponent},
+  {path:'signin',component:SigninComponent},
   {path:'',redirectTo:'/home',pathMatch:'full'},
   {path:'log',component:LogComponent}
 
@@ -33,9 +33,9 @@ const appRoutes: Routes =[
     RechercheComponent,
     LogComponent,
     FooterComponent,
-    SigninHrComponent,
-    SigninIntershipSeekerComponent,
-    StoryComponent
+    StoryComponent,
+    AboutComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,

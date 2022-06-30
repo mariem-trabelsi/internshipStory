@@ -1,12 +1,10 @@
-.lv {
+/* .lv {
     border-right: 2px solid #000;
     display: inline-block;
     height: 100%;
     margin: 0 20px;
    
-}
-
-
+} */
 
 .purple-border {
     border: 1px solid #ba68c8;
@@ -16,17 +14,17 @@
     border: 1px solid #ba68c8;
     box-shadow: 0 0 0 0.2rem rgba(186, 104, 200, .25);
 }
-
 .bg{
-    background-image: url('https://media-exp1.licdn.com/dms/image/C5612AQFmS3vujlhmvw/article-cover_image-shrink_600_2000/0/1634191536175?e=1657152000&v=beta&t=_BeFZlXu6otpSOM9XPB1UeijJfWcGa1A_odBmXh_frc');
-    background-size: contain;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzaQxpoLFsbghfxfm4WzkrFyGYxTuIpPGq8Q&usqp=CAU');
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;   
-}
+} 
+
 .dot {
     height: 27px;
     width: 27px;
-    background-color:rgb(245, 245, 154);
+    background-color:rgb(245, 236, 154);
     border-radius: 50%;
     display: inline-block;
   }
