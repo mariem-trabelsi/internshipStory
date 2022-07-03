@@ -1,24 +1,24 @@
 <div class="container" style="border-radius:30px;margin-top:7vh;margin-bottom:10vh" >
-    <div class="row" style="box-shadow: 3px 3px black, -1em 0 .4em olive;margin:0% 10vw;background-color:olive;border-radius:30px">
+    <div class="row" style="box-shadow: 3px 3px black, -1em 0 .4em #DA7B93 ;margin:0% 10vw;background-color:#DA7B93 ;border-radius:30px">
 <!--as intern-->
     <div class="col-md-6 rounded-left bg_sign_in" style="border-radius:30px;background-color:white">
         <h3 class="center">sign in as intern</h3>
         <form style="margin:0% 3vw">
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control rounded" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <label for="mail" class="form-label">Email address</label>
+              <input style="background-color:transparent" type="email" class="form-control rounded" id="mail1">
               <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control rounded" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control rounded" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <label for="nom" class="form-label">Email address</label>
+              <input style="background-color:transparent" type="text" class="form-control rounded" id="nom">
+              <label for="loca" class="form-label">Email address</label>
+              <input style="background-color:transparent" type="text" class="form-control rounded" id="loca" >
             </div>
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control rounded" id="exampleInputPassword1">
+              <label for="pass" class="form-label">Password</label>
+              <input style="background-color:transparent" type="password" class="form-control rounded" id="pass">
             </div>
-            <button type="submit" class="btn" style="margin-bottom:4%;margin-right:25%;background-color:olive">Submit</button>
-            <button type="reset" class="btn" style="margin-bottom:4%;background-color:olive">cancel</button>
+            <button type="submit" class="btn" style="margin-bottom:4%;margin-right:25%;background-color:#DA7B93 ">Submit</button>
+            <button type="reset" class="btn" style="margin-bottom:4%;background-color:#DA7B93 ">cancel</button>
           </form>
 
     </div>
@@ -27,18 +27,18 @@
         <h3 class="center">sign in as Hr</h3>
         <form style="margin:0% 3vw">
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control rounded" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control rounded" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control rounded" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control rounded" id="exampleInputPassword1">
-            </div>
+                <label for="mail1" class="form-label">Email address</label>
+                <input style="background-color:transparent"type="email" class="form-control rounded " id="mail1">
+                <div id="emailHelp" class="form-text" style="color:white">We'll never share your email with anyone else.</div>
+                <label for="nom1" class="form-label">Email address</label>
+                <input style="background-color:transparent" type="text" class="form-control rounded" id="nom1">
+                <label for="loca1" class="form-label">Email address</label>
+                <input style="background-color:transparent"type="text" class="form-control rounded" id="loca1" >
+              </div>
+              <div class="mb-3">
+                <label for="pass1" class="form-label">Password</label>
+                <input  style="background-color:transparent" type="password" class="form-control rounded" id="pass1">
+              </div>
             <button type="submit" class="btn" style="background-color:white;color:black;border-radius:30px;margin-right:25%">Submit</button>
             <button type="reset" class="btn" style="background-color:white;color:black;border-radius:30px">cancel</button>
           </form>
@@ -47,3 +47,5 @@
 </div>
 
 </div>
+
+<app-footer></app-footer>
