@@ -9,10 +9,10 @@
 }
 
 .green-border {
-    border: 1px solid #116013;
+    border: 1px solid rgb(164, 16, 120);
 }
 
 .green-border:focus {
-    border: 1px solid #416c0f;
-    box-shadow: 0 0 0 0.2rem cadetblue;
+    border: 1px solid rgb(164, 16, 120);
+    box-shadow: 0 0 0 0.2rem rgb(164, 16, 120);
 }
