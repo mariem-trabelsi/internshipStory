@@ -14,17 +14,17 @@ background: linear-gradient(90deg, rgba(240,45,223,1) 0%, rgba(150,36,187,1) 0%,
  
   <form style="height:90%;box-shadow: 2px 2px 3px 4px black;width:fit-content;padding-top:10vh;background-color:transparent;padding-bottom:10vh;margin-top:2vh;" class="container">
     <div class="mb-3">
-      <label for="exampleInputEmail1" style="color:white" class="form-label">Email address</label>
-      <input  style="background-color:transparent" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <label for="email" style="color:white" class="form-label">Email address</label>
+      <input  style="background-color:transparent" type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
       <div id="emailHelp" class="form-text" style="color:white">We'll never share your email with anyone else.</div>
     </div>
     <div class="mb-3">
-      <label for="exampleInputPassword1" style="color:white" class="form-label">Password</label>
-      <input  style="background-color:transparent"  type="password" class="form-control" id="exampleInputPassword1">
+      <label for="epass" style="color:white" class="form-label">Password</label>
+      <input  style="background-color:transparent"  type="password" class="form-control" id="epass" name="epass">
     </div>
     <div style="display:flex">
     <button type="submit" class="btn" style="background-color:transparent;border-radius:20px;border-color:white;color:white;margin-right:2vw">validate</button>
-    <button type="reset" class="btn"  style="background-color:transparent;border-radius:20px;border-color:white;color:white">cancel</button>
+    <button type="reset" class="btn" style="background-color:transparent;border-radius:20px;border-color:white;color:white">cancel</button>
     </div>
     <a class="center" style="padding-top:3vh;color:white;" routerLink="/signin">you don't have an account?</a>
   </form>
