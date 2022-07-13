@@ -7,3 +7,7 @@ img{
    
 }
 
+.purple-red:focus {
+    
+    box-shadow: 0 0 0 0.2rem #c02727;
+}
