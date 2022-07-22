@@ -14,6 +14,8 @@ import { StoryComponent } from './story/story.component';
 import { AboutComponent } from './about/about.component';
 import { SigninComponent } from './signin/signin.component';
 import { SigninHrComponent } from './signin-hr/signin-hr.component';
+import { NewComponent } from './new/new.component';
+import { HiringComponent } from './hiring/hiring.component';
 
 
 
@@ -24,6 +26,7 @@ const appRoutes: Routes =[
   {path:'signin',component:SigninComponent},
   {path:'log',component:LogComponent},
   {path:'about',component:AboutComponent},
+  {path:'hiring',component:HiringComponent},
   {path:'signinHr',component:SigninHrComponent},
   {path:'',redirectTo:'/home',pathMatch:'full'}
 ];
@@ -39,7 +42,9 @@ const appRoutes: Routes =[
     StoryComponent,
     AboutComponent,
     SigninComponent,
-    SigninHrComponent
+    SigninHrComponent,
+    NewComponent,
+    HiringComponent
   ],
   imports: [
     BrowserModule,

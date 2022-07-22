@@ -1,73 +1,59 @@
-<div id="tout">
-<div class="container" style="padding-top:10vh;margin-right:10vw;margin-bottom:10vh">
- 
-   <div class="row bg" style="margin:0% 14vw;padding-bottom:5vh">
+<!-- la partie supérieure contenant formulaire -->
 
-    <div class="col-md-3">
-    <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwxs76Qywz7aKmVF1PYeBR7w8a7iOEaLJBi2pXOlk2xRiFGiCr4zaKDMHMft1Vn42wOZc&usqp=CAU" style="height:80%;width:90%;margin-top:3vh;background-position:left;background-size:contain;mix-blend-mode: multiply;"> -->
+<div class="row" style="background-color:purple;margin-top:3vh">
+  <div class="col-md-1"></div>
+  <div class="col-md-6" style="margin-top:3vh;">
+  <h3 class="center" style="margin-bottom:3vh;color:white;margin-left:2vw">Share your InternshipStory</h3>   
+  <form method="post" style="width:60%">
+    <div class="input-group mb-3" style="color:white">
+    <div class="input-group-prepend" >
+    <span style="color:white;background-color:rgb(75, 12, 126)" class=" form-control">@</span>
     </div>
-
-    <div class="col-md-6 center"style="margin-top:7vh;">
-  <h3 class="center" style="margin-bottom:5vh;color:rgb(119, 31, 191);margin-left:2vw">Share your InternshipSto<div class="dot">ry</div></h3>   
-
-  <div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span style="background-color:transparent" class="input-group-text form-control purple-border" id="basic-addon1">@</span>
-  </div>
-  <input style="background-color:transparent" type="text" class="form-control purple-border amber-textarea active-amber-textarea" placeholder="name of the compagny" aria-label="Username" aria-describedby="basic-addon1">
-</div> 
-
-  <div class="md-form">
-    <i class="fas fa-pencil-alt prefix"></i>
-    <textarea id="form10" style="background-color:transparent" class="md-textarea form-control purple-border amber-textarea active-amber-textarea" rows="3"></textarea>
-    <label for="form10">life is better when you share it.</label>
-  </div>
-  <a class="btn center" style="margin-left:34%;cursor:cursor;box-shadow: 3px 3px black, -0.7em 0 .4em olive;margin-top:2vh;font-weight:bolder;color:white;border-radius:10px;background-color:#DA7B93;">share now</a>
+    <input style="background-color:rgb(75, 12, 126);color:white" type="text" class="form-control" placeholder="name of the compagny" aria-label="Username">
     </div>
-    <div class="col-md-3">
-   </div>
+    <i class="fas fa-pencil-alt prefix" style="color:white"></i>
+    <textarea id="form10" style="color:white;background-color:rgb(75, 12, 126)" class="md-textarea form-control" rows="3"></textarea>
+    <label  style="color:white"for="form10">Life is better when you share it.</label>
+    <button type="reset" class="btn" style="margin-left:34%;color:white;border-radius:10px;background-color:rgb(195, 21, 157);margin-bottom:1vh;margin-top:1vh">share now</button>
+  </form>
+  </div>
+  <div class="col-md-5 bg" style="background-color:darkblue"></div>
+  <div style="background-color:darkblue;height:2px"></div>
 </div>
-
-
-<div class="container" style="display:flex;margin-top:20vh">
-
- <div class="col-md-8" style="background-image:var('/assets/stage_accueil.png');">
-
-   <div class="story" > 
-    <div style="display:flex;color:#ccc">
+ 
+<!--la deuxième partie: affichage de stories-->
+<div id="tout" class="container" style="display:flex;padding-top:10vh">
+  <div class="col-md-2" ></div>
+  <div class="col-md-8" style="background-image:var('/assets/stage_accueil.png');">
+  <div class="story" > 
+      <div style="display:flex;color:#ccc">
         <img src="./assets/l7.png" class="rounded-circle" style="width:50px;height:60px;margin-right:1vw">
         <p style="color:darkblue;margin-top:2vh"><strong>Ahmed trabelsi</strong> :@<strong>Adactim </strong><span style="color:rgb(89, 89, 89)">, le 11/12/2022</span></p>
+      </div>
+      <div readonly>
+        <p style="background-color:white;padding:10px 14px;border-radius:7px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae debitis laboriosam veniam voluptatum odio deleniti, quasi sequi modi quidem minus voluptatem id cum cumque dolorem sit delectus nemo natus nostrum.Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae debitis laboriosam veniam voluptatum odio deleniti, quasi sequi modi quidem minus voluptatem id cum cumque dolorem sit delectus nemo natus nostrum.</p>
+      </div> 
+      <button style="background-color:rgb(241, 200, 232);border-radius:30px;color:black;margin-left:2px;border:none;" type="submit">
+        <span id="icon"><i style="color:purple" class="far fa-heart"></i></span>
+        <span id="count" style="color:purple;font-weight:bold;">5</span>
+      </button>    
     </div>
-    <div readonly>
-        <p style="background-color:white;padding:5px 12px;border-radius:5px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae debitis laboriosam veniam voluptatum odio deleniti, quasi sequi modi quidem minus voluptatem id cum cumque dolorem sit delectus nemo natus nostrum.Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae debitis laboriosam veniam voluptatum odio deleniti, quasi sequi modi quidem minus voluptatem id cum cumque dolorem sit delectus nemo natus nostrum.</p>
-    </div> 
-    <button style="background-color:rgb(241, 200, 232);border-radius:30px;color:black;margin-left:2px;border:none;" type="submit">
-      <span id="icon"><i style="color:purple" class="far fa-heart"></i></span>
-      <span id="count" style="color:purple;font-weight:bold;">5</span>
-    </button>    
-  </div>
-
-  <div class="story"> 
-    <div style="display:flex;">
+    <div class="story"> 
+      <div style="display:flex;">
         <img src="./assets/l4.webp" class="rounded-circle" style="width:50px;height:60px;margin-right:1vw">
         <p style="color:darkblue;margin-top:2vh"><strong>Rihab Ben Ali</strong> :@<strong>Linedata </strong><span style="color:rgb(89, 89, 89)">, le 02/07/2021</span></p>
-    </div>
-    <div readonly>
-        <p style="padding:5px 12px;background-color:white;padding:2px 2px" class="rounded">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae debitis laboriosam veniam voluptatum odio deleniti, quasi sequi modi quidem minus voluptatem id cum cumque dolorem sit delectus nemo natus nostrum.</p>
-    </div>
-
-    <button style="background-color:rgb(241, 200, 232);border-radius:30px;color:black;margin-left:2px;border:none;" type="submit">
+      </div>
+      <div readonly>
+        <p style="background-color:white;padding:10px 14px;border-radius:7px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae debitis laboriosam, modi cum cumque dolorem sit nostrum.Lorem consectetur adipisicing elit.R ecusandae debitis laboriosam veniam voluptatum odio deleniti, quasi sequi modi quidem minus voluptatem id nemo natus nostrum.</p>
+      </div>
+      <button style="background-color:rgb(241, 200, 232);border-radius:30px;color:black;margin-left:2px;border:none;" type="submit">
         <span id="icon"><i style="color:purple" class="far fa-heart"></i></span>
         <span style="color:purple;font-weight:bold;border:none" id="count">15</span>
       </button>  
-  </div>  
+    </div>  
+    </div>
+  <div class="col-md-2"></div>   
 </div>
 
-<div class="col-md-6">
 
-</div>
-   
-</div>
-</div>
-</div>
 

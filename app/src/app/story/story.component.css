@@ -1,42 +1,14 @@
 #tout{
-    background-color: #eee;
-    margin: 7px 14px;
-    border-radius:3px
+    background-color: #eee; 
 }
-.purple-border {
-    border: 1px solid #ba68c8;
-    
-}
-.form-control:focus {
-    border: 1px solid #ba68c8;
-    box-shadow: 0 0 0 0.2rem #ba68c8;
-}
-.bg{
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzaQxpoLFsbghfxfm4WzkrFyGYxTuIpPGq8Q&usqp=CAU');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;   
-} 
 
-.dot {
-    height:32px;
-    width:32px;
-    background-color:rgb(245, 236, 154);
-    border-radius: 50%;
-    display: inline-block;
-}
 .story{
     margin-bottom:3vh;
 }
-input[type=submit]
-{
-    display: block;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-}
- 
-input[type=submit] + br
-{
-    display: none;
+
+.bg{
+    background-image: url('https://media.npr.org/assets/img/2022/04/26/npr_moth-final_slide-30c2bb454542835c4cde4a63ad1fa4538116d950-s900-c85.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: darkblue;
 }

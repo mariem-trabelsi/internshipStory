@@ -1,9 +1,9 @@
 .dot {
-    height: 27px;
-    width: 27px;
-    background-color:rgb(241, 110, 197);
-    border-radius: 50%;
-    display: inline-block;
-    margin-top:2vh
-   
-  }
+  height: 27px;
+  width: 27px;
+  background-color:rgb(241, 110, 197);
+  border-radius: 50%;
+  display: inline-block;
+  margin-top:2vh
+ 
+}

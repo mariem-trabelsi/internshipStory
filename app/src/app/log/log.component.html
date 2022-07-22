@@ -1,36 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>   
-    </head>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+</head>
 <body>
-  <h2 style="font-weight:lighter;text-shadow: 1px 2px rgb(62, 5, 123);text-align:center;color:rgb(164, 16, 120);margin-top:4vh">Welcome to InternshipSt<div class="dot"></div>ry</h2>
-<div style="margin-bottom:8vh;background: rgb(240,45,223);
-background: linear-gradient(90deg, rgba(240,45,223,1) 0%, rgba(150,36,187,1) 0%, rgba(137,35,182,1) 12%, rgba(90,30,164,1) 41%, rgba(33,60,173,1) 91%, rgba(39,24,144,1) 100%);;margin:0% 25vw;">
- 
-  <form style="height:90%;box-shadow: 2px 2px 3px 4px black;width:fit-content;padding-top:10vh;background-color:transparent;padding-bottom:10vh;margin-top:2vh;" class="container">
-    <div class="mb-3">
-      <label for="email" style="color:white" class="form-label">Email address</label>
-      <input  style="background-color:transparent" type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
-      <div id="emailHelp" class="form-text" style="color:white">We'll never share your email with anyone else.</div>
-    </div>
-    <div class="mb-3">
-      <label for="epass" style="color:white" class="form-label">Password</label>
-      <input  style="background-color:transparent"  type="password" class="form-control" id="epass" name="epass">
-    </div>
-    <div style="display:flex">
-    <button type="submit" class="btn" style="background-color:transparent;border-radius:20px;border-color:white;color:white;margin-right:2vw">validate</button>
-    <button type="reset" class="btn" style="background-color:transparent;border-radius:20px;border-color:white;color:white">cancel</button>
-    </div>
-    <a class="center" style="padding-top:3vh;color:white;" routerLink="/signin">you don't have an account?</a>
-  </form>
+  <h2
+    style="font-weight:lighter;text-shadow: 1px 2px rgb(62, 5, 123);text-align:center;color:rgb(164, 16, 120);margin-top:4vh">
+    Welcome to InternshipSt<div class="dot"></div>ry</h2>
   <div
-  style="margin-bottom:10vh"></div>
-</div>
+    style = "margin-bottom:8vh;background: rgb(240,45,223);
+          background: linear-gradient(90deg, rgba(240,45,223,1) 0%, rgba(150,36,187,1) 0%, rgba(137,35,182,1) 12%, rgba(90,30,164,1) 41%, rgba(33,60,173,1) 91%, rgba(39,24,144,1) 100%);;margin:0% 25vw;">
+    <div class="alert alert-danger" *ngIf="erreur==1">
+      <strong> Oouups ! wrong login/password .. </strong>
+    </div>
+    <form
+      style="height:90%;box-shadow: 2px 2px 3px 4px black;width:fit-content;background-color:transparent;padding-bottom:10vh;padding-top:2vh;"
+      class="container">
+      <div class="mb-3">
+        <label for="email" style="color:white" class="form-label">Email address</label>
+        <input style="background-color:transparent" type="email" class="form-control" id="email" name="username"
+          [(ngModel)]="user.username">
+        <div id="emailHelp" class="form-text" style="color:white">We'll never share your email with anyone else.</div>
+      </div>
+      <div class="mb-3">
+        <label for="epass" style="color:white" class="form-label">Password</label>
+        <input style="background-color:transparent" type="password" class="form-control" id="epass" name="password"
+          [(ngModel)]="user.password">
+      </div>
+      <div style="display:flex;margin-bottom:4vh">
+        <button type="submit" class="btn"
+          style="background-color:transparent;border-radius:20px;border-color:white;color:white;margin-right:1vw"
+          (click)="onLoggedin()">validate</button>
+        <button type="reset" class="btn"
+          style="background-color:transparent;border-radius:20px;border-color:white;color:white;padding:0% 1vw">cancel</button>
+      </div>
+      <a class="center" style="padding-top:3vh;color:white;" routerLink="/signin">you don't have an account?</a>
+    </form>
+    <div style="margin-bottom:10vh"></div>
+  </div>
 </body>
 </html>
 <div style="margin-bottom:10vh"></div>
