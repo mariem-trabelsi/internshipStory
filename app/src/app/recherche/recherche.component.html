@@ -60,50 +60,8 @@
                 obcaecati nesciunt ducimus delectus in repellendus, accusantium eveniet adipisci. Quis minus eius quo?
                 Voluptatum rem blanditiis vitae?
               </p>
-              <button style="background-color:white;border:none;border-radius:30px;color:black;margin-right:2px"
-                type="submit"><i style="color:rgb(164, 16, 120)"class="far fa-thumbs-up"></i>2</button>
-              <button style="background-color:rgb(164, 16, 120);color:white;border:none;border-radius:30px;"
-                type="submit">comment</button>
-              <hr>
-            </div>
-            <div style="display:flex;padding-top:2vh">
-              <img src="./assets/l9.png" style="margin-right:2px;width:3%;height:4vh;mix-blend-mode:multiply"
-                class="rounded-circle">
-              <div class="md-form" style="width:100%">
-                <input id="form10" style="border-radius:40px;background-color:white;border-color:#ccc"
-                  class="md-textarea form-control green-border amber-textarea active-amber-textarea" rows="3"
-                  placeholder="add a comment" type="text">
-              </div>
-            </div>
-            <button
-              style="margin-left:2vw;background-color:rgb(164, 16, 120);border:none;border-radius:30px;color:white;margin-top:2px;"
-              type="submit">publish</button>
-            <!--show comments-->
-            <div style="display:flex;margin-top:1vh;margin-left:1vw">
-              <img src="./assets/l8.png" style="margin-right:1px;width:3%;height:5vh;mix-blend-mode:multiply"
-                class="rounded-circle">
-              <p style="padding:8px 14px;background-color:rgb(238, 235, 235);width:92%" class="rounded">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus dignissimos ipsa asperiores accusamus
-                libero saepe tenetur, amet deleniti odit veritatis sunt molestiae doloremque porro ea? Beatae sed veniam
-                saepe incidunt?
-              </p>
-            </div>
-          </div>
-
-          <div class="unity" style="background-color:white;margin-bottom:3vh;border-radius:10px;padding-bottom:2vh">
-            <div style="background-color:white">
-              <div style="display:flex">
-                <img class="rounded-circle" src="./assets/user.png"
-                  style="margin-right:2px;width:4%;height:5vh;mix-blend-mode:multiply;margin-top:1vh">
-                <h5 style="margin-top:1vh">UpgratekEngeenring</h5>
-              </div>
-              <p style="padding-left:2vw">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus aliquam officiis sit nisi
-                obcaecati nesciunt ducimus delectus in repellendus, accusantium eveniet adipisci. Quis minus eius quo?
-                Voluptatum rem blanditiis vitae?
-              </p>
-              <button style="background-color:white;border:none;border-radius:30px;color:black;margin-right:2px"
-                type="submit"><i style="color:rgb(164, 16, 120)"class="far fa-thumbs-up"></i>2</button>
+              <button (click)="Like()" style="background-color:white;border:none;border-radius:30px;color:black;margin-right:2px"
+                type="submit"><i style="color:rgb(164, 16, 120)" [class]="Icon"></i>{{Count}}</button>
               <button style="background-color:rgb(164, 16, 120);color:white;border:none;border-radius:30px;"
                 type="submit">comment</button>
               <hr>

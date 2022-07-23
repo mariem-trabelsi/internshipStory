@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-story',
@@ -8,9 +7,20 @@ import { AuthService } from '../services/auth.service';
 })
 export class StoryComponent implements OnInit {
 
-  constructor(public authService:AuthService) { }
-
+  constructor() { }
+  icon ="far fa-heart";
+  count=2;
   ngOnInit(): void {
+  }
+
+  addLike(){
+    if(this.icon =='far fa-heart'){
+    this.icon="fas fa-heart";
+    this.count++;}
+    else {
+    this.icon = "far fa-heart";
+    this.count--;
+    }
   }
 
 }

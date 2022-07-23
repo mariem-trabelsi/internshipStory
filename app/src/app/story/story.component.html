@@ -33,25 +33,13 @@
       <div readonly>
         <p style="background-color:white;padding:10px 14px;border-radius:7px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae debitis laboriosam veniam voluptatum odio deleniti, quasi sequi modi quidem minus voluptatem id cum cumque dolorem sit delectus nemo natus nostrum.Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae debitis laboriosam veniam voluptatum odio deleniti, quasi sequi modi quidem minus voluptatem id cum cumque dolorem sit delectus nemo natus nostrum.</p>
       </div> 
-      <button style="background-color:rgb(241, 200, 232);border-radius:30px;color:black;margin-left:2px;border:none;" type="submit">
-        <span id="icon"><i style="color:purple" class="far fa-heart"></i></span>
-        <span id="count" style="color:purple;font-weight:bold;">5</span>
+      <button (click)="addLike()" style="background-color:rgb(241, 200, 232);border-radius:30px;color:black;margin-left:2px;border:none;" type="submit">
+        <span id="icon"><i style="color:purple" [class]="icon"></i></span>
+        <span id="count" style="color:purple;font-weight:bold;">{{count}}</span>
       </button>    
     </div>
-    <div class="story"> 
-      <div style="display:flex;">
-        <img src="./assets/l4.webp" class="rounded-circle" style="width:50px;height:60px;margin-right:1vw">
-        <p style="color:darkblue;margin-top:2vh"><strong>Rihab Ben Ali</strong> :@<strong>Linedata </strong><span style="color:rgb(89, 89, 89)">, le 02/07/2021</span></p>
-      </div>
-      <div readonly>
-        <p style="background-color:white;padding:10px 14px;border-radius:7px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae debitis laboriosam, modi cum cumque dolorem sit nostrum.Lorem consectetur adipisicing elit.R ecusandae debitis laboriosam veniam voluptatum odio deleniti, quasi sequi modi quidem minus voluptatem id nemo natus nostrum.</p>
-      </div>
-      <button style="background-color:rgb(241, 200, 232);border-radius:30px;color:black;margin-left:2px;border:none;" type="submit">
-        <span id="icon"><i style="color:purple" class="far fa-heart"></i></span>
-        <span style="color:purple;font-weight:bold;border:none" id="count">15</span>
-      </button>  
-    </div>  
-    </div>
+      
+    </div>                         
   <div class="col-md-2"></div>   
 </div>
 

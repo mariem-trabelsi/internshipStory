@@ -4,30 +4,28 @@
      <img src="./assets/rocket.png" style="mix-blend-mode:color-burn;height:12vh;margin-left:6vw">
      <h3 style="text-align:center;color:white">Welcome</h3>
      <p style="text-align:center;color:white">It's a platform dedicated to support internships seekers and make their professional experiences more interesting by sharing it with us.</p>
-     <button type="submit" style="width:7em;margin-bottom:1px;margin-left:5vw;background-color:white;border-radius:30px;border-color:white" routerLink="/signinHr">Sign in as HR</button>
+     <button type="submit" style="width:7em;margin-bottom:1px;margin-left:5vw;background-color:white;border-radius:30px;border:none" routerLink="/signinHr">Sign in as HR</button>
   </div>
   <div class="col-md-9">
     <div style="height:1vh"></div>
     <div style="background-color:white;border-radius: 80px 5px 5px 80px;margin-right:2vw;height:100%;">
       <p style="text-align:center;font-weight:bold;font-size:30px;padding-top:8vh;padding-bottom:4vh"> sign in as Intern</p>
-      <form style="width:90%;padding-left:5vw;margin-top:1vh">
+      <form [formGroup]="registerForm" novalidate class="form" style="width:90%;padding-left:5vw;margin-top:1vh" >
           <div style="display:flex;padding-bottom:1vh">
-          <input style="background-color:transparent;margin-right:1vw"type="email" class="form-control rounded" id="prenom" name="prenom" placeholder="First Name">
-          <input style="background-color:transparent" type="text" class="form-control rounded" id="nom" name="nom" placeholder="Last Name">
+          <input style="background-color:transparent;margin-right:1vw" type="text" class="form-control rounded" id="prenom" name="prenom" placeholder="First Name" formControlName="prenom">
+          <input style="background-color:transparent" type="text" class="form-control rounded" id="nom" name="nom"  formControlName="nom" placeholder="Last Name">
           </div>
           <div style="display:flex;padding-bottom:1vh">
-            <input style="background-color:transparent;margin-right:1vw"type="email" class="form-control rounded" id="reg" name="reg" placeholder="tape your state">
-            <input style="background-color:transparent" type="text" class="form-control rounded" id="img" name="img" placeholder="link of your profile image">
+            <input style="background-color:transparent;margin-right:1vw" type="text" class="form-control rounded" id="region" name="region" formControlName="region" placeholder="tape your state">
+            <input style="background-color:transparent" type="text" class="form-control rounded" id="img" name="image" formControlName="image" placeholder="link of your profile image">
             </div>
             <div style="display:flex;padding-bottom:1vh">
-              <input style="background-color:transparent;margin-right:1vw" type="email" class="form-control rounded" id="mail" name="mail" placeholder="email adress">
-              <input style="background-color:transparent" type="password" class="form-control rounded" id="pass" name="pass" placeholder="password">
+              <input style="background-color:transparent;margin-right:1vw" type="email" class="form-control rounded" id="mail" name="mail" formControlName="mail" placeholder="email adress">
+              <input style="background-color:transparent" type="password" class="form-control rounded" id="pass" name="pass" formControlName="pass" placeholder="password">
               </div>
-             
-          <button type="submit" class="btn" style="background-color:rgb(155, 7, 165);color:white;border-radius:30px;margin-left:66%;width:7em;margin-right:1vw">Register</button>
+          <button (click)="onSubmit()" class="btn" style="background-color:rgb(155, 7, 165);color:white;border-radius:30px;margin-left:66%;width:7em;margin-right:1vw">Register</button>
       </form>
       </div>
     </div>
-  </div>
-
+</div>
 <div style="height:15vh"></div>

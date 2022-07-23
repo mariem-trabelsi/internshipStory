@@ -50,6 +50,7 @@ const appRoutes: Routes =[
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
    
   ],
