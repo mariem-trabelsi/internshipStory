@@ -1,4 +1,18 @@
+<div class="dropdown" style="padding-bottom:25vh">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+      Dropdown link
+    </a>
+  
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <li><a class="dropdown-item" routerLink="/listHRs">List of HRs</a></li>
+      <li><a class="dropdown-item"routerLink="/listInterns" >List of interns</a></li>
+      <li class="nav-item ">
+        <a *ngIf="authService.isloggedIn" (click)="quit()" class="nav-link" >Log out</a>
+      </li>
+    </ul>
+  </div>
 
-<li class="nav-item ">
-    <a *ngIf="authService.isloggedIn" (click)="quit()" class="nav-link" >Log out</a>
-</li>
+
+
+
+

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import{HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -18,6 +18,8 @@ import { NewComponent } from './new/new.component';
 import { HiringComponent } from './hiring/hiring.component';
 import { SettingComponent } from './setting/setting.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ListInternsComponent } from './list-interns/list-interns.component';
+import { ListHrsComponent } from './list-hrs/list-hrs.component';
 
 
 
@@ -32,6 +34,8 @@ const appRoutes: Routes =[
   {path:'setting',component:SettingComponent},
   {path:'signinHr',component:SigninHrComponent},
   {path:'profile',component:ProfileComponent},
+  {path:'listInterns',component:ListInternsComponent},
+  {path:'listHRs',component:ListHrsComponent},
   {path:'',redirectTo:'/home',pathMatch:'full'}
 ];
 
@@ -50,12 +54,15 @@ const appRoutes: Routes =[
     NewComponent,
     HiringComponent,
     SettingComponent,
-    ProfileComponent
+    ProfileComponent,
+    ListInternsComponent,
+    ListHrsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
    

@@ -13,7 +13,7 @@ export class AuthService {
     ];
     
     public loggedUser : string | undefined;
-    public isloggedIn:Boolean = false;
+    public isloggedIn: Boolean = false;
     public roles : string[] | undefined;
 
   constructor( private router:Router) {}
