@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { RechercheComponent } from './recherche/recherche.component';
-import{RouterModule,Routes} from '@angular/router';
+import {RouterModule,Routes} from '@angular/router';
 import { LogComponent } from './log/log.component';
 import { FooterComponent } from './footer/footer.component';
 import { StoryComponent } from './story/story.component';
@@ -16,6 +16,8 @@ import { SigninComponent } from './signin/signin.component';
 import { SigninHrComponent } from './signin-hr/signin-hr.component';
 import { NewComponent } from './new/new.component';
 import { HiringComponent } from './hiring/hiring.component';
+import { SettingComponent } from './setting/setting.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -27,7 +29,9 @@ const appRoutes: Routes =[
   {path:'log',component:LogComponent},
   {path:'about',component:AboutComponent},
   {path:'hiring',component:HiringComponent},
+  {path:'setting',component:SettingComponent},
   {path:'signinHr',component:SigninHrComponent},
+  {path:'profile',component:ProfileComponent},
   {path:'',redirectTo:'/home',pathMatch:'full'}
 ];
 
@@ -44,7 +48,9 @@ const appRoutes: Routes =[
     SigninComponent,
     SigninHrComponent,
     NewComponent,
-    HiringComponent
+    HiringComponent,
+    SettingComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

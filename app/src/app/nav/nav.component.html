@@ -28,11 +28,11 @@
       <li class="nav-item" *ngIf="authService.isHr()||authService.isAdmin()">
         <a class="nav-link" routerLink="/hiring">Hiring</a>
       </li>
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown" *ngIf="!authService.isAdmin()">
         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"  role="button" aria-expanded="false">Connection</a>
         <ul class="dropdown-menu">
           <li class="nav-item ">
-            <a *ngIf="authService.isloggedIn && !(authService.isAdmin())" class="nav-link" routerLink="">Profile</a>
+            <a *ngIf="authService.isloggedIn && !(authService.isAdmin())" class="nav-link" routerLink="/profile">Profile</a>
           </li>
           <li class="nav-item ">
             <a *ngIf="!authService.isloggedIn" class="nav-link" routerLink="/log">Log In</a>
@@ -41,6 +41,9 @@
             <a *ngIf="authService.isloggedIn" (click)="OnLogout()" class="nav-link" >Log out</a>
           </li>
         </ul>
+      </li>
+      <li class="nav-item" *ngIf="authService.isAdmin()">
+        <a class="nav-link" routerLink="/setting"><i style="color:rgb(198, 39, 65)" class="fas fa-user-shield"></i></a>
       </li>
     </ul>   
   </div>

@@ -14,7 +14,7 @@
     <i class="fas fa-pencil-alt prefix" style="color:white"></i>
     <textarea id="form10" style="color:white;background-color:rgb(75, 12, 126)" class="md-textarea form-control" rows="3"></textarea>
     <label  style="color:white"for="form10">Life is better when you share it.</label>
-    <button type="reset" class="btn" style="margin-left:34%;color:white;border-radius:10px;background-color:rgb(195, 21, 157);margin-bottom:1vh;margin-top:1vh">share now</button>
+    <button [disabled]="activeButton()" (click)="activeButton()" type="reset" class="btn" style="margin-left:34%;color:white;border-radius:10px;background-color:rgb(195, 21, 157);margin-bottom:1vh;margin-top:1vh">share now</button>
   </form>
   </div>
   <div class="col-md-5 bg" style="background-color:darkblue"></div>
