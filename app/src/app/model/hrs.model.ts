@@ -1,10 +1,12 @@
-export class Interns {
+export default class Hrs {
     "Id": number;
     "fName": string;
     "lName": string;
-    "region":string;
+    "local":string;
     "image": string;
     "email": string;
     "password": string;
     "role":string;
-} 
+    "compName":string;
+
+}

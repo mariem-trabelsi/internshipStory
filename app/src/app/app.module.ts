@@ -14,12 +14,12 @@ import { StoryComponent } from './story/story.component';
 import { AboutComponent } from './about/about.component';
 import { SigninComponent } from './signin/signin.component';
 import { SigninHrComponent } from './signin-hr/signin-hr.component';
-import { NewComponent } from './new/new.component';
 import { HiringComponent } from './hiring/hiring.component';
 import { SettingComponent } from './setting/setting.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ListInternsComponent } from './list-interns/list-interns.component';
 import { ListHrsComponent } from './list-hrs/list-hrs.component';
+import { StaticsComponent } from './statics/statics.component';
 
 
 
@@ -51,12 +51,12 @@ const appRoutes: Routes =[
     AboutComponent,
     SigninComponent,
     SigninHrComponent,
-    NewComponent,
     HiringComponent,
     SettingComponent,
     ProfileComponent,
     ListInternsComponent,
-    ListHrsComponent
+    ListHrsComponent,
+    StaticsComponent
   ],
   imports: [
     BrowserModule,

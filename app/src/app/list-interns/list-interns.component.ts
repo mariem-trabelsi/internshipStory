@@ -10,9 +10,6 @@ export class ListInternsComponent implements OnInit {
 
   constructor(private internService:InternsService) { }
   InternsTable: Interns[] | undefined;
-  bool = false;
-
-  
 
   ngOnInit()
   {
