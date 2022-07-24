@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 11, 2022 at 03:00 PM
+-- Generation Time: Jul 24, 2022 at 03:10 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -30,20 +30,22 @@ SET time_zone = "+00:00";
 CREATE TABLE `interns` (
   `ID_INTERN` int(3) NOT NULL,
   `NOM_INTERN` varchar(30) DEFAULT NULL,
-  `PRENOM_INTERN` varchar(30) DEFAULT NULL,
-  `REGION_INTERN` varchar(50) DEFAULT NULL,
-  `IMAGE_INTERN` text DEFAULT NULL,
-  `INTERNMAIL` varchar(40) DEFAULT NULL,
-  `INTERNPSS` varchar(20) DEFAULT NULL
+  `PRENOM_INTERN` varchar(30) NOT NULL,
+  `REGION_INTERN` varchar(50) NOT NULL,
+  `IMAGE_INTERN` text DEFAULT 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrBp4rAadRiXmk6NWl3redkvGJgWGDkBT4vA&usqp=CAU',
+  `INTERNMAIL` varchar(40) NOT NULL,
+  `INTERNPSS` varchar(20) NOT NULL,
+  `role` varchar(30) DEFAULT 'INTERN'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `interns`
 --
 
-INSERT INTO `interns` (`ID_INTERN`, `NOM_INTERN`, `PRENOM_INTERN`, `REGION_INTERN`, `IMAGE_INTERN`, `INTERNMAIL`, `INTERNPSS`) VALUES
-(1, 'Sassi', 'Zeineb', 'Ariana', 'https://images.prismic.io/cadremploi-edito/2c42db4e-15ac-49a4-8d50-e4113a8adbb5_Bonne-photo-cv-femme1.JPG?auto=compress,format', 'zeineb.sassi@gmail.com', 'zeineb2022'),
-(2, 'Brinis', 'Ahmed', 'Sfax', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTaEUA69pbBiO-U4U9VVrZxAuWjU7viJ5FCA&usqp=CAU', 'ahmed.brinis@gmail.com', 'ahmed2022');
+INSERT INTO `interns` (`ID_INTERN`, `NOM_INTERN`, `PRENOM_INTERN`, `REGION_INTERN`, `IMAGE_INTERN`, `INTERNMAIL`, `INTERNPSS`, `role`) VALUES
+(1, 'Sassi', 'Zeineb', 'Ariana', 'https://images.prismic.io/cadremploi-edito/2c42db4e-15ac-49a4-8d50-e4113a8adbb5_Bonne-photo-cv-femme1.JPG?auto=compress,format', 'zeineb.sassi@gmail.com', 'zeineb2022', 'INTERN'),
+(2, 'Brinis', 'Ahmed', 'Sfax', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTaEUA69pbBiO-U4U9VVrZxAuWjU7viJ5FCA&usqp=CAU', 'ahmed.brinis@gmail.com', 'ahmed2022', 'INTERN'),
+(3, 'Tbourski', 'Asma', 'Djerba', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrBp4rAadRiXmk6NWl3redkvGJgWGDkBT4vA&usqp=CAU', 'asma.tbourski@gmail.com', 'asma2022', 'INTERN');
 
 --
 -- Indexes for dumped tables
@@ -63,7 +65,7 @@ ALTER TABLE `interns`
 -- AUTO_INCREMENT for table `interns`
 --
 ALTER TABLE `interns`
-  MODIFY `ID_INTERN` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID_INTERN` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
