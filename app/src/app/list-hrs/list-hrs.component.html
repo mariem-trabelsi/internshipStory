@@ -2,17 +2,17 @@
 <div  class="row" style="padding-right:10vw">
 <div  class="col-md-2" style="color:rgb(102, 6, 193);font-weight:700;padding:1vh;padding-left:11vw">Hr</div> 
 <div  class="col-md-2" style="color:rgb(102, 6, 193);font-weight:700;padding:1vh;padding-left:0vw">E-mail</div>   
-<div  class="col-md-2" style="color:rgb(102, 6, 193);font-weight:700;padding:1vh;padding-left:0vw">Localisation</div>  
-<div  class="col-md-2" style="color:rgb(102, 6, 193);font-weight:700;padding:1vh;padding-left:0vw">Password</div>       
-<div  class="col-md-4" style="color:rgb(102, 6, 193);font-weight:700;padding:1vh;padding-left:0vw">Delete</div>    
-
+<div  class="col-md-2" style="color:rgb(102, 6, 193);font-weight:700;padding:1vh;padding-left:0vw">Name</div>  
+<div  class="col-md-2" style="color:rgb(102, 6, 193);font-weight:700;padding:1vh;padding-left:0vw">Compagny</div>       
+<div  class="col-md-4" style="color:rgb(102, 6, 193);font-weight:700;padding:1vh;padding-left:0vw">Localisation</div>    
 </div>
 
-<div class="row" *ngFor="let intern of HrsTable" style="padding:2vh;padding-left:10vw;">
-    <img  class="col-md-2 rounded-circle" src="{{intern.image}}" alt=""  style="width:5%;height:5vh;mix-blend-mode:multiply;">
-    <div  class="col-md-2">{{intern.email}}</div>
-    <div  class="col-md-2">{{intern.local}}</div>
-    <div  class="col-md-2">{{intern.password}}</div>
-    <div  class="col-md-4"><a class="btn btn-danger" href="">Delete</a></div>
+<div class="row" *ngFor="let hr of HrsTable" style="padding:2vh;padding-left:10vw;">
+    <img  class="col-md-2 rounded-circle" src="{{hr.image}}" alt=""  style="width:5%;height:5vh;mix-blend-mode:multiply;">
+    <div  class="col-md-2">{{hr.email}}</div>
+    <div  class="col-md-2">{{hr.fName}} {{hr.lName}}</div>
+    <div  class="col-md-2">{{hr.compName}}</div>
+    <div  class="col-md-2">{{hr.local}}</div>
+    <div  class="col-md-2"><a class="btn btn-danger" href="">Delete</a></div>
 </div>
  <div style="margin-bottom:15vh"></div>

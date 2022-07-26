@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service';
+import { InternsService } from '../services/interns.service';
 
 @Component({
   selector: 'app-story',
@@ -8,14 +8,14 @@ import { AuthService } from '../services/auth.service';
 })
 export class StoryComponent implements OnInit {
   disAbled=true;
-  constructor(public authService:AuthService) { }
+  constructor(public internService:InternsService) { }
   icon ="far fa-heart";
   count=2;
   ngOnInit(): void {
   }
 
  activeButton():Boolean{
-  if (this.authService.isloggedIn)
+  if (this.internService.isloggedIn)
   {this.disAbled = false;}
   return this.disAbled;
  }

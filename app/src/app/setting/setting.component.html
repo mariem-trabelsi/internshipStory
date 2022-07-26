@@ -1,19 +1,20 @@
-<div class="dropdown" style="padding:15vh 15vw">
-    <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-      Dropdown link
+<div>
+<div class="dropdown" style="padding:2vh;padding-left:5vh;padding-bottom:15vw">
+    <a class="btn btn-primary dropdown-toggle"  role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+      Administration
     </a>
-  
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-      <li><a class="dropdown-item" routerLink="/listHRs">List of HRs</a></li>
-      <li><a class="dropdown-item"routerLink="/listInterns" >List of interns</a></li>
-      <li><a class="dropdown-item" routerLink="/statics">Statics</a></li>
+      <li><a class="dropdown-item nav-link" routerLink="/listHRs">List of HRs</a></li>
+      <li><a class="dropdown-item nav-link"routerLink="/listInterns" >List of interns</a></li>
+      <li><a class="dropdown-item nav-link" routerLink="/statics">Statics</a></li>
       <li class="nav-item ">
-        <a *ngIf="authService.isloggedIn" (click)="quit()" class="nav-link" >Log out</a>
+        <a *ngIf="internService.isloggedIn" (click)="quit()" class="nav-link" >Log out</a>
       </li>
     </ul>
   </div>
 
-
+</div>
+<div style="height:10vh"></div>
 
 
 

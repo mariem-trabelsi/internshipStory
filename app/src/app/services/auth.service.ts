@@ -1,11 +1,13 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../model/user.model';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthService  {
+ 
   users: User[]= [
     {"username":"admin","password":"123","roles":['ADMIN']},
     {"username":"meriem","password":"ok","roles":['INTERN']},
@@ -17,6 +19,22 @@ export class AuthService {
     public roles : string[] | undefined;
 
   constructor( private router:Router) {}
+
+  // SignIn1(intern:Interns): Boolean{
+  //   let validUser: Boolean = false;
+  //   if(!this.InternsTable){}else{
+  //     this.InternsTable.forEach((curUser)=> {
+  //     if(intern.email === curUser.email && intern.password === curUser.password ){
+  //       validUser = true;
+  //       this.loggedUser = String(curUser.email);
+  //       this.roles = curUser.role;
+  //       this.isloggedIn = true;
+  //       localStorage.setItem('loggedUser', this.loggedUser);
+  //       localStorage.setItem('isloggedIn', String(this.isloggedIn));
+  //     }
+  //   });}
+  //   return validUser;
+  // }
 
   SignIn(user:User): Boolean{
     let validUser: Boolean = false;
@@ -69,9 +87,7 @@ export class AuthService {
       if(username === curUser.username){
         this.roles=curUser.roles;
       }
-    });
-
-    
+    }); 
   }
 }
 

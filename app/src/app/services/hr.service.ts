@@ -1,6 +1,7 @@
 import { HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import Hrs from '../model/hrs.model';
+import { Observable } from 'rxjs';
+import {HRs} from '../model/hrs.model';
 
 
 @Injectable({
@@ -9,8 +10,9 @@ import Hrs from '../model/hrs.model';
 export class HrService {
 
   constructor(private httpClient:HttpClient) { }
-  getHrs(){
-    return this.httpClient.get<[Hrs]>('http://localhost/internshipStory/php/afficheHrs.php');
-    }
+  ListeHrs():Observable<HRs[]>{
+    return this.httpClient.get<HRs[]>('http://localhost/internshipStory/php/afficheHrs.php');
+  }
 
+  
 }

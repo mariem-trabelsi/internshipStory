@@ -1,4 +1,4 @@
-export default class Hrs {
+export  class HRs {
     "Id": number;
     "fName": string;
     "lName": string;

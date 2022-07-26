@@ -22,27 +22,27 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/story">stories</a>
       </li>
-      <li class="nav-item" *ngIf="authService.isIntern()||authService.isAdmin()">
+      <li class="nav-item" *ngIf="internService.isIntern()||internService.isAdmin()">
         <a class="nav-link" routerLink="/recherche">search</a>
       </li>
-      <li class="nav-item" *ngIf="authService.isHr()||authService.isAdmin()">
+      <li class="nav-item" *ngIf="internService.isHr()||internService.isAdmin()">
         <a class="nav-link" routerLink="/hiring">Hiring</a>
       </li>
-      <li class="nav-item dropdown" *ngIf="!authService.isAdmin()">
+      <li class="nav-item dropdown" *ngIf="!this.internService.isAdmin()">
         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"  role="button" aria-expanded="false">Connection</a>
         <ul class="dropdown-menu">
           <li class="nav-item ">
-            <a *ngIf="authService.isloggedIn && !(authService.isAdmin())" class="nav-link" routerLink="/profile">Profile</a>
+            <a *ngIf="internService.isloggedIn" class="nav-link" routerLink="/profile">Profile</a>
           </li>
           <li class="nav-item ">
-            <a *ngIf="!authService.isloggedIn" class="nav-link" routerLink="/log">Log In</a>
+            <a *ngIf="!internService.isloggedIn" class="nav-link" routerLink="/log">Log In</a>
           </li>
           <li class="nav-item ">
-            <a *ngIf="authService.isloggedIn" (click)="OnLogout()" class="nav-link" >Log out</a>
+            <a *ngIf="internService.isloggedIn"(click)="internService.logout()" class="nav-link" >Log out</a>
           </li>
         </ul>
       </li>
-      <li class="nav-item" *ngIf="authService.isAdmin()">
+      <li class="nav-item" *ngIf="internService.isAdmin()">
         <a class="nav-link" routerLink="/setting"><i style="color:rgb(198, 39, 65)" class="fas fa-user-shield"></i></a>
       </li>
     </ul>   

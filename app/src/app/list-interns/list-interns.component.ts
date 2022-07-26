@@ -13,10 +13,9 @@ export class ListInternsComponent implements OnInit {
 
   ngOnInit()
   {
-    this.internService.getInterns().
+    this.internService.ListeInterns().
       subscribe((data:Interns[])=>{
       this.InternsTable = data;
-      
       console.log(this.InternsTable);
       
     });

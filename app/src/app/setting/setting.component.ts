@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service';
+import { InternsService } from '../services/interns.service';
 
 @Component({
   selector: 'app-setting',
@@ -8,11 +8,9 @@ import { AuthService } from '../services/auth.service';
 })
 export class SettingComponent implements OnInit {
 
-  constructor(public authService:AuthService) { }
-
-  ngOnInit(): void {
-  }
+  constructor(public internService:InternsService) { }
+  ngOnInit(): void {}
 quit(){
-  this.authService.logout();
+  this.internService.logout();
  }
 }
