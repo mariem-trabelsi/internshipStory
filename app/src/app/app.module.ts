@@ -20,6 +20,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { ListInternsComponent } from './list-interns/list-interns.component';
 import { ListHrsComponent } from './list-hrs/list-hrs.component';
 import { StaticsComponent } from './statics/statics.component';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { AdminGuard } from './admin.guard';
+import { HrGuard } from './hr.guard';
 
 
 
@@ -31,9 +34,10 @@ const appRoutes: Routes =[
   {path:'log',component:LogComponent},
   {path:'about',component:AboutComponent},
   {path:'hiring',component:HiringComponent},
-  {path:'setting',component:SettingComponent},
+  {path:'setting',component:SettingComponent, canActivate:[AdminGuard]},
   {path:'signinHr',component:SigninHrComponent},
-  {path:'profile',component:ProfileComponent},
+  {path:'profile',component:ProfileComponent, canActivate:[HrGuard]},
+  {path:'forbidden',component:ForbiddenComponent},
   {path:'listInterns',component:ListInternsComponent},
   {path:'listHRs',component:ListHrsComponent},
   {path:'',redirectTo:'/home',pathMatch:'full'}
@@ -56,7 +60,8 @@ const appRoutes: Routes =[
     ProfileComponent,
     ListInternsComponent,
     ListHrsComponent,
-    StaticsComponent
+    StaticsComponent,
+    ForbiddenComponent
   ],
   imports: [
     BrowserModule,

@@ -23,10 +23,10 @@ export class ProfileComponent implements OnInit {
       if(this.internService.isloggedIn){
           this.InternsTable.forEach((current)=>{
           if( this.internService.loggedUser === current.email){
-            this.image1  =current.image;
+            this.image1  = current.image;
             console.log(this.image1);
-            this.nom    =current.lName;
-            this.prenom =current.fName;
+            this.nom     =current.lName;
+            this.prenom  =current.fName;
             this.region1 =current.region;
           }
         }); 
