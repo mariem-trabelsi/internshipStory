@@ -1,19 +1,22 @@
-<h2 style="text-align:center;margin:5vh 0;font-weight:lighter;color:rgb(164, 16, 120);">List of Interns</h2>
-<div  class="row" style="padding-right:10vw">
-<div  class="col-md-2" style="color:rgb(102, 6, 193);font-weight:700;padding:1vh;padding-left:11vw">Intern</div> 
-<div  class="col-md-2" style="color:rgb(102, 6, 193);font-weight:700;padding:1vh;padding-left:0vw">E-mail</div>   
-<div  class="col-md-2" style="color:rgb(102, 6, 193);font-weight:700;padding:1vh;padding-left:0vw">Region</div>  
-<div  class="col-md-2" style="color:rgb(102, 6, 193);font-weight:700;padding:1vh;padding-left:0vw">First Name</div>       
-<div  class="col-md-4" style="color:rgb(102, 6, 193);font-weight:700;padding:1vh;padding-left:0vw">Last Name</div>    
-
-</div>
-
-<div class="row" *ngFor="let intern of InternsTable" style="padding:2vh;padding-left:10vw;">
-    <img  class="col-md-2 rounded-circle" src="{{intern.image}}" alt=""  style="width:5%;height:5vh;mix-blend-mode:multiply;">
-    <div  class="col-md-2">{{intern.email}}</div>
-    <div  class="col-md-2">{{intern.region}}</div>
-    <div  class="col-md-2">{{intern.fName}}</div>
-    <div  class="col-md-2">{{intern.lName}}</div>
-    <div  class="col-md-2"><a class="btn btn-danger" href="">Delete</a></div>
-</div>
- <div style="margin-bottom:15vh"></div>
+ <h2 style="text-align:center;margin:5vh 0;font-weight:lighter;color:rgb(164, 16, 120);">List of Interns</h2>
+ <table>
+    <thead>
+    <tr>
+        <td style="color:rgb(102, 6, 193);font-weight:700;">Intern</td>
+        <td style="color:rgb(102, 6, 193);font-weight:700;">E-mail</td>
+        <td style="color:rgb(102, 6, 193);font-weight:700;">Region</td>
+        <td style="color:rgb(102, 6, 193);font-weight:700;">First Name</td>
+        <td style="color:rgb(102, 6, 193);font-weight:700;">Last Name</td>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let intern of InternsTable" >
+        <td><img  class="rounded-circle" src="{{intern.image}}" style="width:3vw;height:5vh;mix-blend-mode:multiply;"></td>
+        <td>{{intern.email}}</td>
+        <td>{{intern.region}}</td>
+        <td>{{intern.fName}}</td>
+        <td>{{intern.lName}}</td>
+        <td><a class="btn btn-danger" href="">Delete</a></td>
+    </tr>
+</tbody>
+ </table>

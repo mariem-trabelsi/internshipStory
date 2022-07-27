@@ -1,20 +1,26 @@
-<div>
-<div class="dropdown" style="padding:2vh;padding-left:5vh;padding-bottom:15vw">
-    <a class="btn btn-primary dropdown-toggle"  role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-      Administration
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-      <li><a class="dropdown-item nav-link" routerLink="/listHRs">List of HRs</a></li>
-      <li><a class="dropdown-item nav-link"routerLink="/listInterns" >List of interns</a></li>
-      <li><a class="dropdown-item nav-link" routerLink="/statics">Statics</a></li>
-      <li class="nav-item ">
-        <a *ngIf="internService.isloggedIn" (click)="quit()" class="nav-link" >Log out</a>
-      </li>
-    </ul>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>InternshipStories</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/45e38e596f.js" crossorigin="anonymous"></script>
+</head>
+<nav>
+  <div class="nav nav-tabs " id="nav-tab" role="tablist">
+    <a class="nav-item nav-link active " id="nav-home-tab" data-toggle="tab" role="tab" aria-controls="nav-home"
+      aria-selected="true">Administration</a>
+    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" routerLink="/listHRs" role="tab"
+      aria-controls="nav-profile" aria-selected="false">HRs</a>
+    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" routerLink="/listInterns" role="tab"
+      aria-controls="nav-contact" aria-selected="false">Interns</a>
+    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" routerLink="/statics" role="tab"
+      aria-controls="nav-contact" aria-selected="false">Statics</a>
+    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" role="tab" aria-controls="nav-contact"
+      *ngIf="internService.isloggedIn" (click)="quit()" class="nav-link"><img style="height:4vh" src="./assets/log.png"></a>
   </div>
-
-</div>
-<div style="height:10vh"></div>
-
-
-
+</nav>
+<div class="bg"></div>
+<app-statics></app-statics>
+</html>

@@ -32,14 +32,15 @@ const appRoutes: Routes =[
   {path:'story',component:StoryComponent},
   {path:'signin',component:SigninComponent},
   {path:'log',component:LogComponent},
+  {path:'statics',component:StaticsComponent, canActivate:[AdminGuard]},
   {path:'about',component:AboutComponent},
   {path:'hiring',component:HiringComponent},
   {path:'setting',component:SettingComponent, canActivate:[AdminGuard]},
   {path:'signinHr',component:SigninHrComponent},
   {path:'profile',component:ProfileComponent, canActivate:[HrGuard]},
   {path:'forbidden',component:ForbiddenComponent},
-  {path:'listInterns',component:ListInternsComponent},
-  {path:'listHRs',component:ListHrsComponent},
+  {path:'listInterns',component:ListInternsComponent,canActivate:[AdminGuard]},
+  {path:'listHRs',component:ListHrsComponent,canActivate:[AdminGuard]},
   {path:'',redirectTo:'/home',pathMatch:'full'}
 ];
 
