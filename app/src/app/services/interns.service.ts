@@ -25,7 +25,6 @@ ListeInterns():Observable<Interns[]>{
 }
 deleteIntern(email:string){
   return this.httpClient.delete<Interns[]>('http://localhost/internshipStory/php/deleteInterns.php?INTERNMAIL='+ email);
-  
 }
 isAdmin():Boolean {
   if(localStorage.getItem('role') ==="ADMIN")

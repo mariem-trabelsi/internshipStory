@@ -27,10 +27,8 @@ export class ListInternsComponent implements OnInit {
     this.InternsTable = this.InternsTable?.filter(u => u !== intern);
     });
     this.router.navigate(['listInterns']).then(()=>{
-     window.location.reload();
-    });
-  }
- 
+      window.location.reload();
+     });
   }
 
-
+}
