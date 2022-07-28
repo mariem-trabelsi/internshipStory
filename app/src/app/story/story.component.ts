@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InternsService } from '../services/interns.service';
+import { Stories } from '../model/story.model';
+import { StoryService } from '../services/story.service';
 
 @Component({
   selector: 'app-story',
@@ -8,12 +10,19 @@ import { InternsService } from '../services/interns.service';
 })
 export class StoryComponent implements OnInit {
   disAbled=true;
-  constructor(public internService:InternsService) { }
+  story=new Stories();
+  storyT:Stories[]=[];
+  constructor(public internService:InternsService,public storyService:StoryService) { }
   icon ="far fa-heart";
   count=2;
-  ngOnInit(): void {
+  ngOnInit()
+  {
+    this.storyService.ListeStory().
+      subscribe((data:Stories[])=>{
+      this.storyT=data;
+      console.log(this.storyT);
+    });
   }
-
  activeButton():Boolean{
   if (this.internService.isloggedIn)
   {this.disAbled = false;}

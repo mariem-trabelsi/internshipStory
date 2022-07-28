@@ -9,10 +9,10 @@
     <div class="input-group-prepend" >
     <span style="color:white;background-color:rgb(75, 12, 126)" class=" form-control">@</span>
     </div>
-    <input style="background-color:rgb(75, 12, 126);color:white" type="text" class="form-control" placeholder="name of the compagny" aria-label="Username">
+    <input [(ngModel)]="story.compName" style="background-color:rgb(75, 12, 126);color:white" type="text" class="form-control" placeholder="name of the compagny">
     </div>
     <i class="fas fa-pencil-alt prefix" style="color:white"></i>
-    <textarea id="form10" style="color:white;background-color:rgb(75, 12, 126)" class="md-textarea form-control" rows="3"></textarea>
+    <textarea  [(ngModel)]="story.contenu" id="form10" style="color:white;background-color:rgb(75, 12, 126)" class="md-textarea form-control" rows="3"></textarea>
     <label  style="color:white"for="form10">Life is better when you share it.</label>
     <button [disabled]="activeButton()" (click)="activeButton()" type="reset" class="btn" style="margin-left:34%;color:white;border-radius:10px;background-color:rgb(195, 21, 157);margin-bottom:1vh;margin-top:1vh">share now</button>
   </form>
@@ -24,18 +24,18 @@
 <!--la deuxième partie: affichage de stories-->
 <div id="tout" class="container" style="display:flex;padding-top:10vh">
   <div class="col-md-2" ></div>
-  <div class="col-md-8" style="background-image:var('/assets/stage_accueil.png');">
+  <div class="col-md-8" *ngFor="let stry of storyT" >
   <div class="story" > 
       <div style="display:flex;color:#ccc">
         <img src="./assets/l7.png" class="rounded-circle" style="width:50px;height:60px;margin-right:1vw">
-        <p style="color:darkblue;margin-top:2vh"><strong>Ahmed trabelsi</strong> :@<strong>Adactim </strong><span style="color:rgb(89, 89, 89)">, le 11/12/2022</span></p>
+        <p style="color:darkblue;margin-top:2vh"><strong>Ahmed trabelsi</strong> :@<strong>{{stry.compName}} </strong><span style="color:rgb(89, 89, 89)">, {{stry.Sdate}}</span></p>
       </div>
       <div readonly>
-        <p style="background-color:white;padding:10px 14px;border-radius:7px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae debitis laboriosam veniam voluptatum odio deleniti, quasi sequi modi quidem minus voluptatem id cum cumque dolorem sit delectus nemo natus nostrum.Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae debitis laboriosam veniam voluptatum odio deleniti, quasi sequi modi quidem minus voluptatem id cum cumque dolorem sit delectus nemo natus nostrum.</p>
+        <p style="background-color:white;padding:10px 14px;border-radius:7px">{{stry.contenu}}.</p>
       </div> 
       <button (click)="addLike()" style="background-color:rgb(241, 200, 232);border-radius:30px;color:black;margin-left:2px;border:none;" type="submit">
         <span id="icon"><i style="color:purple" [class]="icon"></i></span>
-        <span id="count" style="color:purple;font-weight:bold;">{{count}}</span>
+        <span id="count"  style="color:purple;font-weight:bold;">{{stry.likes}}</span>
       </button>    
     </div>
       

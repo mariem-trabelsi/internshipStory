@@ -1,15 +1,12 @@
 a  {
-    color:red;
-    font-size: larger
+    color:rgb(198, 39, 65);
+    font-size: larger;
 }
-.nav-tabs{
-    color:green;
-    
-}
+
 .bg{
     background-image: url('https://thumbs.dreamstime.com/b/ic%C3%B4ne-lin%C3%A9aire-d-administration-logo-moderne-c-ensemble-133515291.jpg');
     background-repeat: no-repeat;
-    background-position:left;
+    background-position:center;
     background-size: contain;
     height:20vh;
     justify-content: center;

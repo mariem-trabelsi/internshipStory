@@ -13,22 +13,20 @@ const httpOptions={
 })
 export class InternsService {
   internsT:Interns[]=[];
-  intern =new Interns();
+  intern = new Interns();
   public loggedUser : string | undefined;
   public isloggedIn : Boolean = false;
   public roles      : string | undefined;
-  // public image:String='';
-  // public nom:string='';
-  // public prenom:string='';
-  // public region:string='';
+
 constructor(private httpClient:HttpClient,private router:Router)  { }
-
-
 
 ListeInterns():Observable<Interns[]>{
   return this.httpClient.get<Interns[]>('http://localhost/internshipStory/php/afficheInterns.php');
 }
-
+deleteIntern(email:string){
+  return this.httpClient.delete<Interns[]>('http://localhost/internshipStory/php/deleteInterns.php?INTERNMAIL='+ email);
+  
+}
 isAdmin():Boolean {
   if(localStorage.getItem('role') ==="ADMIN")
       {return true;}

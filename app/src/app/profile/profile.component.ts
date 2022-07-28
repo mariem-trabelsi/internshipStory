@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HRs } from '../model/hrs.model';
 import { Interns } from '../model/intern.model';
+import { HrService } from '../services/hr.service';
 import { InternsService } from '../services/interns.service';
 @Component({
   selector: 'app-profile',
@@ -8,30 +10,47 @@ import { InternsService } from '../services/interns.service';
 })
 export class ProfileComponent implements OnInit {
   InternsTable:Interns[]=[];
-  public image1:String='';
+  HrsTable:HRs[]=[];
+  public image:String='';
   public nom:string='';
   public prenom:string='';
-  public region1:string='';
-  constructor(public internService:InternsService) { }
+  public region:string='';
+  constructor(public internService:InternsService,public hrService:HrService) { }
 
   ngOnInit(): void {
       this.internService.ListeInterns().
         subscribe((data:Interns[])=>{
         this.InternsTable = data;
-        console.log(this.InternsTable);
-      });
-      if(this.internService.isloggedIn){
+        //console.log(this.InternsTable);
+        if(this.internService.isloggedIn){
           this.InternsTable.forEach((current)=>{
           if( this.internService.loggedUser === current.email){
-            this.image1  = current.image;
-            console.log(this.image1);
-            this.nom     =current.lName;
-            this.prenom  =current.fName;
-            this.region1 =current.region;
+            this.image  = current.image;
+            this.nom     = current.lName;
+            this.prenom  = current.fName;
+            this.region = current.region;
           }
+          
         }); 
       }
-  }
-  
-  
+    });
+      
+    this.hrService.ListeHrs().
+        subscribe((data:HRs[])=>{
+        this.HrsTable = data;
+        //console.log(this.InternsTable);
+        if(this.internService.isloggedIn){
+          this.HrsTable.forEach((current)=>{
+          if( this.internService.loggedUser === current.email){
+            this.image  = current.image;
+            this.nom     = current.lName;
+            this.prenom  = current.fName;
+            this.region = current.local;
+          }
+          
+        }); 
+      }
+    });
+
+    } 
 }

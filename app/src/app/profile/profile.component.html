@@ -1,4 +1,18 @@
-<h2>Hi,dear {{prenom}}</h2>
-<div>{{internService.loggedUser}}</div>
-<div>{{region1}}</div>
-<div>{{prenom}} {{nom}}</div>
+<div id="tout">
+<div  class="container">
+<div class="row">
+<div class="col-md-2"></div>
+<div class="col-md-6 rounded" id="profil">
+<div class="couverture">
+    <img src={{image}} class="rounded-circle">
+</div>
+<div class="coordonnes">
+<h2>{{prenom}} {{nom}}</h2>
+<p>{{internService.loggedUser}}</p>
+<div class="local">{{region}}</div>
+</div>
+</div>
+<div class="col-md-2"></div>
+</div>
+</div>
+</div>

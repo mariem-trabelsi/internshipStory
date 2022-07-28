@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InternsService } from '../services/interns.service';
 import { Interns } from '../model/intern.model';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-list-interns',
   templateUrl: './list-interns.component.html',
@@ -8,7 +9,7 @@ import { Interns } from '../model/intern.model';
 })
 export class ListInternsComponent implements OnInit {
 
-  constructor(private internService:InternsService) { }
+  constructor(private router:Router ,private internService:InternsService) { }
   InternsTable: Interns[] | undefined;
 
   ngOnInit()
@@ -20,6 +21,16 @@ export class ListInternsComponent implements OnInit {
       
     });
   }
+  supprimer(intern:Interns){
+    //console.log(intern.email);
+    this.internService.deleteIntern(intern.email).subscribe((data) =>{
+    this.InternsTable = this.InternsTable?.filter(u => u !== intern);
+    });
+    this.router.navigate(['listInterns']).then(()=>{
+     window.location.reload();
+    });
+  }
+ 
   }
 
 
