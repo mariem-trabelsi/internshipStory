@@ -1,5 +1,5 @@
 h2{
-    color:rgb(198, 39, 65);
+    color:rgb(152, 74, 87);
     text-align: center;
 }
 
@@ -21,7 +21,7 @@ h2{
   }
   
   input[type=submit] {
-    background-color:blueviolet;
+    background-color:rgb(164, 16, 120);
     color: white;
     padding: 12px 20px;
     border: none;
@@ -30,9 +30,7 @@ h2{
     float: right;
   }
   
-  input[type=submit]:hover {
-    background-color: blueviolet;
-  }
+  
   
   .container {
     border-radius: 5px;

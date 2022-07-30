@@ -1,31 +1,42 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Interns } from '../model/intern.model';
+import { InternsService } from '../services/interns.service';
+
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
-  
-  constructor(private formBuilder:FormBuilder) {
+  intrn =new Interns();
+  constructor(private formBuilder:FormBuilder,private internService:InternsService,private router:Router) {
    }
    registerForm!: FormGroup;
   ngOnInit(): void {
     this.registerForm=this.formBuilder.group({
-      nom:['',Validators.required],
+      nom:   ['',Validators.required],
       prenom:['',Validators.required],
       region:['',Validators.required],
-      image:['',Validators.required],
-      pass:['',[Validators.required,Validators.minLength(5)]],
-      mail:['',[Validators.required,Validators.maxLength(30)]]
+      image: ['',Validators.required],
+      pass:  ['',[Validators.required,Validators.minLength(5)]],
+      mail:  ['',[Validators.required,Validators.maxLength(30)]]
     });
   }
-  onSubmit(){
-    if(!this.registerForm) {
-      console.log('no');
+  onSignIn(){
+    if(!this.registerForm.value.nom||
+    !this.registerForm.value.prenom||
+    !this.registerForm.value.mail||
+    !this.registerForm.value.pass||
+    !this.registerForm.value.region)
+    {
+      alert('Please fill in all the fields');
     }
-    else{
-  console.log(this.registerForm.value) ;
-  }
+    else
+    {
+    this.internService.insIntern(this.intrn).subscribe();
+    alert('welcome '+this.intrn.fName);
+    }
 }
 }

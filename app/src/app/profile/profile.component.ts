@@ -11,10 +11,14 @@ import { InternsService } from '../services/interns.service';
 export class ProfileComponent implements OnInit {
   InternsTable:Interns[]=[];
   HrsTable:HRs[]=[];
+  // public biog:string='';
+  // public Newbiog:string='';
+  // public NewbioT:string[]=[];
   public image:String='';
   public nom:string='';
   public prenom:string='';
   public region:string='';
+ 
   constructor(public internService:InternsService,public hrService:HrService) { }
 
   ngOnInit(): void {
@@ -30,7 +34,6 @@ export class ProfileComponent implements OnInit {
             this.prenom  = current.fName;
             this.region = current.region;
           }
-          
         }); 
       }
     });
@@ -47,10 +50,16 @@ export class ProfileComponent implements OnInit {
             this.prenom  = current.fName;
             this.region = current.local;
           }
-          
         }); 
       }
     });
-
-    } 
+    }
+ 
+    // bio(){
+    //    this.Newbiog =this.biog;
+    //    this.biog='';
+    //    this.NewbioT.pop();
+    //    this.NewbioT?.push(this.Newbiog);
+    //    alert(this.NewbioT[0]);
+    // } 
 }

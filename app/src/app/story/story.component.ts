@@ -13,8 +13,8 @@ export class StoryComponent implements OnInit {
   story=new Stories();
   storyT:Stories[]=[];
   constructor(public internService:InternsService,public storyService:StoryService) { }
-  icon ="far fa-heart";
-  count=2;
+  icon  ="far fa-heart";
+  count =2;
   ngOnInit()
   {
     this.storyService.ListeStory().

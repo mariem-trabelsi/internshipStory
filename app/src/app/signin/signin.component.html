@@ -10,20 +10,20 @@
     <div style="height:1vh"></div>
     <div style="background-color:white;border-radius: 80px 5px 5px 80px;margin-right:2vw;height:100%;">
       <p style="text-align:center;font-weight:bold;font-size:30px;padding-top:8vh;padding-bottom:4vh"> sign in as Intern</p>
-      <form [formGroup]="registerForm" novalidate class="form" style="width:90%;padding-left:5vw;margin-top:1vh" >
+      <form [formGroup]="registerForm"  class="form" style="width:90%;padding-left:5vw;margin-top:1vh" >
           <div style="display:flex;padding-bottom:1vh">
-          <input style="background-color:transparent;margin-right:1vw" type="text" class="form-control rounded" id="prenom" name="prenom" placeholder="First Name" formControlName="prenom">
-          <input style="background-color:transparent" type="text" class="form-control rounded" id="nom" name="nom"  formControlName="nom" placeholder="Last Name">
+          <input [(ngModel)]="intrn.fName"  style="background-color:transparent;margin-right:1vw" type="text" class="form-control rounded" id="prenom" name="prenom" placeholder="First Name" formControlName="prenom">
+          <input [(ngModel)]="intrn.lName"  style="background-color:transparent" type="text" class="form-control rounded" id="nom" name="nom"  formControlName="nom" placeholder="Last Name">
           </div>
           <div style="display:flex;padding-bottom:1vh">
-            <input style="background-color:transparent;margin-right:1vw" type="text" class="form-control rounded" id="region" name="region" formControlName="region" placeholder="tape your state">
-            <input style="background-color:transparent" type="text" class="form-control rounded" id="img" name="image" formControlName="image" placeholder="link of your profile image">
+            <input [(ngModel)]="intrn.region" style="background-color:transparent;margin-right:1vw" type="text" class="form-control rounded" id="region" name="region" formControlName="region" placeholder="tape your state">
+            <input  [(ngModel)]="intrn.image"style="background-color:transparent" type="text" class="form-control rounded" id="img" name="image" formControlName="image" placeholder="link of your profile image" value="2222">
             </div>
             <div style="display:flex;padding-bottom:1vh">
-              <input style="background-color:transparent;margin-right:1vw" type="email" class="form-control rounded" id="mail" name="mail" formControlName="mail" placeholder="email adress">
-              <input style="background-color:transparent" type="password" class="form-control rounded" id="pass" name="pass" formControlName="pass" placeholder="password">
+              <input [(ngModel)]="intrn.email" style="background-color:transparent;margin-right:1vw" type="email" class="form-control rounded" id="mail" name="mail" formControlName="mail" placeholder="email adress">
+              <input [(ngModel)]="intrn.password" style="background-color:transparent" type="password" class="form-control rounded" id="pass" name="pass" formControlName="pass" placeholder="password">
               </div>
-          <button (click)="onSubmit()" class="btn" style="background-color:rgb(155, 7, 165);color:white;border-radius:30px;margin-left:66%;width:7em;margin-right:1vw">Register</button>
+          <button (click)="onSignIn()" type="submit" class="btn" style="background-color:rgb(155, 7, 165);color:white;border-radius:30px;margin-left:66%;width:7em;margin-right:1vw">Register</button>
       </form>
       </div>
     </div>

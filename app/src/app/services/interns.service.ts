@@ -26,8 +26,14 @@ ListeInterns():Observable<Interns[]>{
 deleteIntern(email:string){
   return this.httpClient.delete<Interns[]>('http://localhost/internshipStory/php/deleteInterns.php?INTERNMAIL='+ email);
 }
+
+insIntern(intrn:Interns)
+{  
+  return this.httpClient.get<Interns>('http://localhost/internshipStory/php/insIntern.php?region='+intrn.region+'&&nom='+intrn.lName+'&&image='+intrn.image+'&&prenom=' +intrn.fName+"&&email="+intrn.email+"&&psw="+intrn.password);
+}
+
 isAdmin():Boolean {
-  if(localStorage.getItem('role') ==="ADMIN")
+  if(localStorage.getItem('role') === "ADMIN")
       {return true;}
     return false;
     }
