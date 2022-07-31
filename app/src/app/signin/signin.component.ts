@@ -10,7 +10,7 @@ import { InternsService } from '../services/interns.service';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
-  intrn =new Interns();
+  intrn = new Interns();
   constructor(private formBuilder:FormBuilder,private internService:InternsService,private router:Router) {
    }
    registerForm!: FormGroup;
@@ -36,6 +36,12 @@ export class SigninComponent implements OnInit {
     else
     {
     this.internService.insIntern(this.intrn).subscribe();
+    this.internService.loggedUser = String(this.intrn.email);
+    this.internService.roles ="INTERN";
+    this.internService.isloggedIn=true;
+    localStorage.setItem('isloggedIn',String(this.internService.isloggedIn));
+    localStorage.setItem('loggedUser', this.internService.loggedUser);
+    localStorage.setItem('role',this.internService.roles);
     alert('welcome '+this.intrn.fName);
     }
 }

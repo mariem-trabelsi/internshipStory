@@ -18,5 +18,10 @@ export class HrService {
     return this.httpClient.delete<HRs[]>('http://localhost/internshipStory/php/deleteHrs.php?EMAIL='+ email);
   }
 
+  insHr(hr:HRs)
+{  
+  return this.httpClient.get<HRs>('http://localhost/internshipStory/php/insHr.php?region='+hr.local+'&&nom='+hr.lName+'&&image='+hr.image+'&&prenom=' +hr.fName+"&&email="+hr.email+"&&psw="+hr.password+"&&loca="+hr.compName);
+}
+
   
 }

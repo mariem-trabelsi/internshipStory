@@ -68,24 +68,5 @@ isAdmin():Boolean {
       }
     }); 
   }
-  
-  // getDataCurrentUser():void
-  // {
-  //   if(this.isloggedIn){
-  //     this.internsT.forEach((current)=>{
-  //       if( this.loggedUser === current.email){
-  //         alert('oui');
-  //         this.image  =current.image;
-  //         this.nom    =current.lName;
-  //         this.prenom =current.fName;
-  //         this.region =current.region;
-  //         console.log(this.internsT);
-  //       }
-  //       else alert('noo');
-  //     }); 
-  //   }
-  // }
-     
-    
   }
 
