@@ -37,12 +37,12 @@ export class SigninComponent implements OnInit {
     {
     this.internService.insIntern(this.intrn).subscribe();
     this.internService.loggedUser = String(this.intrn.email);
-    this.internService.roles ="INTERN";
-    this.internService.isloggedIn=true;
+    this.internService.roles      = "INTERN";
+    this.internService.isloggedIn = true;
     localStorage.setItem('isloggedIn',String(this.internService.isloggedIn));
     localStorage.setItem('loggedUser', this.internService.loggedUser);
     localStorage.setItem('role',this.internService.roles);
-    alert('welcome '+this.intrn.fName);
+    alert('welcome '+this.intrn.fName +"!");
     }
 }
 }

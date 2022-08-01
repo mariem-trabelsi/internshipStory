@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { InternsService } from '../services/interns.service';
 import { Stories } from '../model/story.model';
 import { StoryService } from '../services/story.service';
+import { Interns } from '../model/intern.model';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-story',
@@ -9,17 +11,21 @@ import { StoryService } from '../services/story.service';
   styleUrls: ['./story.component.css']
 })
 export class StoryComponent implements OnInit {
-  disAbled=true;
-  story=new Stories();
+  disAbled= true;
+  story   = new Stories();
   storyT:Stories[]=[];
-  constructor(public internService:InternsService,public storyService:StoryService) { }
+  InternsTable: Interns[]=[];
+  constructor(private router:Router,public internService:InternsService,public storyService:StoryService) { }
   icon  ="far fa-heart";
   count =2;
   ngOnInit()
-  {
+  { this.internService.ListeInterns().
+    subscribe((data:Interns[])=>{
+    this.InternsTable = data;
+    });
     this.storyService.ListeStory().
       subscribe((data:Stories[])=>{
-      this.storyT=data;
+      this.storyT = data;
       console.log(this.storyT);
     });
   }
@@ -28,6 +34,20 @@ export class StoryComponent implements OnInit {
   {this.disAbled = false;}
   return this.disAbled;
  }
+  ajouter(){
+    const username       = this.internService.loggedUser;
+    this.story.likes     = String(0);
+    this.InternsTable.forEach((curUser)=>{
+      if(username        === curUser.email){
+        this.story.name  = curUser.fName+' '+curUser.lName;
+        this.story.image = curUser.image;
+        this.storyService.ajoutStory(this.story).subscribe();
+      }
+    });
+    this.router.navigate(['story']).then(()=>{
+      window.location.reload();  
+    });
+  }
 
   addLike(){
     if(this.icon =='far fa-heart'){

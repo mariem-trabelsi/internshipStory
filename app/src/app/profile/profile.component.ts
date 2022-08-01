@@ -14,24 +14,23 @@ export class ProfileComponent implements OnInit {
   // public biog:string='';
   // public Newbiog:string='';
   // public NewbioT:string[]=[];
-  public image:String='';
-  public nom:string='';
-  public prenom:string='';
-  public region:string='';
- 
+  public image   :String='';
+  public nom     :string='';
+  public prenom  :string='';
+  public region  :string='';
+  public fonction:string="";
   constructor(public internService:InternsService,public hrService:HrService) { }
 
   ngOnInit(): void {
       this.internService.ListeInterns().
         subscribe((data:Interns[])=>{
         this.InternsTable = data;
-        //console.log(this.InternsTable);
         if(this.internService.isloggedIn){
           this.InternsTable.forEach((current)=>{
           if( this.internService.loggedUser === current.email){
             this.image  = current.image;
-            this.nom     = current.lName;
-            this.prenom  = current.fName;
+            this.nom    = current.lName;
+            this.prenom = current.fName;
             this.region = current.region;
           }
         }); 
@@ -46,9 +45,10 @@ export class ProfileComponent implements OnInit {
           this.HrsTable.forEach((current)=>{
           if( this.internService.loggedUser === current.email){
             this.image  = current.image;
-            this.nom     = current.lName;
-            this.prenom  = current.fName;
+            this.nom    = current.lName;
+            this.prenom = current.fName;
             this.region = current.local;
+            this.fonction= "HR at "+current.compName;
           }
         }); 
       }

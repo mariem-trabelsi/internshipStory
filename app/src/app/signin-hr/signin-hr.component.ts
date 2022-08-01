@@ -30,17 +30,17 @@ export class SigninHrComponent implements OnInit {
    {
      alert('Please fill in all the fields');
      this.router.navigate(['/SigninHrComponent']);
-     console.log(this.hr);
-    }
-     else
-    {
+  }
+    else
+  {
+   console.log(this.hr);
    this.hrService.insHr(this.hr).subscribe();
    this.internService.loggedUser = String(this.hr.email);
-   this.internService.isloggedIn=true;
+   this.internService.isloggedIn = true;
    localStorage.setItem('isloggedIn',String(this.internService.isloggedIn));
    localStorage.setItem('loggedUser', this.internService.loggedUser);
    localStorage.setItem('role',"HR");
-   alert('welcome '+this.hr.fName);
+   alert('welcome '+this.hr.fName +"!");
    }
 }
 }

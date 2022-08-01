@@ -6,5 +6,4 @@ export class Stories {
     "likes": string;
     "image":string;
     "name":string;
-    
 } 
