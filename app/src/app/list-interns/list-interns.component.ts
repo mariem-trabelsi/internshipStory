@@ -21,14 +21,18 @@ export class ListInternsComponent implements OnInit {
       
     });
   }
+ 
+
   supprimer(intern:Interns){
+    if (confirm("Are you sure ? "))
+  { 
     this.internService.deleteIntern(intern.email).subscribe((data) =>{
     this.InternsTable = this.InternsTable?.filter(u => u !== intern);
-     this.router.navigate(['listInterns']).then(()=>{
-      window.location.reload();
+    this.router.navigate(['listInterns']).then(()=>{
+      window.location.reload();  
     });
-   });
+    });
   }
   }
-
+}
 

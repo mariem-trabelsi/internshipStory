@@ -43,6 +43,10 @@ export class SigninComponent implements OnInit {
     localStorage.setItem('loggedUser', this.internService.loggedUser);
     localStorage.setItem('role',this.internService.roles);
     alert('welcome '+this.intrn.fName +"!");
+    this.router.navigate(['home']).then(()=>{
+      window.location.reload();  
+    });
     }
+
 }
 }

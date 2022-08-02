@@ -37,7 +37,7 @@ const appRoutes: Routes =[
   {path:'hiring',component:HiringComponent},
   {path:'setting',component:SettingComponent, canActivate:[AdminGuard]},
   {path:'signinHr',component:SigninHrComponent},
-  {path:'profile',component:ProfileComponent, canActivate:[HrGuard]},
+  {path:'profile',component:ProfileComponent},
   {path:'forbidden',component:ForbiddenComponent},
   {path:'listInterns',component:ListInternsComponent,canActivate:[AdminGuard]},
   {path:'listHRs',component:ListHrsComponent,canActivate:[AdminGuard]},

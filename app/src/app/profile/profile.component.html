@@ -1,5 +1,5 @@
 <div id="tout">
-<div  class="container">
+<div class="container">
 <div class="row">
 <div class="col-md-2"></div>
 <div class="col-md-6 rounded" id="profil">
@@ -18,7 +18,68 @@
 <!-- <input type="text" [(ngModel)]="biog"> -->
 <!-- <button (click)="bio()">ok</button> -->
 </div>
+<div class="col-md-4"></div>
+</div>
+<div class="row">
 <div class="col-md-2"></div>
+<div class="col-md-6">
+  <!--affichage de stories-->
+    <div class="story" *ngFor="let stry of storyT2"> 
+        <div style="display:flex;color:#ccc">
+          <img src={{stry.image}} class="rounded-circle" style="width:45px;height:50px;margin-right:1vw">
+          <p style="color:darkblue;margin-top:18vh"><strong>{{this.stry.name}}</strong> :@<strong>{{stry.compName}} </strong><span style="color:rgb(89, 89, 89)">, {{stry.Sdate}}</span></p>
+        </div>
+        <div readonly>
+          <p style="background-color:white;padding:10px 14px;border-radius:7px">{{stry.contenu}}.</p>
+        </div> 
+        <button (click)="addLike()"  style="background-color:rgb(241, 200, 232);border-radius:30px;color:black;margin-left:2px;border:none;" type="submit">
+          <span id="icon"><i style="color:purple" [class]="icon" ></i></span>
+          <span id="count"  style="color:purple;font-weight:bold;">{{stry.likes}}</span>
+        </button>    
+      </div>
+      <!--affichage de HireList-->
+      <div *ngIf="bool" class="story">
+        <div *ngFor="let hire of HireTable" class="unity" style="background-color:white;margin-bottom:3vh;border-radius:10px;padding-bottom:2vh">
+          <div style="background-color:white">
+            <div style="display:flex">
+              <img class="rounded-circle" src={{hire.image}}
+                style="margin-right:1vw;width:4%;height:5vh;mix-blend-mode:multiply;margin-top:1vh">
+              <h5 style="margin-top:13px;margin-right:1vw">{{hire.compName}}</h5>
+              <p style="margin-top:14px;color:#ccc">{{hire.dateH}}</p>
+            </div>
+            <p style="padding-left:2vw">
+              {{hire.contenu}}
+            </p>
+            <button  style="background-color:white;border:none;border-radius:30px;color:black;margin-right:2px"
+              type="submit"><i style="color:rgb(164, 16, 120)" ></i></button>
+            
+            <hr>
+          </div>
+          <div style="display:flex;padding-top:2vh">
+            <img  style="margin-right:2px;width:3%;height:4vh;mix-blend-mode:multiply"
+              class="rounded-circle">
+            <div class="md-form" style="width:100%">
+              <input id="form10" style="border-radius:40px;background-color:white;border-color:#ccc"
+                class="md-textarea form-control green-border amber-textarea active-amber-textarea" rows="3"
+                placeholder="add a comment" type="text">
+            </div>
+          </div>
+          <button
+            style="margin-left:2vw;background-color:rgb(164, 16, 120);border:none;border-radius:30px;color:white;margin-top:5px;"
+            type="submit">publish</button>
+          <!--show comments-->
+          <div style="display:flex;margin-top:1vh;margin-left:1vw">
+            <img src="./assets/l8.png" style="margin-right:1px;width:3%;height:5vh;mix-blend-mode:multiply"
+              class="rounded-circle">
+            <p style="padding:8px 14px;background-color:rgb(238, 235, 235);width:92%" class="rounded">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus dignissimos ipsa asperiores accusamus
+              libero saepe tenetur, amet deleniti odit veritatis sunt molestiae doloremque porro ea? Beatae sed veniam
+              saepe incidunt?
+            </p>
+          </div>
+        </div>
+</div>
+<div class="col-md-4"></div>
 </div>
 </div>
 </div>

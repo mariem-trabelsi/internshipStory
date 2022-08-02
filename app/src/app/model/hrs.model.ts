@@ -8,5 +8,4 @@ export  class HRs {
     "password": string;
     "role":string;
     "compName":string;
-
 }

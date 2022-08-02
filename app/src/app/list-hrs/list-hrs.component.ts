@@ -16,10 +16,12 @@ export class ListHrsComponent implements OnInit {
     this.hrService.ListeHrs().
       subscribe((data:HRs[])=>{
       this.HrsTable = data;
-      console.log(this.HrsTable);
+      this.HrsTable = this.HrsTable.filter(hr => hr.role !== String('ADMIN'))
     });
   }
+  
   supprimer(hr:HRs){
+    if(confirm('Are you sure ?')){
     this.hrService.deleteHr(hr.email).subscribe((data) =>{
     this.HrsTable = this.HrsTable?.filter(u => u !== hr);
      this.router.navigate(['listHRs']).then(()=>{
@@ -28,5 +30,5 @@ export class ListHrsComponent implements OnInit {
    });
   }
   }
-
+}
 

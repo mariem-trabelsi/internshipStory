@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { Hire } from '../model/hire.model';
 import { HRs } from '../model/hrs.model';
 import { Interns } from '../model/intern.model';
+import { Stories } from '../model/story.model';
+import { HiringService } from '../services/hiring.service';
 import { HrService } from '../services/hr.service';
 import { InternsService } from '../services/interns.service';
+import { StoryService } from '../services/story.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -19,7 +23,13 @@ export class ProfileComponent implements OnInit {
   public prenom  :string='';
   public region  :string='';
   public fonction:string="";
-  constructor(public internService:InternsService,public hrService:HrService) { }
+  storyT :Stories[]=[];
+  storyT2:Stories[]=[];
+  HireTable:Hire[]=[];
+  icon   ="far fa-heart";
+  count  =2;
+  bool=false;
+  constructor(public storyService:StoryService,public internService:InternsService,public hrService:HrService,private hService:HiringService) { }
 
   ngOnInit(): void {
       this.internService.ListeInterns().
@@ -53,6 +63,36 @@ export class ProfileComponent implements OnInit {
         }); 
       }
     });
+    this.storyService.ListeStory().
+      subscribe((data:Stories[])=>{
+      this.storyT      = data;
+      this.storyT.forEach((current)=>{
+      if(current.email == String(this.internService.loggedUser)){
+      this.storyT2.push(current);
+      }
+      });
+      console.log(this.storyT2);
+    });
+    this.hService.ListeToHire().
+    subscribe((data:Hire[])=>{
+    this.HireTable = data;
+      this.HireTable.forEach((current)=>{
+      if( this.internService.loggedUser === current.email){
+       this.bool=true;
+      }
+    }); 
+});
+
+    }
+
+    addLike(){
+      if(this.icon =='far fa-heart'){
+      this.icon ="fas fa-heart";
+      this.count++;}
+      else {
+      this.icon = "far fa-heart";
+      this.count--;
+      }
     }
  
     // bio(){

@@ -13,6 +13,7 @@ $story[$i]['compName']=$data['CompName'];
 $story[$i]['likes']=$data['nbreLike'];
 $story[$i]['name']= $data['nameS'];
 $story[$i]['image']= $data['imageS'];
+$story[$i]['email']= $data['emailS'];
 $i++;
 }
 echo json_encode($story);

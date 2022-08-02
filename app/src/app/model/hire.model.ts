@@ -1,10 +1,11 @@
-export class Stories {
+export  class Hire {
     "Id": number;
     "contenu": string;
-    "Sdate": string;
+    "local": string;
     "compName":string;
     "likes": string;
     "image":string;
     "name":string;
     "email":string;
-} 
+    "dateH":string;
+}

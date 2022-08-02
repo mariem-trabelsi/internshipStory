@@ -41,6 +41,9 @@ export class SigninHrComponent implements OnInit {
    localStorage.setItem('loggedUser', this.internService.loggedUser);
    localStorage.setItem('role',"HR");
    alert('welcome '+this.hr.fName +"!");
+   this.router.navigate(['home']).then(()=>{
+    window.location.reload();  
+  });
    }
 }
 }

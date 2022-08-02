@@ -41,6 +41,7 @@ export class StoryComponent implements OnInit {
       if(username        === curUser.email){
         this.story.name  = curUser.fName+' '+curUser.lName;
         this.story.image = curUser.image;
+        this.story.email = curUser.email;
         this.storyService.ajoutStory(this.story).subscribe();
       }
     });

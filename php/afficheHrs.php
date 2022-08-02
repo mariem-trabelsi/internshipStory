@@ -2,7 +2,7 @@
 header("Access-Control-Allow-Origin: *");
 require 'database.php';
 $hrs=[];
-$stmt= $bdd->prepare('SELECT *  FROM Hrs');
+$stmt= $bdd->prepare('SELECT *  FROM hrs');
 $stmt->execute(array());
 $i=0;
 while($data=$stmt->fetch()){

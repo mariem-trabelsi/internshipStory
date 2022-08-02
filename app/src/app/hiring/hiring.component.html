@@ -3,60 +3,37 @@
 <head>
 </head>
 <body>
-
 <h2>You are Hiring </h2>
 <p class="container"><strong> fill in all the fields accurately to help those who are looking for opportunities.</strong>..</p>
 <div class="container">
-  <form action="/action_page.php">
-  <div class="row">
+  <form method="get" >
+   <div class="row">
     <div class="col-25">
-      <label for="fname">First Name</label>
+      <label for="compName">Compagny</label>
     </div>
     <div class="col-75">
-      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      <textarea [(ngModel)]="hire.compName" id="compName" name="compName" placeholder="" ></textarea>
+    </div> 
+    </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="local">Region</label>
+    </div>
+    <div class="col-75">
+      <textarea [(ngModel)]="hire.local" id="local" name="local" placeholder="Your region"></textarea>
     </div>
   </div>
   <div class="row">
     <div class="col-25">
-      <label for="lname">Last Name</label>
+      <label for="contenu">Subject</label>
     </div>
     <div class="col-75">
-      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-25">
-      <label for="image">Image</label>
-    </div>
-    <div class="col-75">
-      <input type="text" id="image" name="image" placeholder="Link of your image..">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-25">
-      <label for="region">Region</label>
-    </div>
-    <div class="col-75">
-      <select id="region" name="region">
-        <option value="Ariana">Ariana</option>
-        <option value="Ben Arous">Ben Arous</option>
-        <option value="Sfax">Sfax</option>
-        <option value="Beja">Beja</option>
-        <option value="Siliena">Siliena</option>
-      </select>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-25">
-      <label for="subject">Subject</label>
-    </div>
-    <div class="col-75">
-      <textarea id="subject" name="subject" placeholder="Specify more informations about this opportunity" style="height:200px"></textarea>
+      <textarea  [(ngModel)]="hire.contenu" id="contenu" name="contenu" placeholder="Specify more informations about this opportunity" style="height:200px"></textarea>
     </div>
   </div>
   <br>
   <div class="row">
-    <input type="submit" value="Submit">
+    <input (click)="hiring()"  type="submit" value="Submit">
   </div>
   </form>
 </div>
