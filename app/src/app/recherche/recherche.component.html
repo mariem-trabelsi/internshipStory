@@ -54,10 +54,11 @@
               </p>
               <button (click)="Like()" style="background-color:white;border:none;border-radius:30px;color:black;margin-right:2px"
                 type="submit"><i style="color:rgb(164, 16, 120)" [class]="Icon"></i>{{Count}}</button>
-              <button style="background-color:rgb(164, 16, 120);color:white;border:none;border-radius:30px;"
+              <button (click)="commentf()" style="background-color:rgb(164, 16, 120);color:white;border:none;border-radius:30px;"
                 type="submit">comment</button>
               <hr>
             </div>
+            <div *ngIf="comment">
             <div style="display:flex;padding-top:2vh">
               <img src={{imaage}} style="margin-right:2px;width:3%;height:4vh;mix-blend-mode:multiply"
                 class="rounded-circle">
@@ -69,7 +70,7 @@
             </div>
             <button
               style="margin-left:2vw;background-color:rgb(164, 16, 120);border:none;border-radius:30px;color:white;margin-top:5px;"
-              type="submit">publish</button>
+              type="submit">publish</button></div>
             <!--show comments-->
             <div style="display:flex;margin-top:1vh;margin-left:1vw">
               <img src="./assets/l8.png" style="margin-right:1px;width:3%;height:5vh;mix-blend-mode:multiply"
@@ -81,8 +82,6 @@
               </p>
             </div>
           </div>  
-      
-
           <div style="padding-bottom:10vh;margin-left:1vw"></div>
         </div>
       </div>

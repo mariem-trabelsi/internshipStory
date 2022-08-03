@@ -7,4 +7,5 @@ export class Interns {
     "email": string;
     "password": string;
     "role":string;
+
 } 

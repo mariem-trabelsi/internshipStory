@@ -14,6 +14,7 @@ const httpOptions={
 export class StoryService {
   storyy = new Stories();
   storyT:Stories[]=[];
+  icon  ="far fa-heart";
   constructor(private internService:InternsService,private router:Router,private http:HttpClient) { }
 
   ListeStory():Observable<Stories[]>
@@ -27,7 +28,24 @@ export class StoryService {
   }
 
 
+//  updateSP(str:Stories){
+//    if(this.icon =='far fa-heart')
+//   {
+//     this.icon = "fas fa-heart";
+//     this.updateStoryPlus(str)
+//   }
+    
+//  }
 
+  
+  updateStoryPlus(str:Stories):Observable<Stories>
+  {
+    return this.http.get<Stories>("http://localhost/internshipStory/php/updateLikes1.php?idStory="+str.Id);
+  }
 
+  updateStoryMoins(str:Stories):Observable<Stories>
+  {
+    return this.http.get<Stories>("http://localhost/internshipStory/php/updateLikes2.php?idStory="+str.Id);
+  }
   
 }

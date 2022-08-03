@@ -13,10 +13,11 @@ const httpOptions={
 })
 export class InternsService {
   internsT:Interns[]=[];
-  intern = new Interns();
+  intern  = new Interns();
   public loggedUser : string | undefined;
   public isloggedIn : Boolean = false;
   public roles      : string | undefined;
+ 
 
 constructor(private httpClient:HttpClient,private router:Router)  { }
 

@@ -12,8 +12,21 @@ import { InternsService } from '../services/interns.service';
 export class RechercheComponent implements OnInit {
   hireT:Hire[]=[];
   InternsTable:Interns[]=[];
-  imaage:string="";
-  
+  imaage:string = "";
+  comment       = false;
+
+
+  commentf():boolean{
+    if(this.comment)
+    {
+      this.comment=false
+    }
+    else{
+      this.comment=true;
+    }
+    return this.comment;
+  }
+
   constructor(private hiringS:HiringService,private internService:InternsService) { }
   Icon ="far fa-thumbs-up";
   Count= 4;

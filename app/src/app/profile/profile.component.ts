@@ -25,10 +25,12 @@ export class ProfileComponent implements OnInit {
   public fonction:string="";
   storyT :Stories[]=[];
   storyT2:Stories[]=[];
-  HireTable:Hire[]=[];
-  icon   ="far fa-heart";
-  count  =2;
-  bool=false;
+  HireTable:Hire[] =[];
+  Icon   ="far fa-thumbs-up";
+  icon  ="far fa-heart";
+  Count  = 2;
+  bool   = false;
+  comment= false;
   constructor(public storyService:StoryService,public internService:InternsService,public hrService:HrService,private hService:HiringService) { }
 
   ngOnInit(): void {
@@ -82,17 +84,38 @@ export class ProfileComponent implements OnInit {
       }
     }); 
 });
-
-    }
+}
 
     addLike(){
       if(this.icon =='far fa-heart'){
       this.icon ="fas fa-heart";
-      this.count++;}
+      this.Count++;}
       else {
       this.icon = "far fa-heart";
-      this.count--;
+      this.Count--;
       }
+    }
+
+    Like(){
+      if(this.Icon =='far fa-thumbs-up'){
+      this.Icon="fas fa-thumbs-up";
+      this.Count++;
+    }
+      else {
+      this.Icon = "far fa-thumbs-up";
+      this.Count--;
+      }
+    }
+
+    commentF():boolean{
+      if(this.comment)
+      {
+        this.comment=false
+      }
+      else{
+        this.comment=true;
+      }
+      return this.comment;
     }
  
     // bio(){

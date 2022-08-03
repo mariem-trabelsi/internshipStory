@@ -28,6 +28,7 @@ export class StoryComponent implements OnInit {
       this.storyT = data;
       console.log(this.storyT);
     });
+    
   }
  activeButton():Boolean{
   if (this.internService.isloggedIn)
@@ -49,15 +50,31 @@ export class StoryComponent implements OnInit {
       window.location.reload();  
     });
   }
+ 
 
-  addLike(){
-    if(this.icon =='far fa-heart'){
-    this.icon ="fas fa-heart";
-    this.count++;}
-    else {
-    this.icon = "far fa-heart";
-    this.count--;
+  getId(str:Stories){
+    alert(str.icon);
+    if(str.icon="far fa-heart"){
+    this.storyService.updateStoryPlus(str).subscribe();
+    // str.whoClicks.push(String(localStorage.getItem('loggedUser')));
+    console.log(str.whoClicks);
+     }
+     if(str.icon="fas fa-heart"){
+      this.storyService.updateStoryMoins(str).subscribe();
     }
+    this.router.navigate(['story']).then(()=>{
+      window.location.reload();  
+    });
   }
+
+  // addLike(){
+  //   if(this.icon =='far fa-heart'){
+  //   this.icon    ="fas fa-heart";
+  //   this.count++;}
+  //   else {
+  //   this.icon    = "far fa-heart";
+  //   this.count--;
+  //   }
+  // }
 
 }
