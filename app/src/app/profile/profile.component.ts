@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Hire } from '../model/hire.model';
 import { HRs } from '../model/hrs.model';
 import { Interns } from '../model/intern.model';
@@ -31,7 +32,7 @@ export class ProfileComponent implements OnInit {
   Count  = 2;
   bool   = false;
   comment= false;
-  constructor(public storyService:StoryService,public internService:InternsService,public hrService:HrService,private hService:HiringService) { }
+  constructor(public router:Router,public storyService:StoryService,public internService:InternsService,public hrService:HrService,private hService:HiringService) { }
 
   ngOnInit(): void {
       this.internService.ListeInterns().
@@ -125,4 +126,16 @@ export class ProfileComponent implements OnInit {
     //    this.NewbioT?.push(this.Newbiog);
     //    alert(this.NewbioT[0]);
     // } 
+
+    suppSt(st:Stories){
+      if (confirm("Are you sure ? "))
+  { 
+    this.storyService.suppStory(st).subscribe((data) =>{
+    this.storyT2 = this.storyT2.filter(u => u !== st);
+    this.router.navigate(['profile']).then(()=>{
+      window.location.reload();  
+    });
+    });
+  }
+  }
 }

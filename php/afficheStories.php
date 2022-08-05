@@ -14,6 +14,7 @@ $story[$i]['likes']=$data['nbreLike'];
 $story[$i]['name']= $data['nameS'];
 $story[$i]['image']= $data['imageS'];
 $story[$i]['email']= $data['emailS'];
+$story[$i]['icon']= $data['icon'];
 $i++;
 }
 echo json_encode($story);

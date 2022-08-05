@@ -24,11 +24,12 @@
 <div class="col-md-2"></div>
 <div class="col-md-6">
   <!--affichage de stories-->
-  <div >
+  <div>
     <div *ngFor="let stry of storyT2"> 
         <div style="display:flex;color:#ccc">
           <img src={{stry.image}} class="rounded-circle" style="width:45px;height:50px;margin-right:1vw">
-          <p style="color:darkblue;margin-top:18vh"><strong>{{this.stry.name}}</strong> :@<strong>{{stry.compName}} </strong><span style="color:rgb(89, 89, 89)">, {{stry.Sdate}}</span></p>
+          <p style="color:darkblue;margin-top:18vh"><strong>{{this.stry.name}}</strong> :@<strong>{{stry.compName}} </strong><span style="color:rgb(89, 89, 89)">, {{stry.Sdate}}</span><span style="font-size:20px;;margin-left:7vw;color:red"><a (click)="suppSt(stry)">X</a></span></p>
+          
         </div>
         <div readonly>
           <p style="background-color:rgb(248, 245, 246);padding:10px 14px;border-radius:7px">{{stry.contenu}}.</p>
@@ -51,7 +52,7 @@
   <div class='row'>
 <div class="col-md-2"></div>
 <div *ngIf="bool" class="col-md-6 rounded" style="border-radius:10px;background-color:rgb(238, 235, 235);padding:10vh 1vw;">
-  <div *ngFor="let hire of HireTable" class="story" style="background-color:white;margin-bottom:3vh;border-radius:10px;padding-bottom:2vh">
+  <div *ngFor="let hire of HireTable"  style="background-color:white;margin-bottom:3vh;border-radius:10px;padding-bottom:2vh">
     <div style="background-color:white">
       <div style="display:flex">
         <img class="rounded-circle" src={{hire.image}}

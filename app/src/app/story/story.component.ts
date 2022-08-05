@@ -23,6 +23,7 @@ export class StoryComponent implements OnInit {
     subscribe((data:Interns[])=>{
     this.InternsTable = data;
     });
+   
     this.storyService.ListeStory().
       subscribe((data:Stories[])=>{
       this.storyT = data;

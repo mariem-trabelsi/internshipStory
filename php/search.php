@@ -2,8 +2,8 @@
 header("Access-Control-Allow-Origin: *");
 require 'database.php';
 $hire=[];
-$stmt= $bdd->prepare('SELECT *  FROM hiring ORDER BY dateH DESC');
-$stmt->execute(array());
+$stmt= $bdd->prepare('SELECT * FROM hiring where localH=?');
+$stmt->execute(array($_GET['region']));
 $i=0;
 while($data=$stmt->fetch()){
     $hire[$i]['Id']=$data['id'];

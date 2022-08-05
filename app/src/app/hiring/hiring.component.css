@@ -3,6 +3,7 @@ h2{
     text-align: center;
 }
 
+
 * {
     box-sizing: border-box;
   }
@@ -16,9 +17,14 @@ h2{
   }
   
   label {
-    padding: 12px 12px 12px 0;
+    padding: 12px 0 12px 0;
     display: inline-block;
+    font-size: larger;
+    text-transform:uppercase;
+    color:black; 
+    text-decoration-style:double
   }
+ 
   
   input {
     background-color:rgb(164, 16, 120);
@@ -63,4 +69,11 @@ h2{
       width: 100%;
       margin-top: 0;
     }
+  }
+  .hiring{
+    text-align: center;
+    font-weight:bolder;
+    font-size: 100px;
+    color:rgb(164, 16, 120);
+    text-shadow:  10px 7px pink,-2px 15px black;
   }

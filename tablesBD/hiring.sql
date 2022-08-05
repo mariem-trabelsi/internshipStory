@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 02, 2022 at 11:08 PM
+-- Generation Time: Aug 04, 2022 at 01:59 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `hiring` (
   `id` int(3) NOT NULL,
   `contenu` text NOT NULL,
-  `local` varchar(60) NOT NULL,
+  `localH` varchar(60) NOT NULL,
   `compName` varchar(50) NOT NULL,
   `likes` int(3) NOT NULL,
   `imageH` text NOT NULL,
@@ -43,8 +43,9 @@ CREATE TABLE `hiring` (
 -- Dumping data for table `hiring`
 --
 
-INSERT INTO `hiring` (`id`, `contenu`, `local`, `compName`, `likes`, `imageH`, `nameH`, `emailH`, `dateH`) VALUES
-(1, 'ça marche pour l\'instant !', 'Sfax', 'Linedata', 5, 'https://img.freepik.com/photos-gratuite/bel-homme-souriant-confiant-mains-croisees-poitrine_176420-18743.jpg?w=2000', 'Mohamed Kammoun', 'contact.data@gmail.com', '2022-08-02 20:27:57');
+INSERT INTO `hiring` (`id`, `contenu`, `localH`, `compName`, `likes`, `imageH`, `nameH`, `emailH`, `dateH`) VALUES
+(1, 'ça marche pour l\'instant !', 'Sfax', 'Linedata', 5, 'https://img.freepik.com/photos-gratuite/bel-homme-souriant-confiant-mains-croisees-poitrine_176420-18743.jpg?w=2000', 'Mohamed Kammoun', 'contact.data@gmail.com', '2022-08-02 20:27:57'),
+(2, 'qualification:*aaaaaaaaaaa*bbbbbbbbbb', 'Tozeur', 'Follow me', 0, 'https://img.freepik.com/photos-gratuite/bel-homme-souriant-confiant-mains-croisees-poitrine_176420-18743.jpg?w=2000', 'Kammoun Mohamed', 'contact.data@gmail.com', '2022-08-04 11:29:31');
 
 --
 -- Indexes for dumped tables
@@ -64,7 +65,7 @@ ALTER TABLE `hiring`
 -- AUTO_INCREMENT for table `hiring`
 --
 ALTER TABLE `hiring`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

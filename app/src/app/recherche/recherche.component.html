@@ -14,9 +14,9 @@
   <div
     style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM4x8-mFNToyqNIf0p9uO1NRCwwSFt04hmBaIOQ83dYxD_-lvehsqIQDZHOLwElpQDjj8&usqp=CAU');mix-blend-mode: multiply;background-position:right;background-size:cotain;background-repeat: no-repeat;height:26vh;border:solid 1px;border-top-right-radius: 100px 100px;border-bottom-right-radius: 100px 100px;margin-right:7vw;background-color:rgb(164, 16, 120)">
     <form class="d-flex center" style="width:80%;padding-left:5vh;padding-bottom:5vh;padding-top:8vh;">
-      <input class="form-control me-2 green-border" type="search" placeholder="search location (example: Ariana)..."
+      <input [(ngModel)]="hire.local" name="local"  class="form-control me-2 green-border" type="search" placeholder="search location (example: Ariana)..."
         aria-label="Search" style="background-color:white;">
-      <button class="btn" type="submit"
+      <button class="btn" type="submit" (click)="getRegion()"
         style="color:white;background-color:rgb(164, 16, 120);border-style: solid;border-color:white;border-radius: 40px">Search</button>
     </form>
   </div>
@@ -40,8 +40,9 @@
 
         <!--section main-->
 
-        <div class="col-md-9 rounded" style="border-radius:10px;background-color:rgb(238, 235, 235);padding:10vh 1vw;">
-          <div *ngFor="let hire of hireT" class="unity" style="background-color:white;margin-bottom:3vh;border-radius:10px;padding-bottom:2vh">
+
+        <div *ngIf="intellAffichage" class="col-md-9 rounded" style="border-radius:10px;background-color:rgb(238, 235, 235);padding:10vh 1vw;">
+          <div *ngFor="let hire of hireT2" class="unity" style="background-color:white;margin-bottom:3vh;border-radius:10px;padding-bottom:2vh">
             <div style="background-color:white">
               <div style="display:flex">
                 <img class="rounded-circle" src={{hire.image}}
@@ -58,9 +59,10 @@
                 type="submit">comment</button>
               <hr>
             </div>
+            
             <div *ngIf="comment">
             <div style="display:flex;padding-top:2vh">
-              <img src={{imaage}} style="margin-right:2px;width:3%;height:4vh;mix-blend-mode:multiply"
+              <img src={{imaageCurrent}} style="margin-right:2px;width:3%;height:4vh;mix-blend-mode:multiply"
                 class="rounded-circle">
               <div class="md-form" style="width:100%">
                 <input id="form10" style="border-radius:40px;background-color:white;border-color:#ccc"
@@ -72,16 +74,76 @@
               style="margin-left:2vw;background-color:rgb(164, 16, 120);border:none;border-radius:30px;color:white;margin-top:5px;"
               type="submit">publish</button></div>
             <!--show comments-->
-            <div style="display:flex;margin-top:1vh;margin-left:1vw">
-              <img src="./assets/l8.png" style="margin-right:1px;width:3%;height:5vh;mix-blend-mode:multiply"
+            <div *ngFor="let cmt of cmtsTable">
+              <div *ngIf="cmt.Id2 == hire.Id">
+            <div  style="display:flex;margin-top:1vh;margin-left:1vw">
+              <img src={{cmt.image}} style="margin-right:1px;width:3%;height:5vh;mix-blend-mode:multiply"
                 class="rounded-circle">
               <p style="padding:8px 14px;background-color:rgb(238, 235, 235);width:92%" class="rounded">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus dignissimos ipsa asperiores accusamus
-                libero saepe tenetur, amet deleniti odit veritatis sunt molestiae doloremque porro ea? Beatae sed veniam
-                saepe incidunt?
+               {{cmt.contenu}}
               </p>
             </div>
+            </div>
+            </div>
           </div>  
+        <div *ngIf="!this.hireT2.length" >
+          <img class="noResult" src="./assets/noResult.webp">
+        </div>
+          <div style="padding-bottom:10vh;margin-left:1vw"></div>
+        </div>
+
+
+
+
+
+
+        <div *ngIf="!intellAffichage" class="col-md-9 rounded" style="border-radius:10px;background-color:rgb(238, 235, 235);padding:10vh 1vw;">
+          
+          <div *ngFor="let hire of hireT" class="unity" style="background-color:white;margin-bottom:3vh;border-radius:10px;padding-bottom:2vh">
+            <div style="background-color:white">
+              <div style="display:flex">
+                <img class="rounded-circle" src={{hire.image}}
+                  style="margin-right:1vw;width:4%;height:5vh;mix-blend-mode:multiply;margin-top:1vh">
+                <h5 style="margin-top:13px;margin-right:1vw">{{hire.compName}}</h5>
+                <p style="margin-top:14px;color:#ccc">{{hire.dateH}}</p>
+              </div>
+              <p style="padding-left:2vw">
+                {{hire.contenu}}
+              </p>
+              <button (click)="Like()" style="background-color:white;border:none;border-radius:30px;color:black;margin-right:2px"
+                type="submit"><i style="color:rgb(164, 16, 120)" [class]="Icon"></i>{{Count}}</button>
+              <button (click)="commentf()"  style="background-color:rgb(164, 16, 120);color:white;border:none;border-radius:30px;"
+                type="submit">comment</button>
+              <hr>
+            </div>
+            <div *ngIf="comment">
+            <div style="display:flex;padding-top:2vh">
+              <img src={{imaageCurrent}} style="margin-right:2px;width:3%;height:4vh;mix-blend-mode:multiply"
+                class="rounded-circle">
+              <div class="md-form" style="width:100%">
+                <form method="get">
+                <input name="contenu" [(ngModel)]="this.ct" id="form10" style="border-radius:40px;background-color:white;border-color:#ccc"
+                  class="md-textarea form-control green-border amber-textarea active-amber-textarea" rows="3"
+                  placeholder="add a comment" type="text">
+                </form>
+              </div>
+            </div>
+            <button
+              style="margin-left:2vw;background-color:rgb(164, 16, 120);border:none;border-radius:30px;color:white;margin-top:5px;"
+              type="submit" (click)="ajoutComment(hire)">publish</button></div>
+            <!--show comments-->
+            <div *ngFor="let cmt of cmtsTable">
+           <div *ngIf="cmt.Id2 == hire.Id">
+            <div style="display:flex;margin-top:1vh;margin-left:1vw">
+              <img src={{cmt.image}} style="margin-right:1px;width:3%;height:5vh;mix-blend-mode:multiply"
+                class="rounded-circle">
+              <p style="padding:8px 14px;background-color:rgb(238, 235, 235);width:92%" class="rounded">
+                {{cmt.contenu}}
+              </p>
+            </div>
+          </div> 
+        </div>
+        </div> 
           <div style="padding-bottom:10vh;margin-left:1vw"></div>
         </div>
       </div>

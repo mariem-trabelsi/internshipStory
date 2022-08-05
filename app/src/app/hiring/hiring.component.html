@@ -3,21 +3,22 @@
 <head>
 </head>
 <body>
-<h2>You are Hiring </h2>
-<p class="container"><strong> fill in all the fields accurately to help those who are looking for opportunities.</strong>..</p>
 <div class="container">
+  <div class="container">
+  <div class="row">
+    <div class="col-md-6">
   <form method="get" >
    <div class="row">
     <div class="col-25">
-      <label for="compName">Compagny</label>
+      <label class="label" for="compName">Compagny</label>
     </div>
     <div class="col-75">
-      <textarea [(ngModel)]="hire.compName" id="compName" name="compName" placeholder="" ></textarea>
+      <textarea [(ngModel)]="hire.compName" id="compName" name="compName" placeholder="compagny name" ></textarea>
     </div> 
     </div>
   <div class="row">
     <div class="col-25">
-      <label for="local">Region</label>
+      <label class="label" for="local">Region</label>
     </div>
     <div class="col-75">
       <textarea [(ngModel)]="hire.local" id="local" name="local" placeholder="Your region"></textarea>
@@ -25,7 +26,7 @@
   </div>
   <div class="row">
     <div class="col-25">
-      <label for="contenu">Subject</label>
+      <label class="label" for="contenu">Subject</label>
     </div>
     <div class="col-75">
       <textarea  [(ngModel)]="hire.contenu" id="contenu" name="contenu" placeholder="Specify more informations about this opportunity" style="height:200px"></textarea>
@@ -33,11 +34,16 @@
   </div>
   <br>
   <div class="row">
-    <input (click)="hiring()"  type="submit" value="Submit">
+    <input (click)="hiring()" type="submit" value="SUBMIT">
   </div>
   </form>
 </div>
-
+<div class="col-md-6">
+  <h1 class="hiring">HIRING NOW</h1>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>
 
