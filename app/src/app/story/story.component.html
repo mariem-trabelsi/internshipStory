@@ -34,12 +34,12 @@
         <p style="background-color:white;padding:10px 14px;border-radius:7px">{{stry.contenu}}.</p>
       </div> 
       <button  (click)="getId(this.stry)" style="background-color:rgb(241, 200, 232);border-radius:30px;color:black;margin-left:2px;border:none;" type="submit">
-        <span id="icon"><i style="color:purple" [class]="stry.icon"></i></span>
+        <span id="icon"><i style="color:purple" [class]="stry.icon" ></i></span>
         <span id="count"   style="color:purple;font-weight:bold;">{{stry.likes}}</span>
       </button>    
     </div>
     </div>    
-
+    <!-- [ngClass]="{bgButn:}" -->
   <div class="col-md-4"></div>   
 </div>
 

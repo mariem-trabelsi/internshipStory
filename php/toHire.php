@@ -15,6 +15,7 @@ while($data=$stmt->fetch()){
     $hire[$i]['name']=$data['nameH'];
     $hire[$i]['email']=$data['emailH'];  
     $hire[$i]['dateH']=$data['dateH']; 
+    $hire[$i]['icon']= $data['icon'];
 $i++;
 }
 echo json_encode($hire);

@@ -16,14 +16,13 @@ export class StoryComponent implements OnInit {
   storyT:Stories[]=[];
   InternsTable: Interns[]=[];
   constructor(private router:Router,public internService:InternsService,public storyService:StoryService) { }
-  icon  ="far fa-heart";
-  count =2;
+
   ngOnInit()
-  { this.internService.ListeInterns().
+  {
+    this.internService.ListeInterns().
     subscribe((data:Interns[])=>{
     this.InternsTable = data;
     });
-   
     this.storyService.ListeStory().
       subscribe((data:Stories[])=>{
       this.storyT = data;
@@ -36,6 +35,14 @@ export class StoryComponent implements OnInit {
   {this.disAbled = false;}
   return this.disAbled;
  }
+
+//  whoClicks():Boolean{
+//   if (this.internService.isloggedIn)
+//   {this.disAbled = false;}
+//   return this.disAbled;
+//  }
+
+
   ajouter(){
     const username       = this.internService.loggedUser;
     this.story.likes     = String(0);
@@ -54,14 +61,16 @@ export class StoryComponent implements OnInit {
  
 
   getId(str:Stories){
-    alert(str.icon);
-    if(str.icon="far fa-heart"){
+    
+    if(str.icon=="far fa-heart"){
     this.storyService.updateStoryPlus(str).subscribe();
+    str.icon="fas fa-heart";
     // str.whoClicks.push(String(localStorage.getItem('loggedUser')));
-    console.log(str.whoClicks);
+    
      }
-     if(str.icon="fas fa-heart"){
+     if(str.icon=="fas fa-heart"){
       this.storyService.updateStoryMoins(str).subscribe();
+      str.icon="far fa-heart";
     }
     this.router.navigate(['story']).then(()=>{
       window.location.reload();  

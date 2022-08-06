@@ -8,10 +8,14 @@ a  {
     background-repeat: no-repeat;
     background-position:center;
     background-size: contain;
-    height:20vh;
+    height:40vh;
     justify-content: center;
 }
+
 #nav-home-tab{
-   
     font-weight: bold;
+}
+
+a {
+    color:rgb(217, 10, 48);
 }

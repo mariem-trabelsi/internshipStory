@@ -8,4 +8,5 @@ export  class Hire {
     "name":string;
     "email":string;
     "dateH":string;
+    "icon":string;
 }

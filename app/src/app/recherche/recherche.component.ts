@@ -37,8 +37,7 @@ export class RechercheComponent implements OnInit {
   }
 
   constructor(private router:Router,private hiringS:HiringService,private internService:InternsService,public cmtSer:CmtService) { }
-  Icon ="far fa-thumbs-up";
-  Count= 4;
+  
   ngOnInit(): void {
   this.hiringS.ListeToHire().
   subscribe((data:Hire[])=>{
@@ -69,17 +68,6 @@ this.cmtSer.ListeComment().subscribe((data:Commentaire[])=>{
 
 }
 
-  Like(){
-    if(this.Icon =='far fa-thumbs-up'){
-    this.Icon= "fas fa-thumbs-up";
-    this.Count++;
-  }
-    else {
-    this.Icon = "fas fa-thumbs-up";
-    this.Count--;
-    }
-  }
-
   getRegion(){
     this.intellAffichage=true;
     this.hiringS.ListeToHireFiltred(this.hire).subscribe((data:Hire[])=>{
@@ -98,6 +86,20 @@ this.cmtSer.ListeComment().subscribe((data:Commentaire[])=>{
     this.router.navigate(['recherche']).then( ()=>{
       window.location.reload();
     })
+  }
+
+  getId(h:Hire){
+    alert(h.icon);
+    if(h.icon == "far fa-thumbs-up"){
+    this.hiringS.updatePlus(h).subscribe();
+  
+     }
+     if(h.icon == "fas fa-thumbs-up"){
+      this.hiringS.updateMoins(h).subscribe();
+    }
+    this.router.navigate(['recherche']).then(()=>{
+      window.location.reload();  
+    });
   }
   
 

@@ -2,7 +2,7 @@
 header("Access-Control-Allow-Origin: *");
 require 'database.php';
 $cmtre=[];
-$stmt= $bdd->prepare('SELECT *  FROM comments  ORDER BY dateC DESC');
+$stmt= $bdd->prepare('SELECT *  FROM comments ORDER BY dateC DESC');
 $stmt->execute(array());
 $i=0;
 while($data=$stmt->fetch()){

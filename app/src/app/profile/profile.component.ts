@@ -138,4 +138,19 @@ export class ProfileComponent implements OnInit {
     });
   }
   }
+
+  getId(str:Stories){
+    
+    if(str.icon=="far fa-heart"){
+    this.storyService.updateStoryPlus(str).subscribe();
+    // str.whoClicks.push(String(localStorage.getItem('loggedUser')));
+    
+     }
+     if(str.icon=="fas fa-heart"){
+      this.storyService.updateStoryMoins(str).subscribe();
+    }
+    this.router.navigate(['profile']).then(()=>{
+      window.location.reload();  
+    });
+  }
 }

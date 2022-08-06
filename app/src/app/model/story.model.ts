@@ -8,5 +8,5 @@ export class Stories {
     "name":string;
     "email":string;
     "icon":string;
-    "whoClicks":string[];
+    
 } 

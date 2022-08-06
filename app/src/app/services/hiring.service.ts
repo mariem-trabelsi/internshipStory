@@ -20,4 +20,14 @@ export class HiringService {
   ListeToHireFiltred(hire:Hire):Observable<Hire[]>{
     return this.http.get<Hire[]>('http://localhost/internshipStory/php/search.php?region='+hire.local);
   }
+
+  updatePlus(hire:Hire):Observable<Hire>
+  {
+    return this.http.get<Hire>("http://localhost/internshipStory/php/updatePLikes.php?id="+hire.Id);
+  }
+
+  updateMoins(h:Hire):Observable<Hire>
+  {
+    return this.http.get<Hire>("http://localhost/internshipStory/php/updateMLikes.php?id="+h.Id);
+  }
 }
