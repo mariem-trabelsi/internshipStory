@@ -30,4 +30,8 @@ export class HiringService {
   {
     return this.http.get<Hire>("http://localhost/internshipStory/php/updateMLikes.php?id="+h.Id);
   }
+
+  suppHiring(h:Hire){
+    return this.http.get<Hire[]>('http://localhost/internshipStory/php/suppHiring.php?id='+h.Id);
+  }
 }

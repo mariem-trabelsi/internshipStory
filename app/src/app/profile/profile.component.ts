@@ -152,6 +152,21 @@ this.cmtSer.ListeComment().subscribe((data:Commentaire[])=>{
   }
   }
 
+  supphiring(h:Hire){
+    
+    if (confirm("Are you sure ? "))
+{ 
+  this.hService.suppHiring(h).subscribe((data) =>{
+  this.HireTable2 = this.HireTable2.filter(u => u !== h);
+  this.router.navigate(['profile']).then(()=>{
+    window.location.reload();  
+  });
+  });
+}
+}
+
+
+
   getId(str:Stories){
     
     if(str.icon=="far fa-heart"){

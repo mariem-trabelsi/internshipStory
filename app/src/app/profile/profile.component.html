@@ -28,7 +28,7 @@
     <div *ngFor="let stry of storyT2"> 
         <div style="display:flex;color:#ccc">
           <img src={{stry.image}} class="rounded-circle" style="width:45px;height:50px;margin-right:1vw">
-          <p style="color:darkblue;margin-top:18vh"><strong>{{this.stry.name}}</strong> :@<strong>{{stry.compName}} </strong><span style="color:rgb(89, 89, 89)">, {{stry.Sdate}}</span><span style="font-size:20px;;margin-left:7vw;color:red"><a (click)="suppSt(stry)">X</a></span></p>
+          <p style="color:darkblue;margin-top:18vh"><strong>{{this.stry.name}}</strong> :@<strong>{{stry.compName}} </strong><span style="color:rgb(89, 89, 89)">, {{stry.Sdate}}</span><span style="font-size:20px;margin-left:7vw;color:red"><a (click)="suppSt(stry)">X</a></span></p>
           
         </div>
         <div readonly>
@@ -58,7 +58,9 @@
         <img class="rounded-circle" src={{hire.image}}
           style="margin-right:1vw;width:4%;height:5vh;mix-blend-mode:multiply;margin-top:1vh">
         <h5 style="margin-top:13px;margin-right:1vw">{{hire.compName}}</h5>
-        <p style="margin-top:14px;color:#ccc">{{hire.dateH}}</p>
+        <p style="margin-top:8px;color:#ccc">{{hire.dateH}}
+         <span style="font-size:22px;margin-left:22vw;color:red"><a (click)="supphiring(hire)">X</a></span>
+        </p>
       </div>
       <p style="padding-left:2vw">
         {{hire.contenu}}
