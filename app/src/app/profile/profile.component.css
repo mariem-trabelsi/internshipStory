@@ -44,7 +44,7 @@ img{
     box-shadow: 0 0 0 0.2rem rgb(164, 16, 120);
 }
 .mere{
-  justify-items:inherit;
+  
     padding-top:2vh;
     display: flex;
 }
