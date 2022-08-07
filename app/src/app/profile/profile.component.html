@@ -4,7 +4,6 @@
 <div class="col-md-2"></div>
 <div class="col-md-6 rounded" id="profil">
 <div class="couverture">
-
 <img src={{image}} class="rounded-circle">
 </div>
 <div class="coordonnes">
@@ -25,7 +24,7 @@
 <div class="col-md-6">
   <!--affichage de stories-->
   <div>
-    <div *ngFor="let stry of storyT2"> 
+    <div *ngFor="let stry of storyT2" style="margin-bottom:3vh"> 
         <div style="display:flex;color:#ccc">
           <img src={{stry.image}} class="rounded-circle" style="width:45px;height:50px;margin-right:1vw">
           <p style="color:darkblue;margin-top:18vh"><strong>{{this.stry.name}}</strong> :@<strong>{{stry.compName}} </strong><span style="color:rgb(89, 89, 89)">, {{stry.Sdate}}</span><span style="font-size:20px;margin-left:7vw;color:red"><a (click)="suppSt(stry)">X</a></span></p>
@@ -49,7 +48,7 @@
 <!--affichage de HireList-->
 
 <div  class="container">
-  <div class='row'>
+ <div class='row'>
 <div class="col-md-2"></div>
 <div *ngIf="bool" class="col-md-6 rounded" style="border-radius:10px;background-color:rgb(238, 235, 235);padding:10vh 1vw;">
   <div *ngFor="let hire of HireTable2"  style="background-color:white;margin-bottom:3vh;border-radius:10px;padding-bottom:2vh">
@@ -62,18 +61,18 @@
          <span style="font-size:22px;margin-left:22vw;color:red"><a (click)="supphiring(hire)">X</a></span>
         </p>
       </div>
-      <p style="padding-left:2vw">
+      <p style="padding: 7px 14px ">
         {{hire.contenu}}
       </p>
       <button (click)="getId1(this.hire)"style="background-color:white;border:none;border-radius:30px;color:black;margin-right:2px"type="submit">
         <span id="icon"><i style="color:purple" [class]="hire.icon"></i></span>
         <span id="count" style="color:purple;font-weight:bold;">{{hire.likes}}</span>
       </button>
-
       <button (click)="commentF()"
         style="background-color:rgb(164, 16, 120);color:white;border:none;border-radius:30px;"
         type="submit">comment
       </button>
+      
       <hr>
     </div>
     <div *ngIf="comment">

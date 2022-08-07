@@ -183,7 +183,6 @@ this.cmtSer.ListeComment().subscribe((data:Commentaire[])=>{
   }
 
   getId1(h:Hire){
-    alert(h.icon);
     if(h.icon == "far fa-thumbs-up"){
     this.hService.updatePlus(h).subscribe();
   

@@ -82,6 +82,7 @@ commentF():boolean{
   return this.comment;
 }
 
+
   getRegion(){
     this.intellAffichage=true;
     this.hiringS.ListeToHireFiltred(this.hire).subscribe((data:Hire[])=>{

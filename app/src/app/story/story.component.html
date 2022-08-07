@@ -1,10 +1,10 @@
 <!-- la partie supérieure contenant formulaire -->
 
-<div class="row" style="background-color:purple;margin-top:3vh">
-  <div class="col-md-1"></div>
-  <div class="col-md-6" style ="margin-top:3vh;">
-  <h3 class="center" style ="margin-bottom:3vh;color:white;margin-left:2vw">Share your InternshipStory</h3>   
-  <form method="get" style ="width:60%">
+<div class="row" style="height:45vh;background-color:purple;margin-top:3vh">
+  <div class="col-md-4"></div>
+  <div class="col-md-4" style ="margin-top:3vh;align-items:center;justify-content:center">
+  <h3 class="text-center" style ="margin-bottom:3vh;color:white;margin-left:2vw">Share your InternshipStory</h3>   
+  <form method="get" style ="width:100%;padding:0 1vw">
     <div class="input-group mb-3" style="color:white">
     <div class="input-group-prepend" >
     <span style="color:white;background-color:rgb(75, 12, 126)" class=" form-control">@</span>
@@ -14,12 +14,14 @@
     <i class="fas fa-pencil-alt prefix" style="color:white"></i>
     <textarea  [(ngModel)]="story.contenu" name="contenu" id="form10" style="color:white;background-color:rgb(75, 12, 126)" class="md-textarea form-control" rows="3"></textarea>
     <label  style="color:white" for="form10">Life is better when you share it.</label>
-    <button [disabled]="activeButton()" (click)="ajouter()"  type="submit" class="btn" style="margin-left:34%;color:white;border-radius:10px;background-color:rgb(195, 21, 157);margin-bottom:1vh;margin-top:1vh">share now</button>
+    <div style="height:1vh"></div>
+    <button [disabled]="activeButton()" (click)="ajouter()"  type="submit" class="btn" style="margin-left:40%;color:white;border-radius:10px;background-color:rgb(195, 21, 157);margin-bottom:1vh;margin-top:2vh">share now</button>
   </form>
   </div>
-  <div class="col-md-5 bg" style="background-color:darkblue"></div>
-  <div style="background-color:darkblue;height:2px"></div>
+  <div class="col-md-4"></div>
 </div>
+  <div style="background-color:darkblue;height:2px"></div>
+
  
 <!--la deuxième partie: affichage de stories-->
 <div id="tout" class="container" style="display:flex;padding-top:10vh">

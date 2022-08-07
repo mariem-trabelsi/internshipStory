@@ -26,6 +26,7 @@ import { HrGuard } from './hr.guard';
 
 
 
+
 const appRoutes: Routes =[
   {path:'home',component:HomeComponent},
   {path:'recherche',component:RechercheComponent},
