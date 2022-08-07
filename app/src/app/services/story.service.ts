@@ -27,7 +27,7 @@ export class StoryService {
   return this.http.get<Stories>('http://localhost/internshipStory/php/ajoutStory.php?nom='+str.name+'&&contenu='+str.contenu+'&&image='+str.image+"&&likes="+str.likes+"&&comp="+str.compName+"&&email="+str.email);
   }
 
- 
+
 
 suppStory(str:Stories)
 {

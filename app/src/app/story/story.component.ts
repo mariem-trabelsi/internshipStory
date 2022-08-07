@@ -28,11 +28,13 @@ export class StoryComponent implements OnInit {
       this.storyT = data;
       console.log(this.storyT);
     });
-    
   }
+
  activeButton():Boolean{
   if (this.internService.isloggedIn)
-  {this.disAbled = false;}
+  {
+    this.disAbled = false;
+  }
   return this.disAbled;
  }
 
@@ -61,12 +63,11 @@ export class StoryComponent implements OnInit {
  
 
   getId(str:Stories){
-    
+
     if(str.icon=="far fa-heart"){
     this.storyService.updateStoryPlus(str).subscribe();
     str.icon="fas fa-heart";
-    // str.whoClicks.push(String(localStorage.getItem('loggedUser')));
-    
+    console.log(String(localStorage.getItem('loggedUser')));
      }
      if(str.icon=="fas fa-heart"){
       this.storyService.updateStoryMoins(str).subscribe();

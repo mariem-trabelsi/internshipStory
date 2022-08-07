@@ -26,6 +26,7 @@ export class RechercheComponent implements OnInit {
   ct:string="";
 
   commentf():boolean{
+
     if(this.comment)
     {
       this.comment=false

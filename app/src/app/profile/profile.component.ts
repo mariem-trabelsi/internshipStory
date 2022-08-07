@@ -109,11 +109,14 @@ export class ProfileComponent implements OnInit {
     }
 
     commentF():boolean{
+     
       if(this.comment)
       {
         this.comment=false
+       
       }
-      else{
+      else
+      {
         this.comment=true;
       }
       return this.comment;

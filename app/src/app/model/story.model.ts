@@ -7,6 +7,5 @@ export class Stories {
     "image":string;
     "name":string;
     "email":string;
-    "icon":string;
-    
+    "icon":string;   
 } 
