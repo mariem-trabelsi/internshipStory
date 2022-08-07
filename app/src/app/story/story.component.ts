@@ -4,6 +4,8 @@ import { Stories } from '../model/story.model';
 import { StoryService } from '../services/story.service';
 import { Interns } from '../model/intern.model';
 import { Router} from '@angular/router';
+import { Click } from '../model/click.model';
+import { ClicksService } from '../services/clicks.service';
 
 @Component({
   selector: 'app-story',
@@ -15,7 +17,7 @@ export class StoryComponent implements OnInit {
   story   = new Stories();
   storyT:Stories[]=[];
   InternsTable: Interns[]=[];
-  constructor(private router:Router,public internService:InternsService,public storyService:StoryService) { }
+  constructor(private clSerc:ClicksService,private router:Router,public internService:InternsService,public storyService:StoryService) { }
 
   ngOnInit()
   {
@@ -61,6 +63,14 @@ export class StoryComponent implements OnInit {
     });
   }
  
+
+  
+  ajoutClick(c:Click){
+    c.Id=this.story.Id;
+    c.email=String(localStorage.getItem('loggedUser'));
+    console.log(c)
+  //this.clSerc.addWhoCliks(c).subscribe();
+  }
 
   getId(str:Stories){
 

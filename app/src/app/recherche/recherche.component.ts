@@ -68,6 +68,19 @@ this.cmtSer.ListeComment().subscribe((data:Commentaire[])=>{
   });
 
 }
+commentF():boolean{
+     
+  if(this.comment)
+  {
+    this.comment=false
+   
+  }
+  else
+  {
+    this.comment=true;
+  }
+  return this.comment;
+}
 
   getRegion(){
     this.intellAffichage=true;

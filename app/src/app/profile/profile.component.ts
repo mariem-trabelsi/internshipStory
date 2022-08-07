@@ -8,6 +8,8 @@ import { HiringService } from '../services/hiring.service';
 import { HrService } from '../services/hr.service';
 import { InternsService } from '../services/interns.service';
 import { StoryService } from '../services/story.service';
+import { CmtService } from '../services/cmt.service';
+import { Commentaire } from '../model/comment.model';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -27,12 +29,15 @@ export class ProfileComponent implements OnInit {
   storyT :Stories[]=[];
   storyT2:Stories[]=[];
   HireTable:Hire[] =[];
+  HireTable2:Hire[] =[];
+  cmtre = new Commentaire();
+  cmtsTable :Commentaire[]=[];
   Icon   ="far fa-thumbs-up";
   icon  ="far fa-heart";
   Count  = 2;
   bool   = false;
   comment= false;
-  constructor(public router:Router,public storyService:StoryService,public internService:InternsService,public hrService:HrService,private hService:HiringService) { }
+  constructor(public cmtSer:CmtService ,public router:Router,public storyService:StoryService,public internService:InternsService,public hrService:HrService,private hService:HiringService) { }
 
   ngOnInit(): void {
       this.internService.ListeInterns().
@@ -81,10 +86,15 @@ export class ProfileComponent implements OnInit {
     this.HireTable = data;
       this.HireTable.forEach((current)=>{
       if( this.internService.loggedUser === current.email){
-       this.bool=true;
+        this.HireTable2.push(current);
+        this.bool=true;
       }
     }); 
 });
+this.cmtSer.ListeComment().subscribe((data:Commentaire[])=>{
+  this.cmtsTable = data;
+  console.log(this.cmtsTable);
+  });
 }
 
     addLike(){
@@ -151,6 +161,20 @@ export class ProfileComponent implements OnInit {
      }
      if(str.icon=="fas fa-heart"){
       this.storyService.updateStoryMoins(str).subscribe();
+    }
+    this.router.navigate(['profile']).then(()=>{
+      window.location.reload();  
+    });
+  }
+
+  getId1(h:Hire){
+    alert(h.icon);
+    if(h.icon == "far fa-thumbs-up"){
+    this.hService.updatePlus(h).subscribe();
+  
+     }
+     if(h.icon == "fas fa-thumbs-up"){
+      this.hService.updateMoins(h).subscribe();
     }
     this.router.navigate(['profile']).then(()=>{
       window.location.reload();  

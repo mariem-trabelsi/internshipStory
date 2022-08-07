@@ -5,6 +5,7 @@ import { HttpClient,HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { InternsService } from './interns.service';
 
+
 const httpOptions={
   headers:new HttpHeaders({'content-Type':'application/json'})
 }

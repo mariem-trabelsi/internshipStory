@@ -44,7 +44,7 @@
 <div class="col-md-4"></div>
 </div>
 </div>
-
+</div>
 
 <!--affichage de HireList-->
 
@@ -52,7 +52,7 @@
   <div class='row'>
 <div class="col-md-2"></div>
 <div *ngIf="bool" class="col-md-6 rounded" style="border-radius:10px;background-color:rgb(238, 235, 235);padding:10vh 1vw;">
-  <div *ngFor="let hire of HireTable"  style="background-color:white;margin-bottom:3vh;border-radius:10px;padding-bottom:2vh">
+  <div *ngFor="let hire of HireTable2"  style="background-color:white;margin-bottom:3vh;border-radius:10px;padding-bottom:2vh">
     <div style="background-color:white">
       <div style="display:flex">
         <img class="rounded-circle" src={{hire.image}}
@@ -63,10 +63,15 @@
       <p style="padding-left:2vw">
         {{hire.contenu}}
       </p>
-      <button  style="background-color:white;border:none;border-radius:30px;color:black;margin-right:2px"
-        type="submit"><i style="color:rgb(164, 16, 120)" [class]="Icon" >{{Count}}</i></button>
-      <button (click)="commentF()" style="background-color:rgb(164, 16, 120);color:white;border:none;border-radius:30px;"
-        type="submit">comment</button>
+      <button (click)="getId1(this.hire)"style="background-color:white;border:none;border-radius:30px;color:black;margin-right:2px"type="submit">
+        <span id="icon"><i style="color:purple" [class]="hire.icon"></i></span>
+        <span id="count" style="color:purple;font-weight:bold;">{{hire.likes}}</span>
+      </button>
+
+      <button (click)="commentF()"
+        style="background-color:rgb(164, 16, 120);color:white;border:none;border-radius:30px;"
+        type="submit">comment
+      </button>
       <hr>
     </div>
     <div *ngIf="comment">
@@ -86,14 +91,16 @@
     </button>
   </div>
     <!--show comments-->
-    <div style="display:flex;margin-top:1vh;margin-left:1vw">
-      <img src="./assets/l8.png" style="margin-right:1px;width:3%;height:5vh;mix-blend-mode:multiply"
-        class="rounded-circle">
-      <p style="padding:8px 14px;background-color:rgb(238, 235, 235);width:92%" class="rounded">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus dignissimos ipsa asperiores accusamus
-        libero saepe tenetur, amet deleniti odit veritatis sunt molestiae doloremque porro ea? Beatae sed veniam
-        saepe incidunt?
-      </p>
+    <div *ngFor="let cmt of cmtsTable">
+      <div *ngIf="cmt.Id2 == hire.Id">
+        <div style="display:flex;margin-top:1vh;margin-left:1vw">
+          <img src={{cmt.image}} style="margin-right:1px;width:3%;height:5vh;mix-blend-mode:multiply"
+            class="rounded-circle">
+          <p style="padding:8px 14px;background-color:rgb(238, 235, 235);width:92%" class="rounded">
+            {{cmt.contenu}}
+          </p>
+        </div>
+      </div>
     </div>
   </div>  
 </div>
