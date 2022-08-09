@@ -6,7 +6,7 @@
   <h3 class="text-center" style ="margin-bottom:3vh;color:white;margin-left:2vw">Share your InternshipStory</h3>   
   <form method="get" style ="width:100%;padding:0 1vw;padding-top:6vh">
     <div class="input-group mb-3" style="color:white">
-    <div class="input-group-prepend" >
+    <div class="input-group-prepend" style="color:white">
     <span style="color:white;background:transparent" class=" form-control">@</span>
     </div>
     <input [(ngModel)]="story.compName"  name="compName" style="background:transparent;color:white" type="text" class="form-control" placeholder="name of the compagny">
@@ -35,10 +35,11 @@
       <div readonly>
         <p style="background-color:white;padding:10px 14px;border-radius:7px">{{stry.contenu}}.</p>
       </div> 
-      <button  (click)="getId(this.stry)" style="background-color:rgb(241, 200, 232);border-radius:30px;color:black;margin-left:2px;border:none;" type="submit">
+      <button  (click)="getId(this.stry)" style="background-color:rgb(241, 200, 232);border-radius:30px;color:black;margin-left:2px;border:none;margin-bottom:1vh" type="submit">
         <span id="icon"><i style="color:purple" [class]="stry.icon" ></i></span>
         <span id="count" style="color:purple;font-weight:bold;">{{stry.likes}}</span>
-      </button>    
+      </button> 
+      <div style="height:3px;background:#121718;border-radius:30px"></div>   
     </div>
     </div>    
     <!-- [ngClass]="{bgButn:}" -->
