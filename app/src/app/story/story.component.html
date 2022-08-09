@@ -25,7 +25,7 @@
 <!--la deuxième partie: affichage de stories-->
 <div id="tout" class="container" style="display:flex;padding-top:10vh">
   <div class="row">
-  <div class="col-md-2" ></div>
+  <div class="col-md-3" ></div>
   <div class="col-md-6"  >
   <div class="story" *ngFor="let stry of storyT"> 
       <div style="display:flex;color:#ccc">
@@ -39,11 +39,11 @@
         <span id="icon"><i style="color:purple" [class]="stry.icon" ></i></span>
         <span id="count" style="color:purple;font-weight:bold;">{{stry.likes}}</span>
       </button> 
-      <div style="height:3px;background:#121718;border-radius:30px"></div>   
+      <div style="height:1px;background:#121718;border-radius:30px"></div>   
     </div>
     </div>    
     <!-- [ngClass]="{bgButn:}" -->
-  <div class="col-md-4"></div>   
+  <div class="col-md-3"></div>   
 </div>
 </div>
 

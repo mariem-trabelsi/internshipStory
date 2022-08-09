@@ -8,7 +8,7 @@ h2{
     box-sizing: border-box;
   }
   
-  input[type=text], select, textarea {
+  input[type=text],select, textarea {
     width: 100%;
     padding: 2px;
     border: 1px solid #ccc;
@@ -20,28 +20,46 @@ h2{
     padding: 12px 0 12px 0;
     display: inline-block;
     font-size: larger;
-    text-transform:uppercase;
     color:black; 
     text-decoration-style:double
   }
  
-  
+  .bttn{
+    display: flex;
+    float:right;
+    margin-bottom: 5vh;
+  }
   input {
     background-color:rgb(164, 16, 120);
-    color: white;
-    padding: 12px 20px;
+    color: transparent;
+    padding: 6px 10px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    float: right;
+    width:30%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  button{
+      background-color:rgb(164, 16, 120);
+      color: white;
+      padding: 6px 5px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: center;
+      justify-content: center;
   }
   
   
   
   .container {
     border-radius: 5px;
-    background-color: #f2f2f2;
     padding: 20px;
+    padding:0 5vw;
+    margin-top: 2vh;
+   
   }
   
   .col-25 {
@@ -70,10 +88,9 @@ h2{
       margin-top: 0;
     }
   }
-  .hiring{
-    text-align: center;
-    font-weight:bolder;
-    font-size: 100px;
-    color:rgb(164, 16, 120);
-    text-shadow:  10px 7px pink,-2px 15px black;
+  .bg{
+    background-image: url('https://media-exp1.licdn.com/dms/image/C4E1BAQGCIjFgb9sUig/company-background_10000/0/1549490410483?e=2147483647&v=beta&t=kR5g3C-rHHoIjmASvGAJFkXtmBsPxypd-KKNI72FXO4');
+    background-repeat: no-repeat;
+    background-position:right;
+    background-size: cover;
   }

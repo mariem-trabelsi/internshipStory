@@ -2,7 +2,9 @@
     background-color: #fff; 
     
 }
-
+input [placeholder]{
+    color:#fff;
+}
 .story{
     margin-bottom:3vh;
 }
