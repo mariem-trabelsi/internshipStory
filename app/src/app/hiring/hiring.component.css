@@ -29,7 +29,12 @@ h2{
     float:right;
     margin-bottom: 5vh;
   }
-  input {
+  .bttn1{
+    padding:7px 14px;
+    cursor: pointer;
+  }
+
+  /* input {
     background-color:rgb(164, 16, 120);
     color: transparent;
     padding: 6px 10px;
@@ -39,7 +44,7 @@ h2{
     width:30%;
     text-align: center;
     justify-content: center;
-  }
+  } */
 
   button{
       background-color:rgb(164, 16, 120);
@@ -56,9 +61,8 @@ h2{
   
   .container {
     border-radius: 5px;
-    padding: 20px;
     padding:0 5vw;
-    margin-top: 2vh;
+    margin: 5vh;
    
   }
   
@@ -89,8 +93,10 @@ h2{
     }
   }
   .bg{
-    background-image: url('https://media-exp1.licdn.com/dms/image/C4E1BAQGCIjFgb9sUig/company-background_10000/0/1549490410483?e=2147483647&v=beta&t=kR5g3C-rHHoIjmASvGAJFkXtmBsPxypd-KKNI72FXO4');
+    background-image: url('https://img.freepik.com/vecteurs-libre/processus-entretien-embauche-embaucher-nouveaux-employes-personnage-dessin-anime-specialiste-ressources-humaines-parlant-nouveau-candidat-recrutement-emploi-chasse-tetes_335657-281.jpg?w=2000');
     background-repeat: no-repeat;
     background-position:right;
-    background-size: cover;
+    background-size: contain;
+    margin-bottom: 2vh;
+    
   }

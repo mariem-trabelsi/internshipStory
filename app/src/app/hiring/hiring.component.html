@@ -4,46 +4,59 @@
 </head>
 <body>
 <div class="container">
-  <div class="container">
+  
   <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6" style=" background:#f2f2f2;border-radius:10px">
+    <div class="col-md-6" style="border-radius:10px">
   <form method="get" >
    <div class="row">
     <div class="col-25">
       <label class="label" for="compName">Compagny</label>
     </div>
     <div class="col-75">
-      <textarea [(ngModel)]="hire.compName" id="compName" name="compName" placeholder="compagny name" ></textarea>
+      <input [(ngModel)]="hire.compName" id="compName" name="compName" placeholder="compagny name" class="form-control" >
     </div> 
     </div>
-  <div class="row">
+    <div class="row">
+      <div class="col-25">
+        <label for="local">Region</label>
+      </div>
+      <div class="col-75">
+        <select [(ngModel)]="hire.local" id="local" name="local"  value="Ariana">
+          <option value="Ariana">Ariana</option>
+          <option value="Nabeul">Nabeul</option>
+          <option value="Tozeur">Tozeur</option>
+          <option value="Siliena">Siliena</option>
+          <option value="Tunis">Tunis</option>
+        </select>
+      </div>
+    </div>
+  <!-- <div class="row">
     <div class="col-25">
       <label class="label" for="local">Region</label>
     </div>
     <div class="col-75">
-      <textarea [(ngModel)]="hire.local" id="local" name="local" placeholder="Your region"></textarea>
+      <input [(ngModel)]="hire.local" id="local" name="local" placeholder="Your region"  class="form-control">
     </div>
-  </div>
+  </div> -->
   <div class="row">
     <div class="col-25">
       <label class="label" for="contenu">Subject</label>
     </div>
     <div class="col-75">
-      <textarea  [(ngModel)]="hire.contenu" id="contenu" name="contenu" placeholder="Specify more informations about this opportunity" style="height:200px"></textarea>
+      <textarea  class="form-control" [(ngModel)]="hire.contenu" id="contenu" name="contenu" placeholder="Specify more informations about this opportunity" style="height:200px"></textarea>
     </div>
   </div>
   <br>
   <div class="bttn">
-    <button (click)="hiring()" type="submit" value="SUBMIT">Submit</button>
-    <button type="reset" style="margin-left:1vw">Cancel</button>
+    <button class="bttn1" (click)="hiring()" type="submit" value="SUBMIT">Submit</button>
+    <button class="bttn1" type="reset" style="margin-left:1vw">Cancel</button>
   </div>
   </form>
 </div>
-<div class="col-md-3"></div>
+<div class="col-md-6 bg"></div>
 </div>
 </div>
-</div>
+
 </body>
 </html>
 
