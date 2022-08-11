@@ -4,7 +4,7 @@
 <div class="col-md-2"></div>
 <div class="col-md-6 rounded" id="profil">
 <div class="couverture">
-<img src={{image}} class="rounded-circle">
+<img id="imge" src={{image}} class="rounded-circle">
 </div>
 <div class="coordonnes">
 <h2>{{prenom}} {{nom}}</h2>
@@ -50,8 +50,8 @@
 <div  class="container">
  <div class='row'>
 <div class="col-md-2"></div>
-<div *ngIf="bool" class="col-md-6 rounded" style="border-radius:10px;background-color:rgb(238, 235, 235);padding:10vh 1vw;">
-  <div *ngFor="let hire of HireTable2"  style="background-color:white;margin-bottom:3vh;border-radius:10px;padding-bottom:2vh">
+<div *ngIf="bool" class="col-md-6 rounded" style="border-radius:10px;background-color:rgb(238, 235, 235);">
+  <div *ngFor="let hire of HireTable2"  style="background-color:white;margin-bottom:3vh;border-radius:10px;">
     <div style="background-color:white">
       <div style="display:flex">
         <img class="rounded-circle" src={{hire.image}}

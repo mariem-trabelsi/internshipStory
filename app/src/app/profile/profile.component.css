@@ -1,4 +1,4 @@
-img{
+#imge{
     height:120px;
     width: 150px;;
     margin-top:15vh;
@@ -45,7 +45,6 @@ img{
     box-shadow: 0 0 0 0.2rem rgb(164, 16, 120);
 }
 .mere{
-  
     padding-top:2vh;
     display: flex;
 }
