@@ -16,3 +16,6 @@ input [placeholder]{
     background-position: center;
    
 }
+input:hover{
+    background: #fff;
+}
