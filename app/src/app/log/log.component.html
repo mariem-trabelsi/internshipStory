@@ -26,24 +26,24 @@
       class="container">
       <div class="mb-3">
         <label for="email" style="color:white" class="form-label">Email address</label>
-        <input style="color:white;background-color:transparent" type="email" class="form-control" id="email" name="username"
+        <input style="border-color:black;color:black;background-color:#fff" type="email" class="form-control" id="email" name="username"
           [(ngModel)]="intrn.email" [(ngModel)]="hr.email">
-        <div id="emailHelp" class="form-text" style="color:white">We'll never share your email with anyone else.</div>
+        <div id="emailHelp" class="form-text" style="color:black">We'll never share your email with anyone else.</div>
       </div>
       <div class="mb-3">
         <label for="epass" style="color:white" class="form-label">Password</label>
-        <input style="color:white;background-color:transparent" type="password" class="form-control" id="epass" name="password"
+        <input style="border-color:black;color:black;background-color:#fff" type="password" class="form-control" id="epass" name="password"
           [(ngModel)]="intrn.password" [(ngModel)]="hr.password">
       </div>
       <div style="display:flex;margin-bottom:4vh">
         <button type="submit" class="btn"
-          style="background-color:transparent;border-radius:20px;border-color:white;color:white;margin-right:1vw"
+          style="background-color:#fff;border-radius:20px;border-color:black;color:black;margin-right:1vw"
           (click)="onLoggedin()" (click)="onLoggedinHr()">validate</button>
         <button type="reset" class="btn"
-          style="background-color:transparent;border-radius:20px;border-color:white;color:white;padding:0% 1vw">cancel</button>
+          style="background-color:#fff;border-radius:20px;border-color:black;color:black;padding:0% 1vw">cancel</button>
       </div>
       <div style="height:1vh"></div>
-      <a class="center" style="padding-top:3vh;color:white;" routerLink="/signin">you don't have an account?</a>
+      <a class="center" style="padding-top:3vh;color:black;" routerLink="/signin">you don't have an account?</a>
     </form>
     <div style="height:15vh"></div>
   </div>

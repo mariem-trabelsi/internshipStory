@@ -7,10 +7,11 @@
   margin-top:2vh
  
 }
+
 .bg{
-  background-image: url('https://dev.infiniticreation.co.uk/wp-content/uploads/2018/06/background-kupi-contact-form.png');
+  background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20210902/pngtree-real-shot-using-keyboard-typing-business-office-image_786511.jpg');
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
