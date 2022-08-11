@@ -3,13 +3,22 @@ a  {
     font-size: larger;
 }
 
-.bg{
+/* .bg{
     background-image: url('https://thumbs.dreamstime.com/b/ic%C3%B4ne-lin%C3%A9aire-d-administration-logo-moderne-c-ensemble-133515291.jpg');
     background-repeat: no-repeat;
-    background-position:center;
+    background-position:left;
     background-size: contain;
     height:40vh;
-    justify-content: center;
+   
+} */
+
+.bgpr{
+    background-image: url('https://static.vecteezy.com/system/resources/previews/001/874/132/original/abstract-geometric-white-background-free-vector.jpg');
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+   
+   
 }
 
 #nav-home-tab{
@@ -17,5 +26,5 @@ a  {
 }
 
 a {
-    color:rgb(217, 10, 48);
+    color:blueviolet
 }
