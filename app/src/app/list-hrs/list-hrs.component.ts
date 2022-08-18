@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ListHrsComponent implements OnInit {
   HrsTable: HRs[] | undefined;
+  bool=true;
   
   constructor(public router:Router,private hrService:HrService) { }
   ngOnInit()
@@ -30,5 +31,11 @@ export class ListHrsComponent implements OnInit {
    });
   }
   }
+
+  edit(hr:HRs){
+   alert(hr.Id);
+  }
+
+  
 }
 
