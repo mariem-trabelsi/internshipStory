@@ -26,22 +26,23 @@
 <div class="col-md-2"></div>
 <div class="col-md-6">
   <!--affichage de stories-->
-  <div>
-    <div *ngFor="let stry of storyT2" style="margin-bottom:3vh"> 
-      <span style="font-size:20px;color:red;float:right"><a (click)="suppSt(stry)">X</a></span>
-        <div style="display:flex;color:#fff">
-          <img src={{stry.image}} class="rounded-circle" style="width:45px;height:50px;margin-right:1vw">
-          <p style="color:darkblue;margin-top:18vh"><strong>{{this.stry.name}}</strong> :@<strong>{{stry.compName}} </strong><span style="color:rgb(89, 89, 89)">, {{stry.Sdate}}</span></p>
-        </div>
-        <div readonly>
-          <p style="background-color:rgb(248, 245, 246);padding:10px 14px;border-radius:7px">{{stry.contenu}}.</p>
-        </div> 
+ 
+    <div *ngFor="let stry of storyT2" style="margin-bottom:2vh"> 
+        <span style="font-size:20px;color:red;float:right;margin-right:2vw;margin-top:1vh"><a (click)="suppSt(stry)">X</a></span>
+        <div *ngFor="let stry of storyT2" style="margin-bottom:2vh"> 
+          <div style="display:flex;color:#ccc">
+            <img src={{stry.image}} class="rounded-circle" style="width:50px;height:60px;margin-right:1vw">
+            <p style="color:darkblue;margin-top:2vh"><strong>{{this.stry.name}}</strong> :@<strong>{{stry.compName}} </strong><span style="color:rgb(89, 89, 89)">, {{stry.Sdate}}</span></p>
+          </div>
+          <div readonly>
+            <p style="background-color:white;padding:10px 14px;border-radius:7px">{{stry.contenu}}.</p>
+          </div>
         <button (click)="getId(stry)" style="background-color:rgb(241, 200, 232);border-radius:30px;color:black;margin-left:2px;border:none;" type="submit">
           <span id="icon"><i style="color:purple" [class]="stry.icon" ></i></span>
           <span id="count" (click)="addLike()"  style="color:purple;font-weight:bold;">{{stry.likes}}</span>
         </button>    
       </div>
-    </div>    
+    
 </div>
 <div class="col-md-4"></div>
 </div>
