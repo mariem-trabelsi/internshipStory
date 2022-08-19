@@ -11,18 +11,16 @@
     crossorigin="anonymous"></script>
 </head>
 <body class="bg">
-  <div style="height:10vh"></div>
-  <h2 class="tracking-out-contract"
-    style="font-weight:bold;text-align:center;color:#fff;margin-top:4vh">
+  <div class="alert alert-danger" *ngIf="erreur==1" style="margin:0 25vh;padding:5px 14px">
+    <p style="text-align:center"><strong> Oouups !wrong login/password .. </strong></p>
+  </div>
+  <div style="height:6vh"></div>
+  <h2 class="tracking-out-contract">
     Log In
   </h2>
-  <div
-    style ="margin-bottom:8vh;margin:0% 25vw;">
-    <div class="alert alert-danger" *ngIf="erreur==1">
-      <strong> Oouups !wrong login/password .. </strong>
-    </div>
-    <form
-      style="height:100%;box-shadow: 1px 1px 1px 2px black;width:fit-content;background-color:transparent;padding-bottom:5vh;padding-top:5vh;"
+  <div style ="margin-bottom:8vh;margin:0% 25vw;">
+    
+    <form style="height:100%;box-shadow: 1px 1px 1px 2px black;width:fit-content;background-color:transparent;padding-bottom:5vh;padding-top:5vh;border-radius:5px"
       class="container">
       <div class="mb-3">
         <label for="email" style="color:white" class="form-label">Email address</label>

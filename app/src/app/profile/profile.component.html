@@ -3,8 +3,11 @@
 <div class="row">
 <div class="col-md-2"></div>
 <div class="col-md-6 rounded" id="profil">
+<span style=" padding:5px 10px;justify-content: center;align-items: center;background:rgb(202, 202, 202);width:35px;height:35px;border-radius:50%;float:right;color:#fff;font-weight:bold;margin-right:1vw;margin-top: 1vw"><i class="fas fa-pen"></i></span>
 <div class="couverture">
+
 <img id="imge" src={{image}} class="rounded-circle">
+
 </div>
 <div class="coordonnes">
 <h2>{{prenom}} {{nom}}</h2>
@@ -25,10 +28,10 @@
   <!--affichage de stories-->
   <div>
     <div *ngFor="let stry of storyT2" style="margin-bottom:3vh"> 
-        <div style="display:flex;color:#ccc">
+      <span style="font-size:20px;color:red;float:right"><a (click)="suppSt(stry)">X</a></span>
+        <div style="display:flex;color:#fff">
           <img src={{stry.image}} class="rounded-circle" style="width:45px;height:50px;margin-right:1vw">
-          <p style="color:darkblue;margin-top:18vh"><strong>{{this.stry.name}}</strong> :@<strong>{{stry.compName}} </strong><span style="color:rgb(89, 89, 89)">, {{stry.Sdate}}</span><span style="font-size:20px;margin-left:7vw;color:red"><a (click)="suppSt(stry)">X</a></span></p>
-          
+          <p style="color:darkblue;margin-top:18vh"><strong>{{this.stry.name}}</strong> :@<strong>{{stry.compName}} </strong><span style="color:rgb(89, 89, 89)">, {{stry.Sdate}}</span></p>
         </div>
         <div readonly>
           <p style="background-color:rgb(248, 245, 246);padding:10px 14px;border-radius:7px">{{stry.contenu}}.</p>
@@ -53,12 +56,13 @@
 <div *ngIf="bool" class="col-md-6 rounded" style="border-radius:10px;background-color:rgb(238, 235, 235);">
   <div *ngFor="let hire of HireTable2"  style="background-color:white;margin-bottom:3vh;border-radius:10px;">
     <div style="background-color:white">
+      <span style="float:right" class="bttn" style="font-size:22px;margin-right:1vw;color:red;float:right"><a (click)="supphiring(hire)">X</a></span>
       <div style="display:flex">
         <img class="rounded-circle" src={{hire.image}}
           style="margin-right:1vw;width:4%;height:5vh;mix-blend-mode:multiply;margin-top:1vh">
         <h5 style="margin-top:13px;margin-right:1vw">{{hire.compName}}</h5>
         <p style="margin-top:8px;color:#ccc">{{hire.dateH}}
-         <span class="bttn" style="font-size:22px;margin-left:10vw;color:red"><a (click)="supphiring(hire)">X</a></span>
+      
         </p>
       </div>
       <p style="padding: 7px 14px ">
@@ -84,9 +88,7 @@
           placeholder=" add a comment" type="text">
       </div>
     </div>
-    <button
-      style="margin-left:2vw;background-color:rgb(164, 16, 120);border:none;border-radius:30px;color:white;margin-top:5px;"
-      type="submit">
+    <button style="font-weight:1px;margin-left:2vw;background-color:rgb(164, 16, 120);border:none;border-radius:30px;color:white;margin-top:5px;" type="submit">
       publish
     </button>
   </div>
