@@ -15,7 +15,7 @@
     <textarea  [(ngModel)]="story.contenu" name="contenu" id="form10" style="color:white;background:transparent" class="md-textarea form-control" rows="3"></textarea>
     <label  style="color:black" for="form10">Life is better when you share it.</label>
     <div style="height:1vh"></div>
-    <button [disabled]="activeButton()" (click)="ajouter()"  type="submit" class="btn" style="margin-left:40%;color:black;border-color:black;border-radius:10px;background:#fff;margin-bottom:1vh;margin-top:2vh;box-shadow:0 0 0 1px black">share now</button>
+    <button [disabled]="activeButton()" (click)="ajouter()"  type="submit" class="btn" style="box-shadow: 0px 5px 5px rgba(0,0,0,0.2);margin-left:40%;color:black;border-color:black;border-radius:10px;background:#fff;margin-bottom:1vh;margin-top:2vh;">share now</button>
   </form>
   </div>
   <div class="col-md-4"></div>
@@ -27,9 +27,9 @@
   <div class="row">
   <div class="col-md-3" ></div>
   <div class="col-md-6"  >
-  <div class="story" *ngFor="let stry of storyT"> 
-      <div style="display:flex;color:#ccc">
-        <img src={{stry.image}} class="rounded-circle" style="width:50px;height:60px;margin-right:1vw">
+  <div class="story" *ngFor="let stry of storyT">  
+      <div style="display:flex;color:#ccc;box-shadow:0 5px 5px rgba(0,0,0,0.2)">
+        <img src={{stry.image}} class="rounded-circle" style="width:45px;height:55px;margin-right:1vw">
         <p style="color:darkblue;margin-top:2vh"><strong>{{this.stry.name}}</strong> :@<strong>{{stry.compName}} </strong><span style="color:rgb(89, 89, 89)">, {{stry.Sdate}}</span></p>
       </div>
       <div readonly>

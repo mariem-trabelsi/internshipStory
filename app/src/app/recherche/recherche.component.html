@@ -16,10 +16,10 @@
   <div
     style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM4x8-mFNToyqNIf0p9uO1NRCwwSFt04hmBaIOQ83dYxD_-lvehsqIQDZHOLwElpQDjj8&usqp=CAU');mix-blend-mode: multiply;background-position:right;background-size:cotain;background-repeat: no-repeat;height:26vh;border:solid 1px;border-top-right-radius: 100px 100px;border-bottom-right-radius: 100px 100px;margin-right:7vw;background-color:rgb(164, 16, 120)">
     <form class="d-flex center" style="width:80%;padding-left:5vh;padding-bottom:5vh;padding-top:8vh;">
-      <input [(ngModel)]="hire.local" name="local" class="form-control me-2 green-border" type="search"
+      <input [(ngModel)]="hire.local" name="local" class="form-control me-2 green-border" style="box-shadow:0 5px 5px rgba(0,0,0,0.2)" type="search "
         placeholder="search location (example: Ariana)..." aria-label="Search" style="background-color:white;">
       <button class="btn" type="submit" (click)="getRegion()"
-        style="color:white;background-color:rgb(164, 16, 120);border-style: solid;border-color:white;border-radius: 40px">Search</button>
+        style="box-shadow:0 5px 5px rgba(0,0,0,0.2);color:white;background-color:rgb(164, 16, 120);border-style: solid;border-color:white;border-radius: 40px">Search</button>
     </form>
   </div>
   <div style="scrollbar-gutter: stable both-edges;margin-left:1vw"
@@ -68,7 +68,7 @@
 
 
               <button (click)="commentf()"
-                style="background-color:rgb(164, 16, 120);color:white;border:none;border-radius:30px;"
+                style="box-shadow:0 5px 5px rgba(0,0,0,0.2);background-color:rgb(164, 16, 120);color:white;border:none;border-radius:30px;"
                 type="submit">comment</button>
               <hr>
             </div>
@@ -84,7 +84,7 @@
                 </div>
               </div>
               <button
-                style="margin-left:2vw;background-color:rgb(164, 16, 120);border:none;border-radius:30px;color:white;margin-top:5px;"(click)="ajoutComment(hire)"
+                style="box-shadow:0 5px 5px rgba(0,0,0,0.2);margin-left:2vw;background-color:rgb(164, 16, 120);border:none;border-radius:30px;color:white;margin-top:5px;"(click)="ajoutComment(hire)"
                 type="submit">publish</button>
             </div>
             <!--show comments-->

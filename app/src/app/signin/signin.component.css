@@ -3,5 +3,9 @@
     box-shadow: 0 0 0 0.2rem rgba(148, 7, 170, 0.25);
 }
 
-
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}

@@ -4,7 +4,7 @@
      <img src="./assets/rocket.png" style="mix-blend-mode:color-burn;height:12vh;margin-left:6vw">
      <h3 style="text-align:center;color:white">Welcome</h3>
      <p style="text-align:center;color:white">It's a platform dedicated to support internships seekers and make their professional experiences more interesting by sharing it with us.</p>
-     <button type="submit" style="width:7em;margin-bottom:1px;margin-left:5vw;background-color:white;border-radius:30px;border:none" routerLink="/signinHr">Sign in as HR</button>
+     <button type="submit" style="margin-top:6px;padding:7px;width:7em;margin-bottom:1px;margin-left:5vw;background-color:white;border-radius:30px;border:none;box-shadow: 0px 5px 5px rgba(0,0,0,0.2)" routerLink="/signinHr">Sign in as HR</button>
   </div>
   <div class="col-md-9">
     <div style="height:1vh"></div>
@@ -23,9 +23,11 @@
               <input [(ngModel)]="intrn.email" style="background-color:transparent;margin-right:1vw" type="email" class="form-control rounded" id="mail" name="mail" formControlName="mail" placeholder="email adress">
               <input [(ngModel)]="intrn.password" style="background-color:transparent" type="password" class="form-control rounded" id="pass" name="pass" formControlName="pass" placeholder="password">
               </div>
-          <button routerLink="/home" (click)="onSignIn()"  type="submit" class="btn" style="background-color:rgb(155, 7, 165);color:white;border-radius:30px;margin-left:66%;width:7em;margin-right:1vw">Register</button>
+          <button routerLink="/home" (click)="onSignIn()"  type="submit" class="btn" style="background-color:rgb(155, 7, 165);color:white;border-radius:30px;margin-left:66%;width:7em;margin-right:1vw;box-shadow: 0px 5px 5px rgba(0,0,0,0.2)">Register</button>
       </form>
       </div>
     </div>
 </div>
+
+
 <div style="height:15vh"></div>

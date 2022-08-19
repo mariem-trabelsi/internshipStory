@@ -141,7 +141,7 @@ this.cmtSer.ListeComment().subscribe((data:Commentaire[])=>{
     // } 
 
     suppSt(st:Stories){
-      if (confirm("Are you sure ? "))
+      if (confirm("Are you sure to delete this item? "))
   { 
     this.storyService.suppStory(st).subscribe((data) =>{
     this.storyT2 = this.storyT2.filter(u => u !== st);
@@ -154,7 +154,7 @@ this.cmtSer.ListeComment().subscribe((data:Commentaire[])=>{
 
   supphiring(h:Hire){
     
-    if (confirm("Are you sure ? "))
+    if (confirm("Are you sure to delete this item ? "))
 { 
   this.hService.suppHiring(h).subscribe((data) =>{
   this.HireTable2 = this.HireTable2.filter(u => u !== h);
