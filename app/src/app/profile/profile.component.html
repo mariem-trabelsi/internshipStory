@@ -3,7 +3,7 @@
 <div class="row">
 <div class="col-md-2"></div>
 <div class="col-md-6 rounded" id="profil">
-<span style=" padding:5px 10px;justify-content: center;align-items: center;background:rgb(202, 202, 202);width:35px;height:35px;border-radius:50%;float:right;color:#fff;font-weight:bold;margin-right:1vw;margin-top: 1vw"><i class="fas fa-pen"></i></span>
+<span style=" padding:5px 10px;justify-content: center;align-items: center;background:#000;width:35px;height:35px;border-radius:50%;float:right;color:#fff;font-weight:bold;margin-right:1vw;margin-top: 1vw"><i class="fas fa-pen"></i></span>
 <div class="couverture">
 
 <img id="imge" src={{image}} class="rounded-circle">
@@ -25,6 +25,23 @@
 <div class="row">
 <div class="col-md-2"></div>
 <div class="col-md-6">
+
+  <div class="form-popup" id="popup-Form">
+    <form action="" class="form-container">
+      <h2>Veuillez vous connecter</h2>
+      <label for="email">
+        <strong>E-mail</strong>
+      </label>
+      <input type="text" placeholder="Votre Email" name="email" required />
+      <label for="psw">
+        <strong>Mot de passe</strong>
+      </label>
+      <input type="password" placeholder="Votre mot de passe" name="psw" required />
+      <button type="submit" class="btn">Se connecter</button>
+      <button type="submit" class="btn cancel" onclick="closeForm()">Annuler</button>
+    </form>
+  </div>
+
   <!--affichage de stories-->
  
     <div *ngFor="let stry of storyT2" style="margin-bottom:2vh"> 
