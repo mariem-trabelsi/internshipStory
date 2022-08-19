@@ -13,10 +13,10 @@ body{
 
 }
 h2{
-  font-weight:3px;
+  font-weight:lighter;
   text-align:center;
   color:#fff;
-  margin-top:4vh
+  margin-top:4vh;
 }
 .bg{
   background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20210902/pngtree-real-shot-using-keyboard-typing-business-office-image_786511.jpg');
