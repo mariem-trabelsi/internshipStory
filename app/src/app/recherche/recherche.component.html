@@ -93,7 +93,7 @@
                 <div style="display:flex;margin-top:1vh;margin-left:1vw">
                   <img src={{cmt.image}} style="margin-right:1px;width:3%;height:5vh;mix-blend-mode:multiply"
                     class="rounded-circle">
-                  <p style="padding:8px 14px;background-color:rgb(238, 235, 235);width:92%" class="rounded">
+                  <p style="padding:8px 14px;background-color:rgb(238, 235, 235);width:90%" class="rounded">
                     {{cmt.contenu}}
                   </p>
                 </div>
@@ -131,7 +131,7 @@
               </button>
 
               <button (click)="commentf()"
-                style="background-color:rgb(164, 16, 120);color:white;border:none;border-radius:30px;"
+                style="box-shadow:0 5px 5px rgba(0, 0, 0, 0.2);background-color:rgb(164, 16, 120);color:white;border:none;border-radius:30px;"
                 type="submit">comment
               </button>
               <hr>
@@ -143,14 +143,14 @@
                 <div class="md-form" style="width:100%">
                   <form method="get">
                     <input name="contenu" [(ngModel)]="this.ct" id="form10"
-                      style="border-radius:40px;background-color:white;border-color:#ccc"
+                      style="border-radius:40px;background-color:white;border-color:#ccc;"
                       class="md-textarea form-control green-border amber-textarea active-amber-textarea" rows="3"
                       placeholder="add a comment" type="text">
                   </form>
                 </div>
               </div>
               <button
-                style="margin-left:2vw;background-color:rgb(164, 16, 120);border:none;border-radius:30px;color:white;margin-top:5px;"
+                style="box-shadow:0 5px 5px rgba(0, 0, 0, 0.2);margin-left:2vw;background-color:rgb(164, 16, 120);border:none;border-radius:30px;color:white;margin-top:5px;"
                 type="submit" (click)="ajoutComment(hire)">publish</button>
             </div>
             <!--show comments-->
@@ -159,7 +159,7 @@
                 <div style="display:flex;margin-top:1vh;margin-left:1vw">
                   <img src={{cmt.image}} style="margin-right:1px;width:3%;height:5vh;mix-blend-mode:multiply"
                     class="rounded-circle">
-                  <p style="padding:8px 14px;background-color:rgb(238, 235, 235);width:92%" class="rounded">
+                  <p style="padding:8px 14px;background-color:rgb(238, 235, 235);width:90%" class="rounded">
                     {{cmt.contenu}}
                   </p>
                 </div>
