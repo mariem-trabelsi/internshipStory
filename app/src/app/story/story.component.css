@@ -1,22 +1,27 @@
 #tout{
-    background-color: #fff; 
-    
+    background-color: #fff;
 }
-input [placeholder]{
-    color:#fff;
+ 
+.form-control:focus {
+border: 1px solid #490455;
+box-shadow: none
 }
+
+input[placeholder]{
+    color:#000;
+}
+
 .story{
     margin-bottom:3vh;
 }
-
 .bg{
     background-image: url('https://static.vecteezy.com/system/resources/thumbnails/008/171/873/small_2x/abstract-boxes-background-modern-technology-with-square-mesh-geometric-on-white-background-with-lines-cube-cell-illustration-free-vector.jpg');
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
-  
-   
+    background-position: center;  
 }
-input:hover{
-    background: #fff;
+.center{
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }

@@ -17,13 +17,13 @@
     <ul class="nav  justify-content-center" style="margin:auto;width:100%">
       <li class="nav-item">
         <a class="nav-link active" aria-current="page" routerLink="/home"
-          style="font-weight: bold;color:blueviolet">home</a>
+          style="font-weight: bold;color:blueviolet">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/story">stories</a>
+        <a class="nav-link" routerLink="/story">Stories</a>
       </li>
       <li class="nav-item" *ngIf="internService.isIntern()||internService.isAdmin()">
-        <a class="nav-link" routerLink="/recherche">search</a>
+        <a class="nav-link" routerLink="/recherche">Search</a>
       </li>
       <li class="nav-item" *ngIf="internService.isHr()||internService.isAdmin()">
         <a class="nav-link" routerLink="/hiring">Hiring</a>

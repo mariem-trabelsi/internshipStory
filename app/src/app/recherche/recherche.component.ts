@@ -104,7 +104,6 @@ commentF():boolean{
   }
 
   getId(h:Hire){
-    alert(h.icon);
     if(h.icon == "far fa-thumbs-up"){
     this.hiringS.updatePlus(h).subscribe();
   

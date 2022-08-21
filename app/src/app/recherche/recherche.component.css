@@ -7,9 +7,7 @@
     background-repeat:no-repeat;
 }
 
-.green-border {
-    border: 1px solid rgb(164, 16, 120);
-}
+
 
 .green-border:focus {
     border: 1px solid rgb(164, 16, 120);

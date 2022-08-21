@@ -4,8 +4,8 @@ import { Stories } from '../model/story.model';
 import { StoryService } from '../services/story.service';
 import { Interns } from '../model/intern.model';
 import { Router} from '@angular/router';
-import { Click } from '../model/click.model';
-import { ClicksService } from '../services/clicks.service';
+import { clickerS } from '../model/clickerS.model';
+import { ClicksService } from '../services/clickStory.service';
 
 @Component({
   selector: 'app-story',
@@ -16,6 +16,7 @@ export class StoryComponent implements OnInit {
   disAbled= true;
   story   = new Stories();
   storyT:Stories[]=[];
+  cliST:clickerS[]=[];
   InternsTable: Interns[]=[];
   constructor(private clSerc:ClicksService,private router:Router,public internService:InternsService,public storyService:StoryService) { }
 
@@ -40,11 +41,6 @@ export class StoryComponent implements OnInit {
   return this.disAbled;
  }
 
-//  whoClicks():Boolean{
-//   if (this.internService.isloggedIn)
-//   {this.disAbled = false;}
-//   return this.disAbled;
-//  }
 
 
   ajouter(){
@@ -65,37 +61,44 @@ export class StoryComponent implements OnInit {
  
 
   
-  ajoutClick(c:Click){
-    c.Id=this.story.Id;
-    c.email=String(localStorage.getItem('loggedUser'));
-    console.log(c)
+  // ajoutClick(c:clickerS){
+  //   c.Id=this.story.Id;
+  //   c.email=String(localStorage.getItem('loggedUser'));
+  //   console.log(c)
   //this.clSerc.addWhoCliks(c).subscribe();
-  }
+  // }
+
+  //  whoClicks():Boolean{
+//   if (this.internService.isloggedIn)
+//   {this.disAbled = false;}
+//   return this.disAbled;
+//  }
+
+
+whoClicks(s:Stories){
+  this.clSerc.afficheClickerStory(s).
+  subscribe((data:clickerS[])=>{
+    this.cliST = data;
+    if (this.cliST[0].email != localStorage.getItem('loggedUser')){
+      alert('coeur vide '); 
+      //je dois itérer le tableau
+    }
+  });
+}
+
 
   getId(str:Stories){
-
-    if(str.icon=="far fa-heart"){
+    if(str.icon == "far fa-heart"){
     this.storyService.updateStoryPlus(str).subscribe();
-    str.icon="fas fa-heart";
+    str.icon = "fas fa-heart";
     console.log(String(localStorage.getItem('loggedUser')));
      }
-     if(str.icon=="fas fa-heart"){
+     if(str.icon == "fas fa-heart"){
       this.storyService.updateStoryMoins(str).subscribe();
-      str.icon="far fa-heart";
+      str.icon = "far fa-heart";
     }
     this.router.navigate(['story']).then(()=>{
       window.location.reload();  
     });
   }
-
-  // addLike(){
-  //   if(this.icon =='far fa-heart'){
-  //   this.icon    ="fas fa-heart";
-  //   this.count++;}
-  //   else {
-  //   this.icon    = "far fa-heart";
-  //   this.count--;
-  //   }
-  // }
-
 }

@@ -1,21 +1,23 @@
-<!-- la partie supérieure contenant formulaire -->
+<!--la partie supérieure contenant formulaire -->
 <div class="container ">
 <div class="row bg" style="margin-top:3vh">
   <div class="col-md-4"></div>
-  <div class="col-md-4 " style ="margin-top:3vh;align-items:center;justify-content:center">
+  <div class="col-md-4 " style ="margin-top:3vh;align-items:center;justify-content:center;">
   <h3 class="text-center" style ="margin-bottom:3vh;color:black;margin-left:2vw">Share your InternshipStory</h3>   
   <form method="get" style ="width:100%;padding:0 1vw;padding-top:6vh">
-    <div class="input-group mb-3" style="color:white">
-    <div class="input-group-prepend" style="color:white">
+    <div class="input-group mb-3" style="color:#000">
+    <div class="input-group-prepend" style="color:#000">
     <span style="color:black;background:transparent" class=" form-control">@</span>
     </div>
-    <input [(ngModel)]="story.compName"  name="compName" style="background:transparent;color:white" type="text" class="form-control" placeholder="name of the compagny">
+    <input [(ngModel)]="story.compName"  name="compName" style="background:transparent;color:#000" type="text" class="form-control" placeholder="name of the compagny">
     </div>
     <i class="fas fa-pencil-alt prefix" style="color:black"></i>
-    <textarea  [(ngModel)]="story.contenu" name="contenu" id="form10" style="color:white;background:transparent" class="md-textarea form-control" rows="3"></textarea>
+    <textarea  [(ngModel)]="story.contenu" name="contenu" id="form10" style="color:#000;background:transparent" class="md-textarea form-control" rows="3"></textarea>
     <label  style="color:black" for="form10">Life is better when you share it.</label>
     <div style="height:1vh"></div>
-    <button [disabled]="activeButton()" (click)="ajouter()"  type="submit" class="btn" style="box-shadow: 0px 5px 5px rgba(0,0,0,0.2);margin-left:40%;color:black;border-color:black;border-radius:10px;background:#fff;margin-bottom:1vh;margin-top:2vh;">share now</button>
+    <div class="center">
+    <button [disabled]="activeButton()" (click)="ajouter()"  type="submit" class="btn" style="color:black;border-color:black;border-radius:6px;background:#fff;">share now</button>
+  </div>
   </form>
   </div>
   <div class="col-md-4"></div>
@@ -35,7 +37,7 @@
       <div readonly>
         <p style="background-color:white;padding:10px 14px;border-radius:7px">{{stry.contenu}}.</p>
       </div> 
-      <button  (click)="getId(this.stry)" style="background-color:rgb(241, 200, 232);border-radius:30px;color:black;margin-left:2px;border:none;margin-bottom:1vh" type="submit">
+      <button (click)="whoClicks(this.stry)" (click)="getId(this.stry)" style="background-color:rgb(241, 200, 232);border-radius:30px;color:black;margin-left:2px;border:none;margin-bottom:1vh" type="submit">
         <span id="icon"><i style="color:purple" [class]="stry.icon" ></i></span>
         <span id="count" style="color:purple;font-weight:bold;">{{stry.likes}}</span>
       </button> 
