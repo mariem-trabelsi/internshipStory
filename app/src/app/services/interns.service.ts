@@ -17,7 +17,7 @@ export class InternsService {
   public loggedUser : string | undefined;
   public isloggedIn : Boolean = false;
   public roles      : string | undefined;
- 
+  username =localStorage.getItem('loggedUser');
 
 constructor(private httpClient:HttpClient,private router:Router)  { }
 
@@ -30,7 +30,12 @@ deleteIntern(email:string){
 
 insIntern(intrn:Interns)
 {  
-  return this.httpClient.get<Interns>('http://localhost/internshipStory/php/insIntern.php?region='+intrn.region+'&&nom='+intrn.lName+'&&image='+intrn.image+'&&prenom=' +intrn.fName+"&&email="+intrn.email+"&&psw="+intrn.password);
+  return this.httpClient.get<Interns>('http://localhost/internshipStory/php/insIntern.php?region='+intrn.region+'&&nom='+intrn.lName+'&&image='+intrn.image+'&&prenom='+intrn.fName+"&&email="+intrn.email+"&&psw="+intrn.password);
+}
+
+upIntern(intrn:Interns)
+{  
+  return this.httpClient.get<Interns>('http://localhost/internshipStory/php/updateIntern.php?region='+intrn.region+'&&nom='+intrn.lName+'&&image='+intrn.image+'&&prenom='+intrn.fName+"&&email="+intrn.email+"&&psw="+intrn.password+"&&emailp="+this.username);
 }
 
 isAdmin():Boolean {

@@ -10,6 +10,7 @@ import { InternsService } from '../services/interns.service';
 import { StoryService } from '../services/story.service';
 import { CmtService } from '../services/cmt.service';
 import { Commentaire } from '../model/comment.model';
+import {HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -42,8 +43,9 @@ export class ProfileComponent implements OnInit {
   hr=new HRs();
 
   clickForUpdating=0;
+  httpClient: any;
   
-  constructor(public cmtSer:CmtService ,public router:Router,public storyService:StoryService,public internService:InternsService,public hrService:HrService,private hService:HiringService) { }
+  constructor(private http :HttpClient,public cmtSer:CmtService ,public router:Router,public storyService:StoryService,public internService:InternsService,public hrService:HrService,private hService:HiringService) { }
 
   ngOnInit(): void {
       this.internService.ListeInterns().
@@ -208,4 +210,12 @@ maj(){
       window.location.reload();  
     });
   }
+
+  upIntern(intrn:Interns)
+{  
+  this.internService.upIntern(intrn).subscribe();
+  console.log(this.intrn);
+}
+
+
 }
