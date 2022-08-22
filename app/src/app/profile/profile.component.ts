@@ -40,6 +40,9 @@ export class ProfileComponent implements OnInit {
   comment= false;
   intrn=new Interns();
   hr=new HRs();
+
+  clickForUpdating=0;
+  
   constructor(public cmtSer:CmtService ,public router:Router,public storyService:StoryService,public internService:InternsService,public hrService:HrService,private hService:HiringService) { }
 
   ngOnInit(): void {
@@ -184,6 +187,14 @@ this.cmtSer.ListeComment().subscribe((data:Commentaire[])=>{
       window.location.reload();  
     });
   }
+
+maj(){
+  if(this.clickForUpdating == 0)
+  this.clickForUpdating=1;
+  else
+  this.clickForUpdating=0;
+
+}
 
   getId1(h:Hire){
     if(h.icon == "far fa-thumbs-up"){

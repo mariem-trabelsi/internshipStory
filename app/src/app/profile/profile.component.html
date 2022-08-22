@@ -3,7 +3,7 @@
 <div class="row">
 <div class="col-md-2"></div>
 <div class="col-md-6 rounded" id="profil">
-<span style="padding:5px 10px;justify-content: center;align-items: center;background:#000;width:35px;height:35px;border-radius:50%;float:right;color:#fff;font-weight:bold;margin-right:1vw;margin-top: 1vw"><i class="fas fa-pen"></i></span>
+<a style="padding:5px 10px;justify-content: center;align-items: center;background:#000;width:35px;height:35px;border-radius:50%;float:right;color:#fff;font-weight:bold;margin-right:1vw;margin-top: 1vw" (click)="maj()"><i class="fas fa-pen"></i></a>
 <div class="couverture">
 
 <img id="imge" src={{image}} class="rounded-circle">
@@ -22,7 +22,7 @@
 </div>
 <div class="col-md-4">
   
-    <form *ngIf="!bool" class="form" style="width:100%;margin:5vh 1vw" >
+    <form *ngIf="this.clickForUpdating && !bool" class="form" style="width:100%;margin:5vh 1vw" >
       <div style="display:flex;padding-bottom:1vh">
       <input [(ngModel)]="intrn.fName"  style="background-color:transparent;margin-right:1vw" type="text" class="form-control rounded" id="prenom" name="prenom" placeholder="First Name" formControlName="prenom">
       <input [(ngModel)]="intrn.lName"  style="background-color:transparent" type="text" class="form-control rounded" id="nom" name="nom"  formControlName="nom" placeholder="Last Name">
@@ -35,10 +35,10 @@
           <input [(ngModel)]="intrn.email" style="background-color:transparent;margin-right:1vw" type="email" class="form-control rounded" id="mail" name="mail" formControlName="mail" placeholder="email adress">
           <input [(ngModel)]="intrn.password" style="background-color:transparent" type="password" class="form-control rounded" id="pass" name="pass" formControlName="pass" placeholder="password">
           </div>
-      <button routerLink="/profile"   type="submit" class="btn" style="background-color:rgb(155, 7, 165);color:white;border-radius:6px;margin-left:73%;box-shadow: 0px 5px 5px rgba(0,0,0,0.2);">Update</button>
+      <button routerLink="/profile" type="submit" class="btn" style="background-color:rgb(155, 7, 165);color:white;border-radius:6px;margin-left:73%;box-shadow: 0px 5px 5px rgba(0,0,0,0.2);">Update</button>
   </form>
   <!-- le formulaire des Hrs -->
-  <form *ngIf="bool" class="form" style="width:100%;margin:5vh 1vw" >
+  <form *ngIf="this.clickForUpdating && bool" class="form" style="width:100%;margin:5vh 1vw" >
     <div style="display:flex;padding-bottom:1vh">
       <input [(ngModel)]="hr.fName" style="background-color:transparent;margin-right:1vw" type="text" class="form-control rounded" id="prenom" name="prenom"  formControlName="prenom" placeholder="First Name">
       <input [(ngModel)]="hr.lName" style="background-color:transparent" type="text" class="form-control rounded" id="nom" name="nom" formControlName="nom" placeholder="Last Name">
