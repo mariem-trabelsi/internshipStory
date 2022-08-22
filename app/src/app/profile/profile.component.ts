@@ -37,6 +37,7 @@ export class ProfileComponent implements OnInit {
   Count  = 2;
   bool   = false;
   comment= false;
+  intrn=new Interns();
   constructor(public cmtSer:CmtService ,public router:Router,public storyService:StoryService,public internService:InternsService,public hrService:HrService,private hService:HiringService) { }
 
   ngOnInit(): void {

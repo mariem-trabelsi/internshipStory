@@ -21,15 +21,23 @@
 <!-- <button (click)="bio()">ok</button> -->
 </div>
 <div class="col-md-4">
-  <form>
-    <div style="display:flex">
-      <input type="text">
-      <input type="text">
-    </div>
   
-    <input type="text">
-    
+    <form class="form" style="width:100%;margin:5vh 1vw" >
+      <div style="display:flex;padding-bottom:1vh">
+      <input [(ngModel)]="intrn.fName"  style="background-color:transparent;margin-right:1vw" type="text" class="form-control rounded" id="prenom" name="prenom" placeholder="First Name" formControlName="prenom">
+      <input [(ngModel)]="intrn.lName"  style="background-color:transparent" type="text" class="form-control rounded" id="nom" name="nom"  formControlName="nom" placeholder="Last Name">
+      </div>
+      <div style="display:flex;padding-bottom:1vh">
+        <input [(ngModel)]="intrn.region" style="background-color:transparent;margin-right:1vw" type="text" class="form-control rounded" id="region" name="region" formControlName="region" placeholder="tape your state">
+        <input  [(ngModel)]="intrn.image"style="background-color:transparent" type="text" class="form-control rounded" id="img" name="image" formControlName="image" placeholder="link of your profile image">
+        </div>
+        <div style="display:flex;padding-bottom:1vh">
+          <input [(ngModel)]="intrn.email" style="background-color:transparent;margin-right:1vw" type="email" class="form-control rounded" id="mail" name="mail" formControlName="mail" placeholder="email adress">
+          <input [(ngModel)]="intrn.password" style="background-color:transparent" type="password" class="form-control rounded" id="pass" name="pass" formControlName="pass" placeholder="password">
+          </div>
+      <button routerLink="/home"   type="submit" class="btn" style="background-color:rgb(155, 7, 165);color:white;border-radius:6px;float:right;width:7em;box-shadow: 0px 5px 5px rgba(0,0,0,0.2)">Update</button>
   </form>
+
 </div>
 </div>
 <div class="row">
