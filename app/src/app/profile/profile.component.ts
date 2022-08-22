@@ -30,6 +30,7 @@ export class ProfileComponent implements OnInit {
   storyT2:Stories[]=[];
   HireTable:Hire[] =[];
   HireTable2:Hire[] =[];
+
   cmtre = new Commentaire();
   cmtsTable :Commentaire[]=[];
   Icon   ="far fa-thumbs-up";
@@ -38,6 +39,7 @@ export class ProfileComponent implements OnInit {
   bool   = false;
   comment= false;
   intrn=new Interns();
+  hr=new HRs();
   constructor(public cmtSer:CmtService ,public router:Router,public storyService:StoryService,public internService:InternsService,public hrService:HrService,private hService:HiringService) { }
 
   ngOnInit(): void {
