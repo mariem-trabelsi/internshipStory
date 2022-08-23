@@ -214,8 +214,10 @@ maj(){
   upIntern(intrn:Interns)
 {  
   this.internService.upIntern(intrn).subscribe();
-  console.log(this.intrn);
+  this.router.navigate(['profile']).then(()=>{
+    window.location.reload();  
+})
+
+
 }
-
-
 }

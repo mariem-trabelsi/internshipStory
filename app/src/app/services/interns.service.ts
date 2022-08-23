@@ -35,7 +35,9 @@ insIntern(intrn:Interns)
 
 upIntern(intrn:Interns)
 {  
-  return this.httpClient.get<Interns>('http://localhost/internshipStory/php/updateIntern.php?region='+intrn.region+'&&nom='+intrn.lName+'&&image='+intrn.image+'&&prenom='+intrn.fName+"&&email="+intrn.email+"&&psw="+intrn.password+"&&emailp="+this.username);
+ 
+  return this.httpClient.get<Interns>('http://localhost/internshipStory/php/updateIntern.php?region='+intrn.region+'&&nom='+intrn.lName+'&&image='+intrn.image+'&&prenom='+intrn.fName+"&&psw="+intrn.password+'&&emailp='+this.username);
+ 
 }
 
 isAdmin():Boolean {
