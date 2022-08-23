@@ -22,10 +22,10 @@ body{
   align-items: center;
 
 }
-h2{
-  font-weight:lighter;
+h3{
+ 
   text-align:center;
-  color:#fff;
+  color:#000;
   margin-top:4vh;
 }
 .bg{
