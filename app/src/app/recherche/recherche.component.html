@@ -16,8 +16,9 @@
   <div
     style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM4x8-mFNToyqNIf0p9uO1NRCwwSFt04hmBaIOQ83dYxD_-lvehsqIQDZHOLwElpQDjj8&usqp=CAU');mix-blend-mode: multiply;background-position:right;background-size:cotain;background-repeat: no-repeat;height:26vh;border:solid 1px;border-top-right-radius: 100px 100px;border-bottom-right-radius: 100px 100px;margin-right:7vw;background-color:rgb(164, 16, 120)">
     <form class="d-flex center" style="width:80%;padding-left:5vh;padding-bottom:5vh;padding-top:8vh;">
-      <input [(ngModel)]="hire.local" name="local" class="form-control me-2 green-border" style="box-shadow:0 5px 5px rgba(0,0,0,0.2)" type="search "
-        placeholder="search location (example: Ariana)..." aria-label="Search" style="background-color:white;">
+      <input [(ngModel)]="hire.local" name="local" class="form-control me-2 green-border"
+        style="box-shadow:0 5px 5px rgba(0,0,0,0.2)" type="search " placeholder="search location (example: Ariana)..."
+        aria-label="Search" style="background-color:white;">
       <button class="btn" type="submit" (click)="getRegion()"
         style="box-shadow:0 5px 5px rgba(0,0,0,0.2);color:white;background-color:rgb(164, 16, 120);border-style: solid;border-color:white;border-radius: 40px">Search</button>
     </form>
@@ -63,10 +64,6 @@
                 <span id="icon"><i style="color:purple" [class]="hire.icon"></i></span>
                 <span id="count" style="color:purple;font-weight:bold;">{{hire.likes}}</span>
               </button>
-
-
-
-
               <button (click)="commentf()"
                 style="box-shadow:0 5px 5px rgba(0,0,0,0.2);background-color:rgb(164, 16, 120);color:white;border:none;border-radius:30px;"
                 type="submit">comment</button>
@@ -84,8 +81,8 @@
                 </div>
               </div>
               <button
-                style="box-shadow:0 5px 5px rgba(0,0,0,0.2);margin-left:2vw;background-color:rgb(164, 16, 120);border:none;border-radius:30px;color:white;margin-top:5px;"(click)="ajoutComment(hire)"
-                type="submit">publish</button>
+                style="box-shadow:0 5px 5px rgba(0,0,0,0.2);margin-left:2vw;background-color:rgb(164, 16, 120);border:none;border-radius:30px;color:white;margin-top:5px;"
+                (click)="ajoutComment(hire)" type="submit">publish</button>
             </div>
             <!--show comments-->
             <div *ngFor="let cmt of cmtsTable">
@@ -107,10 +104,6 @@
         </div>
 
 
-
-
-
-
         <div *ngIf="!intellAffichage" class="col-md-9 rounded"
           style="border-radius:10px;background-color:rgb(238, 235, 235);padding:10vh 1vw;">
           <div *ngFor="let hire of hireT" class="unity"
@@ -125,7 +118,9 @@
               <p style="padding-left:2vw">
                 {{hire.contenu}}
               </p>
-              <button (click)="getId(this.hire)"style="background-color:white;border:none;border-radius:30px;color:black;margin-right:2px"type="submit">
+              <button (click)="getId(this.hire)"
+              style="background-color:white;border:none;border-radius:30px;color:black;margin-right:2px"
+              type="submit">
                 <span id="icon"><i style="color:purple" [class]="hire.icon"></i></span>
                 <span id="count" style="color:purple;font-weight:bold;">{{hire.likes}}</span>
               </button>

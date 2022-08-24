@@ -217,7 +217,10 @@ maj(){
   this.router.navigate(['profile']).then(()=>{
     window.location.reload();  
 })
-
-
+}
+upHR(h:HRs)
+{  
+  this.hrService.upHr(h).subscribe();
+  this.router.navigate(['profile'])
 }
 }

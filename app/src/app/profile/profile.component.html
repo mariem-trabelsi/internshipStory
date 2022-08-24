@@ -41,17 +41,19 @@
     <div style="display:flex;padding-bottom:1vh">
       <input [(ngModel)]="hr.fName" style="background-color:transparent;margin-right:1vw" type="text" class="form-control rounded" id="prenom" name="prenom"  formControlName="prenom" placeholder="First Name">
       <input [(ngModel)]="hr.lName" style="background-color:transparent" type="text" class="form-control rounded" id="nom" name="nom" formControlName="nom" placeholder="Last Name">
-      </div>
+    </div>
+
       <div style="display:flex;padding-bottom:1vh">
-      <input  [(ngModel)]="hr.email"  style="background-color:transparent;margin-right:1vw" type="email" class="form-control rounded" id="mail" name="mail"  formControlName="mail" placeholder="Email address">
-      <input   [(ngModel)]="hr.password" style="background-color:transparent" type="password" class="form-control rounded" id="pass" name="pass" formControlName="pass" placeholder="Password">
+      <input  [(ngModel)]="hr.compName" style="background-color:transparent;margin-right:1vw" type="text" class="form-control rounded" id="compa" name="compa" formControlName="compa" placeholder="Your compagny name">     
+      <input  [(ngModel)]="hr.password" style="background-color:transparent" type="password" class="form-control rounded" id="pass" name="pass" formControlName="pass" placeholder="Password">
       </div>
+
       <div style="display:flex;padding-bottom:1vh">
         <input  [(ngModel)]="hr.local" style="background-color:transparent;margin-right:1vw" type="text" class="form-control rounded" id="region" formControlName="region" name="region" placeholder="Localisation of compagny">
         <input  [(ngModel)]="hr.image" style="background-color:transparent" type="text" class="form-control rounded" id="image" name="image" formControlName="image" placeholder="Link of your profile image">
-        </div>
-        <input  [(ngModel)]="hr.compName" style="background-color:transparent;width:49%" type="text" class="form-control rounded" id="compa" name="compa" formControlName="compa" placeholder="Your compagny name">     
-      <button  routerLink="/home"   type="submit" class="btn" style="box-shadow: 0px 5px 5px rgba(0,0,0,0.2);background-color:rgb(155, 7, 165);color:white;border:none;border-radius:6px;margin-left:73%;width:7em;margin-right:1vw">Update</button>
+      </div>
+
+      <button (click)="upHR(hr)" type="submit" class="btn" style="box-shadow: 0px 5px 5px rgba(0,0,0,0.2);background-color:rgb(155, 7, 165);color:white;border:none;border-radius:6px;margin-left:73%;width:7em;margin-right:1vw">Update</button>
   </form>
 
 </div>
@@ -64,7 +66,8 @@
   <!--affichage de stories-->
  
     <div *ngFor="let stry of storyT2" style="margin-bottom:2vh"> 
-        <span style="font-size:20px;color:red;float:right;margin-right:2vw;margin-top:12px;"><a (click)="suppSt(stry)">X</a></span>
+ 
+  <span style="font-size:20px;color:red;float:right;margin-right:2vw;margin-top:12px; cursor: pointer;"><a (click)="suppSt(stry)">X</a></span>
         <div *ngFor="let stry of storyT2" style="margin-bottom:2vh"> 
           <div style="display:flex;color:#ccc">
             <img src={{stry.image}} class="rounded-circle" style="width:50px;height:60px;margin-right:1vw">
