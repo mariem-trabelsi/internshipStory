@@ -39,8 +39,8 @@ export class ProfileComponent implements OnInit {
   Count  = 2;
   bool   = false;
   comment= false;
-  intrn=new Interns();
-  hr=new HRs();
+  intrn = new Interns();
+  hr = new HRs();
 
   clickForUpdating=0;
   httpClient: any;
@@ -48,6 +48,9 @@ export class ProfileComponent implements OnInit {
   constructor(private http :HttpClient,public cmtSer:CmtService ,public router:Router,public storyService:StoryService,public internService:InternsService,public hrService:HrService,private hService:HiringService) { }
 
   ngOnInit(): void {
+    if(localStorage.getItem('role') == "HR"){
+      this.bool=true;
+    }
       this.internService.ListeInterns().
         subscribe((data:Interns[])=>{
         this.InternsTable = data;
@@ -95,7 +98,7 @@ export class ProfileComponent implements OnInit {
       this.HireTable.forEach((current)=>{
       if( this.internService.loggedUser === current.email){
         this.HireTable2.push(current);
-        this.bool=true;
+        // this.bool=true;
       }
     }); 
 });
@@ -130,8 +133,7 @@ this.cmtSer.ListeComment().subscribe((data:Commentaire[])=>{
      
       if(this.comment)
       {
-        this.comment=false
-       
+        this.comment=false;
       }
       else
       {
@@ -167,7 +169,7 @@ this.cmtSer.ListeComment().subscribe((data:Commentaire[])=>{
   this.hService.suppHiring(h).subscribe((data) =>{
   this.HireTable2 = this.HireTable2.filter(u => u !== h);
   this.router.navigate(['profile']).then(()=>{
-    window.location.reload();  
+  window.location.reload();  
   });
   });
 }
@@ -195,7 +197,6 @@ maj(){
   this.clickForUpdating=1;
   else
   this.clickForUpdating=0;
-
 }
 
   getId1(h:Hire){
@@ -215,12 +216,16 @@ maj(){
 {  
   this.internService.upIntern(intrn).subscribe();
   this.router.navigate(['profile']).then(()=>{
-    window.location.reload();  
+  window.location.reload();  
 })
 }
-upHR(h:HRs)
+
+upHR(hr:HRs)
 {  
-  this.hrService.upHr(h).subscribe();
-  this.router.navigate(['profile'])
+  console.log(this.hr)
+  this.hrService.updateHr(hr).subscribe();
+   //this.router.navigate(['profile']).then(()=>{
+//   window.location.reload();  
+// })
 }
 }

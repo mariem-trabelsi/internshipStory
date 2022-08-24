@@ -35,25 +35,26 @@
          
       <button (click)="upIntern(this.intrn)" routerLink="/profile" type="submit" class="btn" style="background-color:rgb(155, 7, 165);color:white;border-radius:6px;margin-left:73%;box-shadow: 0px 5px 5px rgba(0,0,0,0.2);">Update</button>
   </form>
+
   <!-- le formulaire des Hrs -->
 
   <form *ngIf="this.clickForUpdating && bool" class="form" style="width:100%;margin:5vh 1vw" >
+   
     <div style="display:flex;padding-bottom:1vh">
-      <input [(ngModel)]="hr.fName" style="background-color:transparent;margin-right:1vw" type="text" class="form-control rounded" id="prenom" name="prenom"  formControlName="prenom" placeholder="First Name">
-      <input [(ngModel)]="hr.lName" style="background-color:transparent" type="text" class="form-control rounded" id="nom" name="nom" formControlName="nom" placeholder="Last Name">
+      <input [(ngModel)]="hr.fName" style="background-color:transparent;margin-right:1vw" type="text" class="form-control rounded" id="prenom" name="prenom"  placeholder="First Name">
+      <input [(ngModel)]="hr.lName" style="background-color:transparent" type="text" class="form-control rounded" id="nom" name="nom"  placeholder="Last Name">
     </div>
 
       <div style="display:flex;padding-bottom:1vh">
-      <input  [(ngModel)]="hr.compName" style="background-color:transparent;margin-right:1vw" type="text" class="form-control rounded" id="compa" name="compa" formControlName="compa" placeholder="Your compagny name">     
-      <input  [(ngModel)]="hr.password" style="background-color:transparent" type="password" class="form-control rounded" id="pass" name="pass" formControlName="pass" placeholder="Password">
+      <input  [(ngModel)]="hr.compName" style="background-color:transparent;margin-right:1vw" type="text" class="form-control rounded" id="compa" name="compa"  placeholder="Your compagny name">     
+      <input  [(ngModel)]="hr.password" style="background-color:transparent" type="password" class="form-control rounded" id="pass" name="pass" placeholder="Password">
       </div>
 
       <div style="display:flex;padding-bottom:1vh">
-        <input  [(ngModel)]="hr.local" style="background-color:transparent;margin-right:1vw" type="text" class="form-control rounded" id="region" formControlName="region" name="region" placeholder="Localisation of compagny">
-        <input  [(ngModel)]="hr.image" style="background-color:transparent" type="text" class="form-control rounded" id="image" name="image" formControlName="image" placeholder="Link of your profile image">
+        <input  [(ngModel)]="hr.local" style="background-color:transparent;margin-right:1vw" type="text" class="form-control rounded" id="region"  name="region" placeholder="Localisation of compagny">
+        <input  [(ngModel)]="hr.image" style="background-color:transparent" type="text" class="form-control rounded" id="image" name="image" placeholder="Link of your profile image">
       </div>
-
-      <button (click)="upHR(hr)" type="submit" class="btn" style="box-shadow: 0px 5px 5px rgba(0,0,0,0.2);background-color:rgb(155, 7, 165);color:white;border:none;border-radius:6px;margin-left:73%;width:7em;margin-right:1vw">Update</button>
+         <button (click)="upHR(hr)" routerLink="/profile" type="submit" class="btn" style="background-color:rgb(155, 7, 165);color:white;border-radius:6px;margin-left:73%;box-shadow: 0px 5px 5px rgba(0,0,0,0.2);">Update</button>
   </form>
 
 </div>
@@ -67,7 +68,7 @@
  
     <div *ngFor="let stry of storyT2" style="margin-bottom:2vh"> 
  
-  <span style="font-size:20px;color:red;float:right;margin-right:2vw;margin-top:12px; cursor: pointer;"><a (click)="suppSt(stry)">X</a></span>
+  <span style="font-size:20px;color:red;float:right;margin-right:2vw;margin-top:12px;cursor: pointer;"><a (click)="suppSt(stry)">X</a></span>
         <div *ngFor="let stry of storyT2" style="margin-bottom:2vh"> 
           <div style="display:flex;color:#ccc">
             <img src={{stry.image}} class="rounded-circle" style="width:50px;height:60px;margin-right:1vw">
@@ -98,7 +99,7 @@
 <div *ngIf="bool" class="col-md-6 rounded" style="border-radius:10px;background-color:rgb(238, 235, 235);">
   <div *ngFor="let hire of HireTable2"  style="background-color:white;margin-bottom:3vh;border-radius:10px;">
     <div style="background-color:white">
-      <span style="float:right" class="bttn" style="font-size:22px;margin-right:1vw;color:red;float:right"><a (click)="supphiring(hire)">X</a></span>
+      <span style="float:right" class="bttn" style="font-size:22px;margin-right:1vw;color:red;float:right;cursor: pointer;"><a (click)="supphiring(hire)" >X</a></span>
       <div style="display:flex">
         <img class="rounded-circle" src={{hire.image}}
           style="margin-right:1vw;width:4%;height:5vh;mix-blend-mode:multiply;margin-top:1vh">
