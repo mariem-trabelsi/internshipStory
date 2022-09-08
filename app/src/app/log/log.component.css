@@ -34,7 +34,7 @@ h3{
   background-size: contain;
   background-repeat: no-repeat;
 }
-/* 
+ 
  @-webkit-keyframes tracking-out-contract {
   0% {
     opacity: 1;
@@ -63,4 +63,4 @@ h3{
 .tracking-out-contract {
 	-webkit-animation: tracking-out-contract 8s cubic-bezier(0.550, 0.085, 0.680, 0.530) infinite both;
 	animation: tracking-out-contract 8s cubic-bezier(0.550, 0.085, 0.680, 0.530) infinite both;
-} */
+}
